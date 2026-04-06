@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soilixa OpenEnv</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background-orb orb-a"></div>
+    <div class="background-orb orb-b"></div>
+
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Soilixa OpenEnv</p>
+          <h1>Intelligent crop learning through guided simulation.</h1>
+        </div>
+        <div class="topbar-pill">
+          <span id="stageLabel">Start</span>
+        </div>
+      </header>
+
+      <section class="progress-strip" aria-label="Journey progress">
+        <div class="progress-step active">1. Start</div>
+        <div class="progress-step">2. Crop</div>
+        <div class="progress-step">3. Guide</div>
+        <div class="progress-step">4. Simulation</div>
+        <div class="progress-step">5. Result</div>
+      </section>
+
+      <div id="app" class="app-panel" aria-live="polite"></div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

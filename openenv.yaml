@@ -1,0 +1,31 @@
+name: SoilixaEnv
+description: AI-driven agricultural environment
+
+state:
+  day: integer
+  soilMoisture: float
+  temperature: float
+  cropHealth: float
+  cropType: string
+
+actions:
+  - water
+  - fertilize
+  - do_nothing
+
+reward:
+  type: float
+  range: 0.0-1.0
+
+episode_length: 30
+
+tasks:
+  tomato:
+    difficulty: Easy
+    optimalMoisture: 55.0
+  rice:
+    difficulty: Medium
+    optimalMoisture: 75.0
+  sugarcane:
+    difficulty: Hard
+    optimalMoisture: 65.0

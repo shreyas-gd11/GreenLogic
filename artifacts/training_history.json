@@ -1,0 +1,5011 @@
+{
+  "episodes": 500,
+  "modelPath": "artifacts\\q_table.json",
+  "movingAverageWindow": 20,
+  "scores": [
+    -282,
+    -311,
+    92,
+    -185,
+    143,
+    -186,
+    -80,
+    -17,
+    -68,
+    28,
+    -202,
+    -137,
+    -60,
+    35,
+    47,
+    -229,
+    -203,
+    -412,
+    -124,
+    -171,
+    -25,
+    22,
+    -7,
+    -31,
+    -32,
+    -128,
+    -45,
+    140,
+    -113,
+    -19,
+    84,
+    77,
+    -93,
+    202,
+    200,
+    129,
+    -325,
+    -164,
+    47,
+    118,
+    -232,
+    -273,
+    -78,
+    -144,
+    16,
+    4,
+    163,
+    145,
+    85,
+    291,
+    44,
+    2,
+    294,
+    204,
+    175,
+    263,
+    37,
+    183,
+    70,
+    30,
+    17,
+    94,
+    256,
+    247,
+    238,
+    219,
+    317,
+    151,
+    209,
+    207,
+    130,
+    269,
+    232,
+    176,
+    268,
+    236,
+    169,
+    87,
+    194,
+    -12,
+    265,
+    308,
+    -32,
+    72,
+    197,
+    72,
+    282,
+    -151,
+    64,
+    178,
+    286,
+    92,
+    232,
+    85,
+    266,
+    316,
+    180,
+    283,
+    -14,
+    256,
+    297,
+    244,
+    18,
+    339,
+    303,
+    150,
+    320,
+    278,
+    270,
+    247,
+    234,
+    -166,
+    345,
+    302,
+    143,
+    357,
+    232,
+    219,
+    289,
+    368,
+    274,
+    17,
+    319,
+    156,
+    247,
+    310,
+    287,
+    343,
+    222,
+    321,
+    298,
+    -3,
+    328,
+    337,
+    343,
+    284,
+    337,
+    222,
+    208,
+    371,
+    117,
+    36,
+    305,
+    329,
+    236,
+    331,
+    296,
+    226,
+    50,
+    349,
+    282,
+    70,
+    303,
+    320,
+    324,
+    344,
+    324,
+    339,
+    347,
+    305,
+    260,
+    332,
+    303,
+    339,
+    348,
+    288,
+    309,
+    391,
+    336,
+    301,
+    323,
+    133,
+    338,
+    340,
+    327,
+    286,
+    317,
+    291,
+    323,
+    347,
+    354,
+    331,
+    355,
+    168,
+    235,
+    230,
+    344,
+    368,
+    382,
+    323,
+    307,
+    347,
+    310,
+    365,
+    339,
+    362,
+    367,
+    364,
+    313,
+    355,
+    332,
+    325,
+    319,
+    315,
+    314,
+    345,
+    347,
+    334,
+    371,
+    349,
+    317,
+    392,
+    364,
+    286,
+    330,
+    378,
+    326,
+    385,
+    342,
+    268,
+    333,
+    331,
+    325,
+    215,
+    327,
+    348,
+    367,
+    366,
+    245,
+    341,
+    344,
+    274,
+    366,
+    367,
+    348,
+    307,
+    368,
+    332,
+    369,
+    347,
+    304,
+    375,
+    214,
+    376,
+    378,
+    322,
+    323,
+    325,
+    294,
+    329,
+    367,
+    325,
+    340,
+    398,
+    365,
+    342,
+    353,
+    235,
+    375,
+    375,
+    391,
+    323,
+    375,
+    387,
+    363,
+    392,
+    379,
+    291,
+    302,
+    379,
+    344,
+    344,
+    356,
+    324,
+    321,
+    348,
+    347,
+    387,
+    392,
+    359,
+    381,
+    382,
+    363,
+    347,
+    354,
+    360,
+    371,
+    371,
+    322,
+    398,
+    355,
+    327,
+    373,
+    358,
+    366,
+    334,
+    351,
+    363,
+    394,
+    382,
+    363,
+    398,
+    390,
+    355,
+    379,
+    390,
+    368,
+    360,
+    363,
+    339,
+    379,
+    390,
+    361,
+    352,
+    390,
+    355,
+    398,
+    353,
+    374,
+    398,
+    373,
+    329,
+    362,
+    351,
+    354,
+    398,
+    388,
+    359,
+    388,
+    366,
+    348,
+    390,
+    367,
+    297,
+    384,
+    357,
+    344,
+    397,
+    390,
+    348,
+    364,
+    392,
+    363,
+    351,
+    375,
+    358,
+    387,
+    375,
+    341,
+    376,
+    392,
+    327,
+    368,
+    356,
+    344,
+    398,
+    358,
+    336,
+    392,
+    370,
+    323,
+    362,
+    392,
+    128,
+    392,
+    368,
+    338,
+    379,
+    375,
+    355,
+    398,
+    392,
+    355,
+    398,
+    392,
+    335,
+    398,
+    377,
+    355,
+    379,
+    392,
+    363,
+    398,
+    358,
+    369,
+    398,
+    392,
+    363,
+    368,
+    352,
+    340,
+    398,
+    373,
+    363,
+    393,
+    392,
+    363,
+    384,
+    372,
+    363,
+    392,
+    356,
+    348,
+    396,
+    349,
+    363,
+    381,
+    392,
+    363,
+    368,
+    372,
+    353,
+    362,
+    392,
+    371,
+    377,
+    384,
+    352,
+    398,
+    392,
+    363,
+    398,
+    384,
+    348,
+    381,
+    392,
+    363,
+    392,
+    378,
+    340,
+    379,
+    392,
+    363,
+    398,
+    377,
+    338,
+    398,
+    375,
+    369,
+    375,
+    392,
+    363,
+    375,
+    384,
+    361,
+    379,
+    374,
+    355,
+    392,
+    384,
+    363,
+    396,
+    392,
+    368,
+    385,
+    378,
+    329,
+    330,
+    392,
+    355,
+    390,
+    387,
+    363,
+    329,
+    392,
+    340,
+    356,
+    387,
+    354,
+    404,
+    377,
+    323,
+    398,
+    384,
+    363,
+    396,
+    340,
+    363,
+    386,
+    387,
+    363,
+    392,
+    382,
+    306,
+    395,
+    373,
+    369,
+    374,
+    392,
+    352,
+    398,
+    371,
+    335,
+    373,
+    375,
+    363,
+    381,
+    397,
+    339,
+    398
+  ],
+  "movingAverage": [
+    -282.0,
+    -296.5,
+    -167.0,
+    -171.5,
+    -108.6,
+    -121.5,
+    -115.57142857142857,
+    -103.25,
+    -99.33333333333333,
+    -86.6,
+    -97.0909090909091,
+    -100.41666666666667,
+    -97.3076923076923,
+    -87.85714285714286,
+    -78.86666666666666,
+    -88.25,
+    -95.0,
+    -112.61111111111111,
+    -113.21052631578948,
+    -116.1,
+    -103.25,
+    -86.6,
+    -91.55,
+    -83.85,
+    -92.6,
+    -89.7,
+    -87.95,
+    -80.1,
+    -82.35,
+    -84.7,
+    -70.4,
+    -59.7,
+    -61.35,
+    -53.0,
+    -45.35,
+    -27.45,
+    -33.55,
+    -21.15,
+    -12.6,
+    1.85,
+    -8.5,
+    -23.25,
+    -26.8,
+    -32.45,
+    -30.05,
+    -23.45,
+    -13.05,
+    -12.8,
+    -2.9,
+    12.6,
+    10.6,
+    6.85,
+    26.2,
+    26.3,
+    25.05,
+    31.75,
+    49.85,
+    67.2,
+    68.35,
+    63.95,
+    76.4,
+    94.75,
+    111.45,
+    131.0,
+    142.1,
+    152.85,
+    160.55,
+    160.85,
+    167.05,
+    162.85,
+    167.15,
+    180.5,
+    177.4,
+    176.0,
+    180.65,
+    179.3,
+    185.9,
+    181.1,
+    187.3,
+    185.2,
+    197.6,
+    208.3,
+    193.9,
+    185.15,
+    183.1,
+    175.75,
+    174.0,
+    158.9,
+    151.65,
+    150.2,
+    158.0,
+    149.15,
+    149.15,
+    144.6,
+    144.5,
+    148.5,
+    149.05,
+    158.85,
+    148.45,
+    161.85,
+    163.45,
+    160.25,
+    162.75,
+    176.1,
+    181.4,
+    185.3,
+    187.2,
+    208.65,
+    218.95,
+    222.4,
+    219.8,
+    206.9,
+    212.55,
+    223.4,
+    217.25,
+    219.3,
+    221.9,
+    218.7,
+    233.85,
+    239.45,
+    238.3,
+    226.95,
+    242.0,
+    232.85,
+    230.05,
+    238.05,
+    236.4,
+    239.65,
+    237.25,
+    240.95,
+    244.15,
+    252.3,
+    251.45,
+    253.2,
+    263.2,
+    259.55,
+    264.8,
+    264.95,
+    260.9,
+    261.05,
+    253.2,
+    254.15,
+    253.45,
+    262.1,
+    261.55,
+    262.6,
+    263.05,
+    257.2,
+    248.6,
+    250.0,
+    249.2,
+    252.85,
+    251.6,
+    250.75,
+    249.8,
+    252.8,
+    252.15,
+    258.0,
+    264.95,
+    261.65,
+    268.8,
+    283.6,
+    283.5,
+    284.0,
+    289.6,
+    287.45,
+    288.1,
+    296.35,
+    310.65,
+    308.25,
+    310.3,
+    313.45,
+    315.2,
+    316.2,
+    316.35,
+    313.45,
+    313.1,
+    310.7,
+    309.5,
+    311.6,
+    316.3,
+    316.25,
+    318.85,
+    310.3,
+    304.65,
+    301.75,
+    303.5,
+    302.35,
+    304.65,
+    305.75,
+    304.95,
+    315.65,
+    314.25,
+    315.5,
+    316.1,
+    319.9,
+    322.4,
+    326.05,
+    325.55,
+    325.95,
+    324.85,
+    324.55,
+    322.75,
+    330.1,
+    334.05,
+    339.8,
+    339.95,
+    338.25,
+    337.7,
+    339.0,
+    339.5,
+    341.75,
+    344.45,
+    340.5,
+    340.05,
+    340.85,
+    338.8,
+    339.85,
+    341.3,
+    336.95,
+    337.0,
+    337.3,
+    337.6,
+    332.6,
+    333.25,
+    333.4,
+    334.4,
+    336.0,
+    329.7,
+    329.3,
+    330.65,
+    324.75,
+    324.85,
+    328.9,
+    329.8,
+    326.25,
+    328.35,
+    325.7,
+    327.05,
+    331.0,
+    329.55,
+    331.75,
+    326.2,
+    334.25,
+    336.8,
+    335.5,
+    333.3,
+    331.25,
+    333.7,
+    333.1,
+    334.25,
+    336.8,
+    335.5,
+    337.05,
+    337.9,
+    339.65,
+    338.9,
+    334.05,
+    334.35,
+    335.75,
+    340.1,
+    337.5,
+    345.55,
+    346.1,
+    345.35,
+    348.85,
+    351.65,
+    349.95,
+    350.35,
+    352.85,
+    351.7,
+    352.65,
+    353.45,
+    349.75,
+    347.55,
+    347.85,
+    347.55,
+    355.15,
+    356.0,
+    355.2,
+    354.7,
+    357.65,
+    357.05,
+    355.05,
+    354.6,
+    353.0,
+    352.6,
+    356.6,
+    357.6,
+    358.55,
+    359.1,
+    358.25,
+    359.1,
+    360.8,
+    363.05,
+    362.35,
+    362.55,
+    361.35,
+    361.45,
+    362.6,
+    361.7,
+    362.5,
+    363.85,
+    364.25,
+    365.5,
+    367.0,
+    366.85,
+    366.3,
+    368.35,
+    365.4,
+    366.6,
+    369.75,
+    369.15,
+    368.85,
+    370.05,
+    371.1,
+    373.45,
+    372.95,
+    371.95,
+    372.75,
+    373.25,
+    369.8,
+    368.4,
+    368.2,
+    366.95,
+    367.35,
+    368.35,
+    368.3,
+    369.55,
+    370.9,
+    369.35,
+    369.35,
+    369.65,
+    366.9,
+    366.6,
+    366.7,
+    364.0,
+    366.2,
+    367.0,
+    364.5,
+    364.05,
+    367.2,
+    367.25,
+    367.25,
+    368.3,
+    366.3,
+    366.25,
+    367.05,
+    364.7,
+    365.2,
+    367.4,
+    364.25,
+    364.3,
+    367.25,
+    365.25,
+    367.3,
+    368.0,
+    364.95,
+    365.05,
+    366.15,
+    364.1,
+    362.6,
+    364.05,
+    352.9,
+    353.75,
+    354.25,
+    351.8,
+    352.0,
+    353.7,
+    352.65,
+    352.95,
+    356.2,
+    355.55,
+    357.65,
+    360.05,
+    356.9,
+    358.9,
+    360.95,
+    359.1,
+    359.55,
+    363.0,
+    363.05,
+    363.35,
+    374.85,
+    373.7,
+    375.2,
+    377.9,
+    377.1,
+    376.75,
+    376.6,
+    373.7,
+    374.0,
+    374.9,
+    373.15,
+    373.2,
+    376.05,
+    374.3,
+    374.65,
+    375.5,
+    374.7,
+    374.7,
+    374.35,
+    371.85,
+    373.75,
+    372.75,
+    371.0,
+    370.45,
+    371.9,
+    371.65,
+    372.45,
+    374.05,
+    371.8,
+    371.25,
+    372.7,
+    371.6,
+    370.85,
+    371.9,
+    370.3,
+    371.6,
+    373.05,
+    371.6,
+    373.7,
+    375.5,
+    373.1,
+    374.7,
+    376.15,
+    375.25,
+    375.25,
+    376.0,
+    374.6,
+    374.95,
+    376.9,
+    376.95,
+    377.25,
+    377.55,
+    375.6,
+    376.3,
+    377.45,
+    376.0,
+    375.15,
+    376.6,
+    374.85,
+    374.4,
+    376.2,
+    375.2,
+    374.55,
+    375.1,
+    373.25,
+    373.95,
+    376.15,
+    375.35,
+    375.55,
+    377.0,
+    375.5,
+    375.9,
+    377.9,
+    374.45,
+    372.2,
+    373.35,
+    372.35,
+    372.25,
+    373.45,
+    372.85,
+    370.1,
+    371.65,
+    369.7,
+    368.8,
+    370.4,
+    368.5,
+    369.5,
+    370.2,
+    366.55,
+    366.85,
+    367.65,
+    366.55,
+    367.45,
+    368.0,
+    369.65,
+    369.35,
+    370.95,
+    369.6,
+    369.85,
+    370.8,
+    369.65,
+    369.8,
+    371.45,
+    372.1,
+    371.45,
+    373.35,
+    370.75,
+    371.8,
+    374.2,
+    371.05,
+    370.5,
+    371.1,
+    369.45,
+    371.5,
+    373.2,
+    370.85,
+    371.4
+  ],
+  "history": [
+    {
+      "episode": 1,
+      "cropId": "tomato",
+      "score": -282,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.992
+    },
+    {
+      "episode": 2,
+      "cropId": "rice",
+      "score": -311,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.984064
+    },
+    {
+      "episode": 3,
+      "cropId": "sugarcane",
+      "score": 92,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.976191
+    },
+    {
+      "episode": 4,
+      "cropId": "tomato",
+      "score": -185,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.968382
+    },
+    {
+      "episode": 5,
+      "cropId": "rice",
+      "score": 143,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.960635
+    },
+    {
+      "episode": 6,
+      "cropId": "sugarcane",
+      "score": -186,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.95295
+    },
+    {
+      "episode": 7,
+      "cropId": "tomato",
+      "score": -80,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.945326
+    },
+    {
+      "episode": 8,
+      "cropId": "rice",
+      "score": -17,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.937764
+    },
+    {
+      "episode": 9,
+      "cropId": "sugarcane",
+      "score": -68,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.930262
+    },
+    {
+      "episode": 10,
+      "cropId": "tomato",
+      "score": 28,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.922819
+    },
+    {
+      "episode": 11,
+      "cropId": "rice",
+      "score": -202,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.915437
+    },
+    {
+      "episode": 12,
+      "cropId": "sugarcane",
+      "score": -137,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.908113
+    },
+    {
+      "episode": 13,
+      "cropId": "tomato",
+      "score": -60,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.900848
+    },
+    {
+      "episode": 14,
+      "cropId": "rice",
+      "score": 35,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.893642
+    },
+    {
+      "episode": 15,
+      "cropId": "sugarcane",
+      "score": 47,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.886493
+    },
+    {
+      "episode": 16,
+      "cropId": "tomato",
+      "score": -229,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.879401
+    },
+    {
+      "episode": 17,
+      "cropId": "rice",
+      "score": -203,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.872365
+    },
+    {
+      "episode": 18,
+      "cropId": "sugarcane",
+      "score": -412,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.865386
+    },
+    {
+      "episode": 19,
+      "cropId": "tomato",
+      "score": -124,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.858463
+    },
+    {
+      "episode": 20,
+      "cropId": "rice",
+      "score": -171,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.851596
+    },
+    {
+      "episode": 21,
+      "cropId": "sugarcane",
+      "score": -25,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.844783
+    },
+    {
+      "episode": 22,
+      "cropId": "tomato",
+      "score": 22,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.838025
+    },
+    {
+      "episode": 23,
+      "cropId": "rice",
+      "score": -7,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.83132
+    },
+    {
+      "episode": 24,
+      "cropId": "sugarcane",
+      "score": -31,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.82467
+    },
+    {
+      "episode": 25,
+      "cropId": "tomato",
+      "score": -32,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.818073
+    },
+    {
+      "episode": 26,
+      "cropId": "rice",
+      "score": -128,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.811528
+    },
+    {
+      "episode": 27,
+      "cropId": "sugarcane",
+      "score": -45,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.805036
+    },
+    {
+      "episode": 28,
+      "cropId": "tomato",
+      "score": 140,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.798595
+    },
+    {
+      "episode": 29,
+      "cropId": "rice",
+      "score": -113,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.792207
+    },
+    {
+      "episode": 30,
+      "cropId": "sugarcane",
+      "score": -19,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.785869
+    },
+    {
+      "episode": 31,
+      "cropId": "tomato",
+      "score": 84,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.779582
+    },
+    {
+      "episode": 32,
+      "cropId": "rice",
+      "score": 77,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.773345
+    },
+    {
+      "episode": 33,
+      "cropId": "sugarcane",
+      "score": -93,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.767159
+    },
+    {
+      "episode": 34,
+      "cropId": "tomato",
+      "score": 202,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.761021
+    },
+    {
+      "episode": 35,
+      "cropId": "rice",
+      "score": 200,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.754933
+    },
+    {
+      "episode": 36,
+      "cropId": "sugarcane",
+      "score": 129,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.748894
+    },
+    {
+      "episode": 37,
+      "cropId": "tomato",
+      "score": -325,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.742903
+    },
+    {
+      "episode": 38,
+      "cropId": "rice",
+      "score": -164,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.736959
+    },
+    {
+      "episode": 39,
+      "cropId": "sugarcane",
+      "score": 47,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.731064
+    },
+    {
+      "episode": 40,
+      "cropId": "tomato",
+      "score": 118,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.725215
+    },
+    {
+      "episode": 41,
+      "cropId": "rice",
+      "score": -232,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.719413
+    },
+    {
+      "episode": 42,
+      "cropId": "sugarcane",
+      "score": -273,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.713658
+    },
+    {
+      "episode": 43,
+      "cropId": "tomato",
+      "score": -78,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.707949
+    },
+    {
+      "episode": 44,
+      "cropId": "rice",
+      "score": -144,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.702285
+    },
+    {
+      "episode": 45,
+      "cropId": "sugarcane",
+      "score": 16,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.696667
+    },
+    {
+      "episode": 46,
+      "cropId": "tomato",
+      "score": 4,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.691094
+    },
+    {
+      "episode": 47,
+      "cropId": "rice",
+      "score": 163,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.685565
+    },
+    {
+      "episode": 48,
+      "cropId": "sugarcane",
+      "score": 145,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.68008
+    },
+    {
+      "episode": 49,
+      "cropId": "tomato",
+      "score": 85,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.67464
+    },
+    {
+      "episode": 50,
+      "cropId": "rice",
+      "score": 291,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.669243
+    },
+    {
+      "episode": 51,
+      "cropId": "sugarcane",
+      "score": 44,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.663889
+    },
+    {
+      "episode": 52,
+      "cropId": "tomato",
+      "score": 2,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.658578
+    },
+    {
+      "episode": 53,
+      "cropId": "rice",
+      "score": 294,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.653309
+    },
+    {
+      "episode": 54,
+      "cropId": "sugarcane",
+      "score": 204,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.648083
+    },
+    {
+      "episode": 55,
+      "cropId": "tomato",
+      "score": 175,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.642898
+    },
+    {
+      "episode": 56,
+      "cropId": "rice",
+      "score": 263,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.637755
+    },
+    {
+      "episode": 57,
+      "cropId": "sugarcane",
+      "score": 37,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.632653
+    },
+    {
+      "episode": 58,
+      "cropId": "tomato",
+      "score": 183,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.627591
+    },
+    {
+      "episode": 59,
+      "cropId": "rice",
+      "score": 70,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.622571
+    },
+    {
+      "episode": 60,
+      "cropId": "sugarcane",
+      "score": 30,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.61759
+    },
+    {
+      "episode": 61,
+      "cropId": "tomato",
+      "score": 17,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.612649
+    },
+    {
+      "episode": 62,
+      "cropId": "rice",
+      "score": 94,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.607748
+    },
+    {
+      "episode": 63,
+      "cropId": "sugarcane",
+      "score": 256,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.602886
+    },
+    {
+      "episode": 64,
+      "cropId": "tomato",
+      "score": 247,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.598063
+    },
+    {
+      "episode": 65,
+      "cropId": "rice",
+      "score": 238,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.593279
+    },
+    {
+      "episode": 66,
+      "cropId": "sugarcane",
+      "score": 219,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.588532
+    },
+    {
+      "episode": 67,
+      "cropId": "tomato",
+      "score": 317,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.583824
+    },
+    {
+      "episode": 68,
+      "cropId": "rice",
+      "score": 151,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.579154
+    },
+    {
+      "episode": 69,
+      "cropId": "sugarcane",
+      "score": 209,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.57452
+    },
+    {
+      "episode": 70,
+      "cropId": "tomato",
+      "score": 207,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.569924
+    },
+    {
+      "episode": 71,
+      "cropId": "rice",
+      "score": 130,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.565365
+    },
+    {
+      "episode": 72,
+      "cropId": "sugarcane",
+      "score": 269,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.560842
+    },
+    {
+      "episode": 73,
+      "cropId": "tomato",
+      "score": 232,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.556355
+    },
+    {
+      "episode": 74,
+      "cropId": "rice",
+      "score": 176,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.551904
+    },
+    {
+      "episode": 75,
+      "cropId": "sugarcane",
+      "score": 268,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.547489
+    },
+    {
+      "episode": 76,
+      "cropId": "tomato",
+      "score": 236,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.543109
+    },
+    {
+      "episode": 77,
+      "cropId": "rice",
+      "score": 169,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.538764
+    },
+    {
+      "episode": 78,
+      "cropId": "sugarcane",
+      "score": 87,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.534454
+    },
+    {
+      "episode": 79,
+      "cropId": "tomato",
+      "score": 194,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.530178
+    },
+    {
+      "episode": 80,
+      "cropId": "rice",
+      "score": -12,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.525937
+    },
+    {
+      "episode": 81,
+      "cropId": "sugarcane",
+      "score": 265,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.52173
+    },
+    {
+      "episode": 82,
+      "cropId": "tomato",
+      "score": 308,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.517556
+    },
+    {
+      "episode": 83,
+      "cropId": "rice",
+      "score": -32,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.513415
+    },
+    {
+      "episode": 84,
+      "cropId": "sugarcane",
+      "score": 72,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.509308
+    },
+    {
+      "episode": 85,
+      "cropId": "tomato",
+      "score": 197,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.505233
+    },
+    {
+      "episode": 86,
+      "cropId": "rice",
+      "score": 72,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.501192
+    },
+    {
+      "episode": 87,
+      "cropId": "sugarcane",
+      "score": 282,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.497182
+    },
+    {
+      "episode": 88,
+      "cropId": "tomato",
+      "score": -151,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.493205
+    },
+    {
+      "episode": 89,
+      "cropId": "rice",
+      "score": 64,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.489259
+    },
+    {
+      "episode": 90,
+      "cropId": "sugarcane",
+      "score": 178,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.485345
+    },
+    {
+      "episode": 91,
+      "cropId": "tomato",
+      "score": 286,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.481462
+    },
+    {
+      "episode": 92,
+      "cropId": "rice",
+      "score": 92,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.47761
+    },
+    {
+      "episode": 93,
+      "cropId": "sugarcane",
+      "score": 232,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.47379
+    },
+    {
+      "episode": 94,
+      "cropId": "tomato",
+      "score": 85,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.469999
+    },
+    {
+      "episode": 95,
+      "cropId": "rice",
+      "score": 266,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.466239
+    },
+    {
+      "episode": 96,
+      "cropId": "sugarcane",
+      "score": 316,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.462509
+    },
+    {
+      "episode": 97,
+      "cropId": "tomato",
+      "score": 180,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.458809
+    },
+    {
+      "episode": 98,
+      "cropId": "rice",
+      "score": 283,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.455139
+    },
+    {
+      "episode": 99,
+      "cropId": "sugarcane",
+      "score": -14,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.451498
+    },
+    {
+      "episode": 100,
+      "cropId": "tomato",
+      "score": 256,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.447886
+    },
+    {
+      "episode": 101,
+      "cropId": "rice",
+      "score": 297,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.444303
+    },
+    {
+      "episode": 102,
+      "cropId": "sugarcane",
+      "score": 244,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.440748
+    },
+    {
+      "episode": 103,
+      "cropId": "tomato",
+      "score": 18,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.437222
+    },
+    {
+      "episode": 104,
+      "cropId": "rice",
+      "score": 339,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.433724
+    },
+    {
+      "episode": 105,
+      "cropId": "sugarcane",
+      "score": 303,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.430255
+    },
+    {
+      "episode": 106,
+      "cropId": "tomato",
+      "score": 150,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.426813
+    },
+    {
+      "episode": 107,
+      "cropId": "rice",
+      "score": 320,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.423398
+    },
+    {
+      "episode": 108,
+      "cropId": "sugarcane",
+      "score": 278,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.420011
+    },
+    {
+      "episode": 109,
+      "cropId": "tomato",
+      "score": 270,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.416651
+    },
+    {
+      "episode": 110,
+      "cropId": "rice",
+      "score": 247,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.413318
+    },
+    {
+      "episode": 111,
+      "cropId": "sugarcane",
+      "score": 234,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.410011
+    },
+    {
+      "episode": 112,
+      "cropId": "tomato",
+      "score": -166,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.406731
+    },
+    {
+      "episode": 113,
+      "cropId": "rice",
+      "score": 345,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.403477
+    },
+    {
+      "episode": 114,
+      "cropId": "sugarcane",
+      "score": 302,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.400249
+    },
+    {
+      "episode": 115,
+      "cropId": "tomato",
+      "score": 143,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.397047
+    },
+    {
+      "episode": 116,
+      "cropId": "rice",
+      "score": 357,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.393871
+    },
+    {
+      "episode": 117,
+      "cropId": "sugarcane",
+      "score": 232,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.39072
+    },
+    {
+      "episode": 118,
+      "cropId": "tomato",
+      "score": 219,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.387594
+    },
+    {
+      "episode": 119,
+      "cropId": "rice",
+      "score": 289,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.384493
+    },
+    {
+      "episode": 120,
+      "cropId": "sugarcane",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.381418
+    },
+    {
+      "episode": 121,
+      "cropId": "tomato",
+      "score": 274,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.378366
+    },
+    {
+      "episode": 122,
+      "cropId": "rice",
+      "score": 17,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.375339
+    },
+    {
+      "episode": 123,
+      "cropId": "sugarcane",
+      "score": 319,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.372337
+    },
+    {
+      "episode": 124,
+      "cropId": "tomato",
+      "score": 156,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.369358
+    },
+    {
+      "episode": 125,
+      "cropId": "rice",
+      "score": 247,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.366403
+    },
+    {
+      "episode": 126,
+      "cropId": "sugarcane",
+      "score": 310,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.363472
+    },
+    {
+      "episode": 127,
+      "cropId": "tomato",
+      "score": 287,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.360564
+    },
+    {
+      "episode": 128,
+      "cropId": "rice",
+      "score": 343,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.357679
+    },
+    {
+      "episode": 129,
+      "cropId": "sugarcane",
+      "score": 222,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.354818
+    },
+    {
+      "episode": 130,
+      "cropId": "tomato",
+      "score": 321,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.35198
+    },
+    {
+      "episode": 131,
+      "cropId": "rice",
+      "score": 298,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.349164
+    },
+    {
+      "episode": 132,
+      "cropId": "sugarcane",
+      "score": -3,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.34637
+    },
+    {
+      "episode": 133,
+      "cropId": "tomato",
+      "score": 328,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.343599
+    },
+    {
+      "episode": 134,
+      "cropId": "rice",
+      "score": 337,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.340851
+    },
+    {
+      "episode": 135,
+      "cropId": "sugarcane",
+      "score": 343,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.338124
+    },
+    {
+      "episode": 136,
+      "cropId": "tomato",
+      "score": 284,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.335419
+    },
+    {
+      "episode": 137,
+      "cropId": "rice",
+      "score": 337,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.332735
+    },
+    {
+      "episode": 138,
+      "cropId": "sugarcane",
+      "score": 222,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.330074
+    },
+    {
+      "episode": 139,
+      "cropId": "tomato",
+      "score": 208,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.327433
+    },
+    {
+      "episode": 140,
+      "cropId": "rice",
+      "score": 371,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.324814
+    },
+    {
+      "episode": 141,
+      "cropId": "sugarcane",
+      "score": 117,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.322215
+    },
+    {
+      "episode": 142,
+      "cropId": "tomato",
+      "score": 36,
+      "outcome": "\u274c Poor Crop",
+      "steps": 30,
+      "epsilon": 0.319637
+    },
+    {
+      "episode": 143,
+      "cropId": "rice",
+      "score": 305,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.31708
+    },
+    {
+      "episode": 144,
+      "cropId": "sugarcane",
+      "score": 329,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.314544
+    },
+    {
+      "episode": 145,
+      "cropId": "tomato",
+      "score": 236,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.312027
+    },
+    {
+      "episode": 146,
+      "cropId": "rice",
+      "score": 331,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.309531
+    },
+    {
+      "episode": 147,
+      "cropId": "sugarcane",
+      "score": 296,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.307055
+    },
+    {
+      "episode": 148,
+      "cropId": "tomato",
+      "score": 226,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.304598
+    },
+    {
+      "episode": 149,
+      "cropId": "rice",
+      "score": 50,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.302162
+    },
+    {
+      "episode": 150,
+      "cropId": "sugarcane",
+      "score": 349,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.299744
+    },
+    {
+      "episode": 151,
+      "cropId": "tomato",
+      "score": 282,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.297346
+    },
+    {
+      "episode": 152,
+      "cropId": "rice",
+      "score": 70,
+      "outcome": "\u26a0\ufe0f Average Crop",
+      "steps": 30,
+      "epsilon": 0.294968
+    },
+    {
+      "episode": 153,
+      "cropId": "sugarcane",
+      "score": 303,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.292608
+    },
+    {
+      "episode": 154,
+      "cropId": "tomato",
+      "score": 320,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.290267
+    },
+    {
+      "episode": 155,
+      "cropId": "rice",
+      "score": 324,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.287945
+    },
+    {
+      "episode": 156,
+      "cropId": "sugarcane",
+      "score": 344,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.285641
+    },
+    {
+      "episode": 157,
+      "cropId": "tomato",
+      "score": 324,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.283356
+    },
+    {
+      "episode": 158,
+      "cropId": "rice",
+      "score": 339,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.281089
+    },
+    {
+      "episode": 159,
+      "cropId": "sugarcane",
+      "score": 347,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.278841
+    },
+    {
+      "episode": 160,
+      "cropId": "tomato",
+      "score": 305,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.27661
+    },
+    {
+      "episode": 161,
+      "cropId": "rice",
+      "score": 260,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.274397
+    },
+    {
+      "episode": 162,
+      "cropId": "sugarcane",
+      "score": 332,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.272202
+    },
+    {
+      "episode": 163,
+      "cropId": "tomato",
+      "score": 303,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.270024
+    },
+    {
+      "episode": 164,
+      "cropId": "rice",
+      "score": 339,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.267864
+    },
+    {
+      "episode": 165,
+      "cropId": "sugarcane",
+      "score": 348,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.265721
+    },
+    {
+      "episode": 166,
+      "cropId": "tomato",
+      "score": 288,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.263595
+    },
+    {
+      "episode": 167,
+      "cropId": "rice",
+      "score": 309,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.261486
+    },
+    {
+      "episode": 168,
+      "cropId": "sugarcane",
+      "score": 391,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.259395
+    },
+    {
+      "episode": 169,
+      "cropId": "tomato",
+      "score": 336,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.257319
+    },
+    {
+      "episode": 170,
+      "cropId": "rice",
+      "score": 301,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.255261
+    },
+    {
+      "episode": 171,
+      "cropId": "sugarcane",
+      "score": 323,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.253219
+    },
+    {
+      "episode": 172,
+      "cropId": "tomato",
+      "score": 133,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.251193
+    },
+    {
+      "episode": 173,
+      "cropId": "rice",
+      "score": 338,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.249184
+    },
+    {
+      "episode": 174,
+      "cropId": "sugarcane",
+      "score": 340,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.24719
+    },
+    {
+      "episode": 175,
+      "cropId": "tomato",
+      "score": 327,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.245213
+    },
+    {
+      "episode": 176,
+      "cropId": "rice",
+      "score": 286,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.243251
+    },
+    {
+      "episode": 177,
+      "cropId": "sugarcane",
+      "score": 317,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.241305
+    },
+    {
+      "episode": 178,
+      "cropId": "tomato",
+      "score": 291,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.239374
+    },
+    {
+      "episode": 179,
+      "cropId": "rice",
+      "score": 323,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.237459
+    },
+    {
+      "episode": 180,
+      "cropId": "sugarcane",
+      "score": 347,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.23556
+    },
+    {
+      "episode": 181,
+      "cropId": "tomato",
+      "score": 354,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.233675
+    },
+    {
+      "episode": 182,
+      "cropId": "rice",
+      "score": 331,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.231806
+    },
+    {
+      "episode": 183,
+      "cropId": "sugarcane",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.229951
+    },
+    {
+      "episode": 184,
+      "cropId": "tomato",
+      "score": 168,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.228112
+    },
+    {
+      "episode": 185,
+      "cropId": "rice",
+      "score": 235,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.226287
+    },
+    {
+      "episode": 186,
+      "cropId": "sugarcane",
+      "score": 230,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.224477
+    },
+    {
+      "episode": 187,
+      "cropId": "tomato",
+      "score": 344,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.222681
+    },
+    {
+      "episode": 188,
+      "cropId": "rice",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.220899
+    },
+    {
+      "episode": 189,
+      "cropId": "sugarcane",
+      "score": 382,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.219132
+    },
+    {
+      "episode": 190,
+      "cropId": "tomato",
+      "score": 323,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.217379
+    },
+    {
+      "episode": 191,
+      "cropId": "rice",
+      "score": 307,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.21564
+    },
+    {
+      "episode": 192,
+      "cropId": "sugarcane",
+      "score": 347,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.213915
+    },
+    {
+      "episode": 193,
+      "cropId": "tomato",
+      "score": 310,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.212204
+    },
+    {
+      "episode": 194,
+      "cropId": "rice",
+      "score": 365,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.210506
+    },
+    {
+      "episode": 195,
+      "cropId": "sugarcane",
+      "score": 339,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.208822
+    },
+    {
+      "episode": 196,
+      "cropId": "tomato",
+      "score": 362,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.207151
+    },
+    {
+      "episode": 197,
+      "cropId": "rice",
+      "score": 367,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.205494
+    },
+    {
+      "episode": 198,
+      "cropId": "sugarcane",
+      "score": 364,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.20385
+    },
+    {
+      "episode": 199,
+      "cropId": "tomato",
+      "score": 313,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.202219
+    },
+    {
+      "episode": 200,
+      "cropId": "rice",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.200602
+    },
+    {
+      "episode": 201,
+      "cropId": "sugarcane",
+      "score": 332,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.198997
+    },
+    {
+      "episode": 202,
+      "cropId": "tomato",
+      "score": 325,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.197405
+    },
+    {
+      "episode": 203,
+      "cropId": "rice",
+      "score": 319,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.195826
+    },
+    {
+      "episode": 204,
+      "cropId": "sugarcane",
+      "score": 315,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.194259
+    },
+    {
+      "episode": 205,
+      "cropId": "tomato",
+      "score": 314,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.192705
+    },
+    {
+      "episode": 206,
+      "cropId": "rice",
+      "score": 345,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.191163
+    },
+    {
+      "episode": 207,
+      "cropId": "sugarcane",
+      "score": 347,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.189634
+    },
+    {
+      "episode": 208,
+      "cropId": "tomato",
+      "score": 334,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.188117
+    },
+    {
+      "episode": 209,
+      "cropId": "rice",
+      "score": 371,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.186612
+    },
+    {
+      "episode": 210,
+      "cropId": "sugarcane",
+      "score": 349,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.185119
+    },
+    {
+      "episode": 211,
+      "cropId": "tomato",
+      "score": 317,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.183638
+    },
+    {
+      "episode": 212,
+      "cropId": "rice",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.182169
+    },
+    {
+      "episode": 213,
+      "cropId": "sugarcane",
+      "score": 364,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.180712
+    },
+    {
+      "episode": 214,
+      "cropId": "tomato",
+      "score": 286,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.179266
+    },
+    {
+      "episode": 215,
+      "cropId": "rice",
+      "score": 330,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.177832
+    },
+    {
+      "episode": 216,
+      "cropId": "sugarcane",
+      "score": 378,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.176409
+    },
+    {
+      "episode": 217,
+      "cropId": "tomato",
+      "score": 326,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.174998
+    },
+    {
+      "episode": 218,
+      "cropId": "rice",
+      "score": 385,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.173598
+    },
+    {
+      "episode": 219,
+      "cropId": "sugarcane",
+      "score": 342,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.172209
+    },
+    {
+      "episode": 220,
+      "cropId": "tomato",
+      "score": 268,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.170831
+    },
+    {
+      "episode": 221,
+      "cropId": "rice",
+      "score": 333,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.169465
+    },
+    {
+      "episode": 222,
+      "cropId": "sugarcane",
+      "score": 331,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.168109
+    },
+    {
+      "episode": 223,
+      "cropId": "tomato",
+      "score": 325,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.166764
+    },
+    {
+      "episode": 224,
+      "cropId": "rice",
+      "score": 215,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.16543
+    },
+    {
+      "episode": 225,
+      "cropId": "sugarcane",
+      "score": 327,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.164107
+    },
+    {
+      "episode": 226,
+      "cropId": "tomato",
+      "score": 348,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.162794
+    },
+    {
+      "episode": 227,
+      "cropId": "rice",
+      "score": 367,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.161491
+    },
+    {
+      "episode": 228,
+      "cropId": "sugarcane",
+      "score": 366,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.1602
+    },
+    {
+      "episode": 229,
+      "cropId": "tomato",
+      "score": 245,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.158918
+    },
+    {
+      "episode": 230,
+      "cropId": "rice",
+      "score": 341,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.157647
+    },
+    {
+      "episode": 231,
+      "cropId": "sugarcane",
+      "score": 344,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.156385
+    },
+    {
+      "episode": 232,
+      "cropId": "tomato",
+      "score": 274,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.155134
+    },
+    {
+      "episode": 233,
+      "cropId": "rice",
+      "score": 366,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.153893
+    },
+    {
+      "episode": 234,
+      "cropId": "sugarcane",
+      "score": 367,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.152662
+    },
+    {
+      "episode": 235,
+      "cropId": "tomato",
+      "score": 348,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.151441
+    },
+    {
+      "episode": 236,
+      "cropId": "rice",
+      "score": 307,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.150229
+    },
+    {
+      "episode": 237,
+      "cropId": "sugarcane",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.149027
+    },
+    {
+      "episode": 238,
+      "cropId": "tomato",
+      "score": 332,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.147835
+    },
+    {
+      "episode": 239,
+      "cropId": "rice",
+      "score": 369,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.146653
+    },
+    {
+      "episode": 240,
+      "cropId": "sugarcane",
+      "score": 347,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.145479
+    },
+    {
+      "episode": 241,
+      "cropId": "tomato",
+      "score": 304,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.144316
+    },
+    {
+      "episode": 242,
+      "cropId": "rice",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.143161
+    },
+    {
+      "episode": 243,
+      "cropId": "sugarcane",
+      "score": 214,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.142016
+    },
+    {
+      "episode": 244,
+      "cropId": "tomato",
+      "score": 376,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.14088
+    },
+    {
+      "episode": 245,
+      "cropId": "rice",
+      "score": 378,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.139753
+    },
+    {
+      "episode": 246,
+      "cropId": "sugarcane",
+      "score": 322,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.138635
+    },
+    {
+      "episode": 247,
+      "cropId": "tomato",
+      "score": 323,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.137525
+    },
+    {
+      "episode": 248,
+      "cropId": "rice",
+      "score": 325,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.136425
+    },
+    {
+      "episode": 249,
+      "cropId": "sugarcane",
+      "score": 294,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.135334
+    },
+    {
+      "episode": 250,
+      "cropId": "tomato",
+      "score": 329,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.134251
+    },
+    {
+      "episode": 251,
+      "cropId": "rice",
+      "score": 367,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.133177
+    },
+    {
+      "episode": 252,
+      "cropId": "sugarcane",
+      "score": 325,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.132112
+    },
+    {
+      "episode": 253,
+      "cropId": "tomato",
+      "score": 340,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.131055
+    },
+    {
+      "episode": 254,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.130006
+    },
+    {
+      "episode": 255,
+      "cropId": "sugarcane",
+      "score": 365,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.128966
+    },
+    {
+      "episode": 256,
+      "cropId": "tomato",
+      "score": 342,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.127935
+    },
+    {
+      "episode": 257,
+      "cropId": "rice",
+      "score": 353,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.126911
+    },
+    {
+      "episode": 258,
+      "cropId": "sugarcane",
+      "score": 235,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.125896
+    },
+    {
+      "episode": 259,
+      "cropId": "tomato",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.124889
+    },
+    {
+      "episode": 260,
+      "cropId": "rice",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.12389
+    },
+    {
+      "episode": 261,
+      "cropId": "sugarcane",
+      "score": 391,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.122898
+    },
+    {
+      "episode": 262,
+      "cropId": "tomato",
+      "score": 323,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.121915
+    },
+    {
+      "episode": 263,
+      "cropId": "rice",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.12094
+    },
+    {
+      "episode": 264,
+      "cropId": "sugarcane",
+      "score": 387,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.119972
+    },
+    {
+      "episode": 265,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.119013
+    },
+    {
+      "episode": 266,
+      "cropId": "rice",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.118061
+    },
+    {
+      "episode": 267,
+      "cropId": "sugarcane",
+      "score": 379,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.117116
+    },
+    {
+      "episode": 268,
+      "cropId": "tomato",
+      "score": 291,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.116179
+    },
+    {
+      "episode": 269,
+      "cropId": "rice",
+      "score": 302,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.11525
+    },
+    {
+      "episode": 270,
+      "cropId": "sugarcane",
+      "score": 379,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.114328
+    },
+    {
+      "episode": 271,
+      "cropId": "tomato",
+      "score": 344,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.113413
+    },
+    {
+      "episode": 272,
+      "cropId": "rice",
+      "score": 344,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.112506
+    },
+    {
+      "episode": 273,
+      "cropId": "sugarcane",
+      "score": 356,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.111606
+    },
+    {
+      "episode": 274,
+      "cropId": "tomato",
+      "score": 324,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.110713
+    },
+    {
+      "episode": 275,
+      "cropId": "rice",
+      "score": 321,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.109827
+    },
+    {
+      "episode": 276,
+      "cropId": "sugarcane",
+      "score": 348,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.108949
+    },
+    {
+      "episode": 277,
+      "cropId": "tomato",
+      "score": 347,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.108077
+    },
+    {
+      "episode": 278,
+      "cropId": "rice",
+      "score": 387,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.107212
+    },
+    {
+      "episode": 279,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.106355
+    },
+    {
+      "episode": 280,
+      "cropId": "tomato",
+      "score": 359,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.105504
+    },
+    {
+      "episode": 281,
+      "cropId": "rice",
+      "score": 381,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.10466
+    },
+    {
+      "episode": 282,
+      "cropId": "sugarcane",
+      "score": 382,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.103823
+    },
+    {
+      "episode": 283,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.102992
+    },
+    {
+      "episode": 284,
+      "cropId": "rice",
+      "score": 347,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.102168
+    },
+    {
+      "episode": 285,
+      "cropId": "sugarcane",
+      "score": 354,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.101351
+    },
+    {
+      "episode": 286,
+      "cropId": "tomato",
+      "score": 360,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.10054
+    },
+    {
+      "episode": 287,
+      "cropId": "rice",
+      "score": 371,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.099736
+    },
+    {
+      "episode": 288,
+      "cropId": "sugarcane",
+      "score": 371,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.098938
+    },
+    {
+      "episode": 289,
+      "cropId": "tomato",
+      "score": 322,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.098146
+    },
+    {
+      "episode": 290,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.097361
+    },
+    {
+      "episode": 291,
+      "cropId": "sugarcane",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.096582
+    },
+    {
+      "episode": 292,
+      "cropId": "tomato",
+      "score": 327,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.095809
+    },
+    {
+      "episode": 293,
+      "cropId": "rice",
+      "score": 373,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.095043
+    },
+    {
+      "episode": 294,
+      "cropId": "sugarcane",
+      "score": 358,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.094283
+    },
+    {
+      "episode": 295,
+      "cropId": "tomato",
+      "score": 366,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.093528
+    },
+    {
+      "episode": 296,
+      "cropId": "rice",
+      "score": 334,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.09278
+    },
+    {
+      "episode": 297,
+      "cropId": "sugarcane",
+      "score": 351,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.092038
+    },
+    {
+      "episode": 298,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.091302
+    },
+    {
+      "episode": 299,
+      "cropId": "rice",
+      "score": 394,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.090571
+    },
+    {
+      "episode": 300,
+      "cropId": "sugarcane",
+      "score": 382,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.089847
+    },
+    {
+      "episode": 301,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.089128
+    },
+    {
+      "episode": 302,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.088415
+    },
+    {
+      "episode": 303,
+      "cropId": "sugarcane",
+      "score": 390,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.087707
+    },
+    {
+      "episode": 304,
+      "cropId": "tomato",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.087006
+    },
+    {
+      "episode": 305,
+      "cropId": "rice",
+      "score": 379,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.08631
+    },
+    {
+      "episode": 306,
+      "cropId": "sugarcane",
+      "score": 390,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.085619
+    },
+    {
+      "episode": 307,
+      "cropId": "tomato",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.084934
+    },
+    {
+      "episode": 308,
+      "cropId": "rice",
+      "score": 360,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.084255
+    },
+    {
+      "episode": 309,
+      "cropId": "sugarcane",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.083581
+    },
+    {
+      "episode": 310,
+      "cropId": "tomato",
+      "score": 339,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.082912
+    },
+    {
+      "episode": 311,
+      "cropId": "rice",
+      "score": 379,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.082249
+    },
+    {
+      "episode": 312,
+      "cropId": "sugarcane",
+      "score": 390,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.081591
+    },
+    {
+      "episode": 313,
+      "cropId": "tomato",
+      "score": 361,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.080938
+    },
+    {
+      "episode": 314,
+      "cropId": "rice",
+      "score": 352,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.080291
+    },
+    {
+      "episode": 315,
+      "cropId": "sugarcane",
+      "score": 390,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.079648
+    },
+    {
+      "episode": 316,
+      "cropId": "tomato",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.079011
+    },
+    {
+      "episode": 317,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.078379
+    },
+    {
+      "episode": 318,
+      "cropId": "sugarcane",
+      "score": 353,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.077752
+    },
+    {
+      "episode": 319,
+      "cropId": "tomato",
+      "score": 374,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.07713
+    },
+    {
+      "episode": 320,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.076513
+    },
+    {
+      "episode": 321,
+      "cropId": "sugarcane",
+      "score": 373,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.075901
+    },
+    {
+      "episode": 322,
+      "cropId": "tomato",
+      "score": 329,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.075294
+    },
+    {
+      "episode": 323,
+      "cropId": "rice",
+      "score": 362,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.074691
+    },
+    {
+      "episode": 324,
+      "cropId": "sugarcane",
+      "score": 351,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.074094
+    },
+    {
+      "episode": 325,
+      "cropId": "tomato",
+      "score": 354,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.073501
+    },
+    {
+      "episode": 326,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.072913
+    },
+    {
+      "episode": 327,
+      "cropId": "sugarcane",
+      "score": 388,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.07233
+    },
+    {
+      "episode": 328,
+      "cropId": "tomato",
+      "score": 359,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.071751
+    },
+    {
+      "episode": 329,
+      "cropId": "rice",
+      "score": 388,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.071177
+    },
+    {
+      "episode": 330,
+      "cropId": "sugarcane",
+      "score": 366,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.070608
+    },
+    {
+      "episode": 331,
+      "cropId": "tomato",
+      "score": 348,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.070043
+    },
+    {
+      "episode": 332,
+      "cropId": "rice",
+      "score": 390,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.069482
+    },
+    {
+      "episode": 333,
+      "cropId": "sugarcane",
+      "score": 367,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.068927
+    },
+    {
+      "episode": 334,
+      "cropId": "tomato",
+      "score": 297,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.068375
+    },
+    {
+      "episode": 335,
+      "cropId": "rice",
+      "score": 384,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.067828
+    },
+    {
+      "episode": 336,
+      "cropId": "sugarcane",
+      "score": 357,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.067286
+    },
+    {
+      "episode": 337,
+      "cropId": "tomato",
+      "score": 344,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.066747
+    },
+    {
+      "episode": 338,
+      "cropId": "rice",
+      "score": 397,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.066213
+    },
+    {
+      "episode": 339,
+      "cropId": "sugarcane",
+      "score": 390,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.065684
+    },
+    {
+      "episode": 340,
+      "cropId": "tomato",
+      "score": 348,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.065158
+    },
+    {
+      "episode": 341,
+      "cropId": "rice",
+      "score": 364,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.064637
+    },
+    {
+      "episode": 342,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.06412
+    },
+    {
+      "episode": 343,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.063607
+    },
+    {
+      "episode": 344,
+      "cropId": "rice",
+      "score": 351,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.063098
+    },
+    {
+      "episode": 345,
+      "cropId": "sugarcane",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.062593
+    },
+    {
+      "episode": 346,
+      "cropId": "tomato",
+      "score": 358,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.062092
+    },
+    {
+      "episode": 347,
+      "cropId": "rice",
+      "score": 387,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.061596
+    },
+    {
+      "episode": 348,
+      "cropId": "sugarcane",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.061103
+    },
+    {
+      "episode": 349,
+      "cropId": "tomato",
+      "score": 341,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.060614
+    },
+    {
+      "episode": 350,
+      "cropId": "rice",
+      "score": 376,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.060129
+    },
+    {
+      "episode": 351,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.059648
+    },
+    {
+      "episode": 352,
+      "cropId": "tomato",
+      "score": 327,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.059171
+    },
+    {
+      "episode": 353,
+      "cropId": "rice",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.058698
+    },
+    {
+      "episode": 354,
+      "cropId": "sugarcane",
+      "score": 356,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.058228
+    },
+    {
+      "episode": 355,
+      "cropId": "tomato",
+      "score": 344,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.057762
+    },
+    {
+      "episode": 356,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.0573
+    },
+    {
+      "episode": 357,
+      "cropId": "sugarcane",
+      "score": 358,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.056842
+    },
+    {
+      "episode": 358,
+      "cropId": "tomato",
+      "score": 336,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.056387
+    },
+    {
+      "episode": 359,
+      "cropId": "rice",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.055936
+    },
+    {
+      "episode": 360,
+      "cropId": "sugarcane",
+      "score": 370,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.055488
+    },
+    {
+      "episode": 361,
+      "cropId": "tomato",
+      "score": 323,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.055044
+    },
+    {
+      "episode": 362,
+      "cropId": "rice",
+      "score": 362,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.054604
+    },
+    {
+      "episode": 363,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.054167
+    },
+    {
+      "episode": 364,
+      "cropId": "tomato",
+      "score": 128,
+      "outcome": "\ud83d\udc4d Good Crop",
+      "steps": 30,
+      "epsilon": 0.053734
+    },
+    {
+      "episode": 365,
+      "cropId": "rice",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.053304
+    },
+    {
+      "episode": 366,
+      "cropId": "sugarcane",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.052878
+    },
+    {
+      "episode": 367,
+      "cropId": "tomato",
+      "score": 338,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.052455
+    },
+    {
+      "episode": 368,
+      "cropId": "rice",
+      "score": 379,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.052035
+    },
+    {
+      "episode": 369,
+      "cropId": "sugarcane",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.051619
+    },
+    {
+      "episode": 370,
+      "cropId": "tomato",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.051206
+    },
+    {
+      "episode": 371,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.050796
+    },
+    {
+      "episode": 372,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05039
+    },
+    {
+      "episode": 373,
+      "cropId": "tomato",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 374,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 375,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 376,
+      "cropId": "tomato",
+      "score": 335,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 377,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 378,
+      "cropId": "sugarcane",
+      "score": 377,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 379,
+      "cropId": "tomato",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 380,
+      "cropId": "rice",
+      "score": 379,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 381,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 382,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 383,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 384,
+      "cropId": "sugarcane",
+      "score": 358,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 385,
+      "cropId": "tomato",
+      "score": 369,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 386,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 387,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 388,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 389,
+      "cropId": "rice",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 390,
+      "cropId": "sugarcane",
+      "score": 352,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 391,
+      "cropId": "tomato",
+      "score": 340,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 392,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 393,
+      "cropId": "sugarcane",
+      "score": 373,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 394,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 395,
+      "cropId": "rice",
+      "score": 393,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 396,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 397,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 398,
+      "cropId": "rice",
+      "score": 384,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 399,
+      "cropId": "sugarcane",
+      "score": 372,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 400,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 401,
+      "cropId": "rice",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 402,
+      "cropId": "sugarcane",
+      "score": 356,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 403,
+      "cropId": "tomato",
+      "score": 348,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 404,
+      "cropId": "rice",
+      "score": 396,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 405,
+      "cropId": "sugarcane",
+      "score": 349,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 406,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 407,
+      "cropId": "rice",
+      "score": 381,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 408,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 409,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 410,
+      "cropId": "rice",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 411,
+      "cropId": "sugarcane",
+      "score": 372,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 412,
+      "cropId": "tomato",
+      "score": 353,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 413,
+      "cropId": "rice",
+      "score": 362,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 414,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 415,
+      "cropId": "tomato",
+      "score": 371,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 416,
+      "cropId": "rice",
+      "score": 377,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 417,
+      "cropId": "sugarcane",
+      "score": 384,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 418,
+      "cropId": "tomato",
+      "score": 352,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 419,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 420,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 421,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 422,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 423,
+      "cropId": "sugarcane",
+      "score": 384,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 424,
+      "cropId": "tomato",
+      "score": 348,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 425,
+      "cropId": "rice",
+      "score": 381,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 426,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 427,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 428,
+      "cropId": "rice",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 429,
+      "cropId": "sugarcane",
+      "score": 378,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 430,
+      "cropId": "tomato",
+      "score": 340,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 431,
+      "cropId": "rice",
+      "score": 379,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 432,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 433,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 434,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 435,
+      "cropId": "sugarcane",
+      "score": 377,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 436,
+      "cropId": "tomato",
+      "score": 338,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 437,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 438,
+      "cropId": "sugarcane",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 439,
+      "cropId": "tomato",
+      "score": 369,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 440,
+      "cropId": "rice",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 441,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 442,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 443,
+      "cropId": "rice",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 444,
+      "cropId": "sugarcane",
+      "score": 384,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 445,
+      "cropId": "tomato",
+      "score": 361,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 446,
+      "cropId": "rice",
+      "score": 379,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 447,
+      "cropId": "sugarcane",
+      "score": 374,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 448,
+      "cropId": "tomato",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 449,
+      "cropId": "rice",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 450,
+      "cropId": "sugarcane",
+      "score": 384,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 451,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 452,
+      "cropId": "rice",
+      "score": 396,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 453,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 454,
+      "cropId": "tomato",
+      "score": 368,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 455,
+      "cropId": "rice",
+      "score": 385,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 456,
+      "cropId": "sugarcane",
+      "score": 378,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 457,
+      "cropId": "tomato",
+      "score": 329,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 458,
+      "cropId": "rice",
+      "score": 330,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 459,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 460,
+      "cropId": "tomato",
+      "score": 355,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 461,
+      "cropId": "rice",
+      "score": 390,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 462,
+      "cropId": "sugarcane",
+      "score": 387,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 463,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 464,
+      "cropId": "rice",
+      "score": 329,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 465,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 466,
+      "cropId": "tomato",
+      "score": 340,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 467,
+      "cropId": "rice",
+      "score": 356,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 468,
+      "cropId": "sugarcane",
+      "score": 387,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 469,
+      "cropId": "tomato",
+      "score": 354,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 470,
+      "cropId": "rice",
+      "score": 404,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 471,
+      "cropId": "sugarcane",
+      "score": 377,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 472,
+      "cropId": "tomato",
+      "score": 323,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 473,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 474,
+      "cropId": "sugarcane",
+      "score": 384,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 475,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 476,
+      "cropId": "rice",
+      "score": 396,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 477,
+      "cropId": "sugarcane",
+      "score": 340,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 478,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 479,
+      "cropId": "rice",
+      "score": 386,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 480,
+      "cropId": "sugarcane",
+      "score": 387,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 481,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 482,
+      "cropId": "rice",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 483,
+      "cropId": "sugarcane",
+      "score": 382,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 484,
+      "cropId": "tomato",
+      "score": 306,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 485,
+      "cropId": "rice",
+      "score": 395,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 486,
+      "cropId": "sugarcane",
+      "score": 373,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 487,
+      "cropId": "tomato",
+      "score": 369,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 488,
+      "cropId": "rice",
+      "score": 374,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 489,
+      "cropId": "sugarcane",
+      "score": 392,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 490,
+      "cropId": "tomato",
+      "score": 352,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 491,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 492,
+      "cropId": "sugarcane",
+      "score": 371,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 493,
+      "cropId": "tomato",
+      "score": 335,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 494,
+      "cropId": "rice",
+      "score": 373,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 495,
+      "cropId": "sugarcane",
+      "score": 375,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 496,
+      "cropId": "tomato",
+      "score": 363,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 497,
+      "cropId": "rice",
+      "score": 381,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 498,
+      "cropId": "sugarcane",
+      "score": 397,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 499,
+      "cropId": "tomato",
+      "score": 339,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    },
+    {
+      "episode": 500,
+      "cropId": "rice",
+      "score": 398,
+      "outcome": "\ud83c\udf1f Excellent Crop",
+      "steps": 30,
+      "epsilon": 0.05
+    }
+  ]
+}

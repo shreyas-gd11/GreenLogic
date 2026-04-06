@@ -1,0 +1,4097 @@
+{
+  "version": 1,
+  "actions": [
+    "water",
+    "fertilize",
+    "do_nothing"
+  ],
+  "stateEncoding": {
+    "day": "exact day number",
+    "moisture": [
+      "very_dry",
+      "dry",
+      "optimal",
+      "wet",
+      "waterlogged"
+    ],
+    "temperature": [
+      "cool",
+      "ideal",
+      "hot"
+    ],
+    "health": [
+      "critical",
+      "weak",
+      "stable",
+      "strong"
+    ],
+    "fertilizer": [
+      "due",
+      "wait"
+    ]
+  },
+  "hyperparameters": {
+    "learningRate": 0.25,
+    "discount": 0.92,
+    "epsilon": 0.05,
+    "epsilonMin": 0.05,
+    "epsilonDecay": 0.992
+  },
+  "qTable": {
+    "crop=tomato|day=01|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 46.76942089984532,
+      "fertilize": 80.07067916513859,
+      "do_nothing": 133.69125872981823
+    },
+    "crop=tomato|day=02|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 2.787541507747294,
+      "do_nothing": 95.78149850739558
+    },
+    "crop=tomato|day=03|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=04|moisture=wet|temp=hot|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.34769275,
+      "do_nothing": -3.75
+    },
+    "crop=tomato|day=05|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=06|moisture=optimal|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.5,
+      "fertilize": 4.94,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=07|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -1.4615455
+    },
+    "crop=tomato|day=08|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.25,
+      "do_nothing": -3.0625
+    },
+    "crop=tomato|day=09|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.005625,
+      "do_nothing": -2.4299999999999997
+    },
+    "crop=tomato|day=10|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=11|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.25,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=12|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.135,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=13|moisture=optimal|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=14|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=waterlogged|temp=cool|health=critical|fertilizer=wait": {
+      "water": -11.375,
+      "fertilize": -4.75,
+      "do_nothing": -5.8825
+    },
+    "crop=tomato|day=16|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -4.8125,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=17|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -8.5075,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=18|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -4.8125,
+      "do_nothing": -5.6875
+    },
+    "crop=tomato|day=19|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.385,
+      "fertilize": -0.27249999999999996,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=20|moisture=wet|temp=ideal|health=critical|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=21|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": -5.1146625,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=22|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -2.21140625,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=23|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": 0.0,
+      "do_nothing": -1.1515054999999998
+    },
+    "crop=tomato|day=24|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=25|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.25,
+      "do_nothing": -1.855
+    },
+    "crop=tomato|day=26|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=27|moisture=optimal|temp=ideal|health=critical|fertilizer=due": {
+      "water": -1.0,
+      "fertilize": 4.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=28|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.0625
+    },
+    "crop=tomato|day=29|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -10.40625,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=30|moisture=waterlogged|temp=cool|health=critical|fertilizer=wait": {
+      "water": -11.375,
+      "fertilize": -8.3125,
+      "do_nothing": -5.25
+    },
+    "crop=rice|day=01|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 8.973556155759697,
+      "fertilize": 88.64307599552257,
+      "do_nothing": 143.67605758262326
+    },
+    "crop=rice|day=02|moisture=optimal|temp=cool|health=strong|fertilizer=wait": {
+      "water": 63.70258190146109,
+      "fertilize": 45.16750427398122,
+      "do_nothing": 143.9863489676608
+    },
+    "crop=rice|day=03|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 24.84242882992767,
+      "fertilize": 3.6844477163476492,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=04|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 32.11284672512725,
+      "fertilize": 75.97895293796277,
+      "do_nothing": 148.86754176888732
+    },
+    "crop=rice|day=05|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 149.52029636962732,
+      "fertilize": 46.04072618357264,
+      "do_nothing": 35.217730698232714
+    },
+    "crop=rice|day=06|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 99.624126243949,
+      "fertilize": -7.0,
+      "do_nothing": -7.55014045
+    },
+    "crop=rice|day=07|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 5.37536925,
+      "fertilize": -3.69295,
+      "do_nothing": -5.38045
+    },
+    "crop=rice|day=08|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 1.4108,
+      "fertilize": -5.9181625,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=09|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=10|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.7942984550000001,
+      "fertilize": -9.0024625,
+      "do_nothing": -2.737629
+    },
+    "crop=rice|day=11|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 3.271893875,
+      "fertilize": -8.667550875,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=12|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 1.927487625,
+      "fertilize": -6.68605,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=13|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.32930625,
+      "fertilize": -4.0,
+      "do_nothing": -2.94295
+    },
+    "crop=rice|day=14|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 3.8305517578125,
+      "fertilize": -3.09737952694375,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=15|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 5.7216552590625,
+      "fertilize": -10.513063160625,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=16|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 5.05552487890625,
+      "fertilize": -13.944602716774062,
+      "do_nothing": -8.0730875
+    },
+    "crop=rice|day=17|moisture=very_dry|temp=cool|health=critical|fertilizer=wait": {
+      "water": -1.92664895868125,
+      "fertilize": -16.007775,
+      "do_nothing": -9.0725
+    },
+    "crop=rice|day=18|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 4.790332903516846,
+      "fertilize": -10.05678891220703,
+      "do_nothing": -8.07650062140625
+    },
+    "crop=rice|day=19|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 7.3484418131408695,
+      "fertilize": -9.25,
+      "do_nothing": -7.343691375000001
+    },
+    "crop=rice|day=20|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 6.358681604003906,
+      "fertilize": -9.108550000000001,
+      "do_nothing": -8.8377220703125
+    },
+    "crop=rice|day=21|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 6.615957763671876,
+      "fertilize": -6.79875,
+      "do_nothing": -7.314375
+    },
+    "crop=rice|day=22|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 6.907019998838656,
+      "fertilize": -8.578570703125,
+      "do_nothing": -8.599195922851562
+    },
+    "crop=rice|day=23|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 7.42173997375254,
+      "fertilize": -4.0,
+      "do_nothing": -5.132042273221876
+    },
+    "crop=rice|day=24|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 5.3669868290087885,
+      "fertilize": -10.405474224824218,
+      "do_nothing": -4.61626694640625
+    },
+    "crop=rice|day=25|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 3.3652674667968747,
+      "fertilize": -10.35048825,
+      "do_nothing": -6.537409266948633
+    },
+    "crop=rice|day=26|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 8.233001427643357,
+      "fertilize": -8.359256059521485,
+      "do_nothing": -3.0024625
+    },
+    "crop=rice|day=27|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 12.280457263208389,
+      "fertilize": -9.04875,
+      "do_nothing": -7.405958827148437
+    },
+    "crop=rice|day=28|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 5.2034183105468745,
+      "fertilize": -9.772442538452148,
+      "do_nothing": -9.90749412841797
+    },
+    "crop=rice|day=29|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 3.7657352828979493,
+      "fertilize": -9.135,
+      "do_nothing": -6.731597900390625
+    },
+    "crop=rice|day=30|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 3.8561229705810547,
+      "fertilize": -12.203125,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=01|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 7.504963622338953,
+      "fertilize": 93.40559938214146,
+      "do_nothing": 145.41606171721435
+    },
+    "crop=sugarcane|day=02|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 58.599688533135506,
+      "fertilize": 74.62108260710508,
+      "do_nothing": 145.95822415742904
+    },
+    "crop=sugarcane|day=03|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 8.5473441515625,
+      "fertilize": 98.05004754747273,
+      "do_nothing": 24.005315026568685
+    },
+    "crop=sugarcane|day=04|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 52.71260337274294,
+      "fertilize": 80.73540053819539,
+      "do_nothing": 141.31043749816948
+    },
+    "crop=sugarcane|day=05|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.25,
+      "do_nothing": -3.8033768175000002
+    },
+    "crop=sugarcane|day=06|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 2.0867721875000003,
+      "do_nothing": 1.809858890567813
+    },
+    "crop=sugarcane|day=07|moisture=optimal|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 17.226548867721128,
+      "do_nothing": 4.310126
+    },
+    "crop=sugarcane|day=08|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 13.041682789275338
+    },
+    "crop=sugarcane|day=09|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 121.48986102218936,
+      "fertilize": 63.611629685507886,
+      "do_nothing": 49.829970930090425
+    },
+    "crop=sugarcane|day=10|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 51.21425298871446,
+      "fertilize": 55.607642066714234,
+      "do_nothing": 130.6277034463701
+    },
+    "crop=sugarcane|day=11|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 85.8199018785104,
+      "fertilize": 50.08301416665661,
+      "do_nothing": 130.38205020107964
+    },
+    "crop=sugarcane|day=12|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 47.995211496727734,
+      "fertilize": 46.840394830549556,
+      "do_nothing": 130.36611515567986
+    },
+    "crop=sugarcane|day=13|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 1.15625,
+      "fertilize": 41.50101938056931,
+      "do_nothing": 104.78746409859122
+    },
+    "crop=sugarcane|day=14|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 59.964914231579385,
+      "fertilize": 122.5612635947729,
+      "do_nothing": 48.17399124975161
+    },
+    "crop=sugarcane|day=15|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 41.729628240060904,
+      "fertilize": 29.186103528217373,
+      "do_nothing": 114.66155594836077
+    },
+    "crop=sugarcane|day=16|moisture=dry|temp=hot|health=strong|fertilizer=wait": {
+      "water": 111.21706807675106,
+      "fertilize": -0.23811087998615132,
+      "do_nothing": 1.6550271737129472
+    },
+    "crop=sugarcane|day=17|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 30.314884529653995,
+      "fertilize": -8.339469524667342,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=18|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 92.55012399137118,
+      "fertilize": 2.073559219375,
+      "do_nothing": -2.3713421875
+    },
+    "crop=sugarcane|day=19|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 52.66315051531639,
+      "fertilize": 61.79455992929854,
+      "do_nothing": 106.54198590788151
+    },
+    "crop=sugarcane|day=20|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 1.15625,
+      "fertilize": 80.58573195339974,
+      "do_nothing": 19.46205497959406
+    },
+    "crop=sugarcane|day=21|moisture=wet|temp=ideal|health=strong|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 19.638660017936555,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=22|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 23.571048918515054,
+      "fertilize": 59.338958446585735,
+      "do_nothing": 84.57974839622236
+    },
+    "crop=sugarcane|day=23|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=24|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 1.0,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=25|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=26|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=27|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": -1.29
+    },
+    "crop=sugarcane|day=28|moisture=wet|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 4.031874999999999,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=29|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 2.964375,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=30|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=03|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -0.31091308593750017,
+      "fertilize": 73.96162095872263,
+      "do_nothing": 133.71570970778632
+    },
+    "crop=tomato|day=04|moisture=optimal|temp=hot|health=strong|fertilizer=wait": {
+      "water": 28.82574012086011,
+      "fertilize": 76.75784626555215,
+      "do_nothing": 133.07346479889475
+    },
+    "crop=tomato|day=05|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 84.84594845537472,
+      "do_nothing": 11.634582928124999
+    },
+    "crop=tomato|day=06|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 12.80747483697813,
+      "fertilize": 60.45758003300432,
+      "do_nothing": 135.57650277312436
+    },
+    "crop=tomato|day=07|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 64.21750320892168,
+      "fertilize": 69.5743329789406,
+      "do_nothing": 135.0589685805456
+    },
+    "crop=tomato|day=08|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 19.93892625675565,
+      "do_nothing": 115.68831291360277
+    },
+    "crop=tomato|day=09|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 30.745832111563843,
+      "fertilize": 20.001528657266675,
+      "do_nothing": 127.86039337325847
+    },
+    "crop=tomato|day=10|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 126.17855319466011,
+      "fertilize": 54.55916528897327,
+      "do_nothing": 62.9780061698354
+    },
+    "crop=tomato|day=11|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 13.974150450882409,
+      "fertilize": 37.7359998261591,
+      "do_nothing": 125.3943217998294
+    },
+    "crop=tomato|day=12|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": 34.641313055732546,
+      "do_nothing": -0.7725
+    },
+    "crop=tomato|day=13|moisture=wet|temp=ideal|health=strong|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=14|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=waterlogged|temp=cool|health=stable|fertilizer=wait": {
+      "water": -6.5,
+      "fertilize": 0.0,
+      "do_nothing": -5.25
+    },
+    "crop=tomato|day=16|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=19|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -2.75,
+      "do_nothing": -3.135
+    },
+    "crop=tomato|day=20|moisture=waterlogged|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.52150175,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=22|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=23|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -2.75,
+      "do_nothing": -5.6875
+    },
+    "crop=tomato|day=24|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.178125,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=26|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -2.29,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=27|moisture=waterlogged|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.5,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=28|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=29|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -11.498750000000001,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=30|moisture=wet|temp=cool|health=critical|fertilizer=wait": {
+      "water": -6.5,
+      "fertilize": -3.25,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=02|moisture=optimal|temp=cool|health=stable|fertilizer=wait": {
+      "water": -1.139775,
+      "fertilize": 6.9740340722151295,
+      "do_nothing": 20.76492241800214
+    },
+    "crop=rice|day=03|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 7.747004523763501,
+      "fertilize": 0.0,
+      "do_nothing": 43.496374969761895
+    },
+    "crop=rice|day=04|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 3.3716500000000007,
+      "fertilize": 7.35048215980604,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=05|moisture=optimal|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 15.29427759204375,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=06|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 144.720095496865,
+      "fertilize": 52.164919895445124,
+      "do_nothing": 51.75018813784763
+    },
+    "crop=rice|day=07|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 127.07962271536789,
+      "fertilize": 3.545877199819527,
+      "do_nothing": 2.874828045813758
+    },
+    "crop=rice|day=08|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 51.06825274116693,
+      "fertilize": -8.905000000000001,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=09|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 7.359375,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=10|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 3.5,
+      "fertilize": 0.0,
+      "do_nothing": -7.515625
+    },
+    "crop=rice|day=11|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 125.40206132632466,
+      "fertilize": -6.1511125,
+      "do_nothing": -2.377675
+    },
+    "crop=rice|day=12|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 130.29981198272876,
+      "fertilize": 44.669676448415856,
+      "do_nothing": 35.04756601340746
+    },
+    "crop=rice|day=13|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 97.11429624832269,
+      "fertilize": -6.889270300982046,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=14|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 120.97416649843109,
+      "fertilize": 33.290460472978424,
+      "do_nothing": 60.57803722625496
+    },
+    "crop=rice|day=15|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 103.99206014502593,
+      "fertilize": -2.04,
+      "do_nothing": -2.6025
+    },
+    "crop=rice|day=16|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 9.593011913744215,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=17|moisture=dry|temp=cool|health=strong|fertilizer=wait": {
+      "water": 98.53283054274603,
+      "fertilize": -9.94625,
+      "do_nothing": -5.7575
+    },
+    "crop=rice|day=18|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 111.5581686196279,
+      "fertilize": 18.40549561455474,
+      "do_nothing": 19.542143314506944
+    },
+    "crop=rice|day=19|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 75.47508372791884,
+      "fertilize": 0.0,
+      "do_nothing": -5.2275
+    },
+    "crop=rice|day=20|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 6.335625,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=21|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": -2.5,
+      "do_nothing": -1.75
+    },
+    "crop=rice|day=22|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 86.8929642036529,
+      "fertilize": 4.6741814544025875,
+      "do_nothing": -2.085
+    },
+    "crop=rice|day=23|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 80.34722615886841,
+      "fertilize": 53.74320038255442,
+      "do_nothing": 46.03376734608774
+    },
+    "crop=rice|day=24|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 58.61814405782054,
+      "fertilize": 53.764321443692516,
+      "do_nothing": 75.59607235544948
+    },
+    "crop=rice|day=25|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 26.434918714308576,
+      "fertilize": 69.13024390260465,
+      "do_nothing": 51.525722305051566
+    },
+    "crop=rice|day=26|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 50.00146114869612
+    },
+    "crop=rice|day=27|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 37.93667516631166,
+      "fertilize": 22.76400374595741,
+      "do_nothing": 42.78873908355319
+    },
+    "crop=rice|day=28|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 10.915932446289062,
+      "fertilize": 33.76253089591819,
+      "do_nothing": 28.03980217557926
+    },
+    "crop=rice|day=29|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 8.098125,
+      "fertilize": 9.566057889170489,
+      "do_nothing": 26.5120179835562
+    },
+    "crop=rice|day=30|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 16.99999999999983,
+      "fertilize": -4.4994354248046875,
+      "do_nothing": -6.605805397033691
+    },
+    "crop=sugarcane|day=06|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=07|moisture=waterlogged|temp=ideal|health=weak|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=08|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=09|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=10|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=11|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=12|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.8125,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=13|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=14|moisture=waterlogged|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=15|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=16|moisture=waterlogged|temp=hot|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -5.25
+    },
+    "crop=sugarcane|day=17|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=18|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -2.3725
+    },
+    "crop=sugarcane|day=19|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.23,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=20|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 3.115
+    },
+    "crop=sugarcane|day=21|moisture=optimal|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 3.69
+    },
+    "crop=sugarcane|day=22|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.865,
+      "fertilize": 1.75,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=23|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.99,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=24|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 3.815,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=25|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": -1.06
+    },
+    "crop=sugarcane|day=26|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 0.0,
+      "do_nothing": 5.25
+    },
+    "crop=sugarcane|day=27|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=28|moisture=wet|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=29|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.875,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=30|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=02|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 133.01062335073328,
+      "fertilize": 37.09058755982157,
+      "do_nothing": 66.28038821935414
+    },
+    "crop=tomato|day=04|moisture=wet|temp=hot|health=strong|fertilizer=wait": {
+      "water": -15.03125,
+      "fertilize": -4.78519275,
+      "do_nothing": -5.723
+    },
+    "crop=tomato|day=05|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.25,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=06|moisture=waterlogged|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.5,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=07|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=09|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=10|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=15|moisture=optimal|temp=cool|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=16|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=17|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=18|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.75,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=19|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=20|moisture=optimal|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 7.4375,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=21|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=26|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -0.54,
+      "fertilize": 1.0,
+      "do_nothing": 6.9662500000000005
+    },
+    "crop=tomato|day=28|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 3.115
+    },
+    "crop=rice|day=07|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 75.85278182363916,
+      "fertilize": 58.09086922804701,
+      "do_nothing": 145.94038264988453
+    },
+    "crop=rice|day=08|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 53.16570682137363,
+      "fertilize": 91.3498177569497,
+      "do_nothing": 146.03907913374456
+    },
+    "crop=rice|day=09|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 11.58887652008295,
+      "fertilize": 16.694814944616233,
+      "do_nothing": 102.68503854903432
+    },
+    "crop=rice|day=10|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 4.6700058124562505,
+      "fertilize": 1.115,
+      "do_nothing": 12.904572493240984
+    },
+    "crop=rice|day=11|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 29.43729949734106,
+      "fertilize": 84.721769667371,
+      "do_nothing": 132.76405868087772
+    },
+    "crop=rice|day=12|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 12.494030617621485,
+      "fertilize": 4.74500875,
+      "do_nothing": 59.84467505608606
+    },
+    "crop=rice|day=13|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 20.965781335451062,
+      "fertilize": 35.03542397588029,
+      "do_nothing": 122.8269190089985
+    },
+    "crop=rice|day=14|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 45.04154697561868,
+      "fertilize": 2.44,
+      "do_nothing": 4.2075
+    },
+    "crop=rice|day=15|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 40.91137035029363,
+      "fertilize": 23.395776132556332,
+      "do_nothing": 113.57521570174326
+    },
+    "crop=rice|day=16|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 111.12376193923552,
+      "fertilize": 37.312651892708125,
+      "do_nothing": 42.27278974507294
+    },
+    "crop=rice|day=18|moisture=very_dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 7.232514434325,
+      "fertilize": 0.0,
+      "do_nothing": -5.6875
+    },
+    "crop=rice|day=22|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.54,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=23|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 3.5,
+      "fertilize": -7.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=24|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -7.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=03|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 146.45008795633768,
+      "fertilize": 16.15896478493391,
+      "do_nothing": 38.13803003886798
+    },
+    "crop=sugarcane|day=05|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 140.93329715904855,
+      "fertilize": 53.833949408715824,
+      "do_nothing": 50.82758189907472
+    },
+    "crop=sugarcane|day=06|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 119.28720402356089,
+      "fertilize": 0.011115275621369491,
+      "do_nothing": -4.046875
+    },
+    "crop=sugarcane|day=07|moisture=very_dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 36.52765132878429,
+      "fertilize": -6.54,
+      "do_nothing": -2.445
+    },
+    "crop=sugarcane|day=08|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 6.3897583910111315,
+      "fertilize": 0.0,
+      "do_nothing": -2.79
+    },
+    "crop=sugarcane|day=09|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 7.672862569613615,
+      "fertilize": -4.375,
+      "do_nothing": -0.3604657499999999
+    },
+    "crop=sugarcane|day=10|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 12.190453288260937,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=11|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 3.7012500000000004,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=12|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=13|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -8.445,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=14|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 3.7012500000000004,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=15|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 3.9952,
+      "fertilize": -4.0,
+      "do_nothing": -5.6412125
+    },
+    "crop=sugarcane|day=16|moisture=very_dry|temp=hot|health=critical|fertilizer=wait": {
+      "water": 0.115,
+      "fertilize": -12.013437500000002,
+      "do_nothing": -3.508540625
+    },
+    "crop=sugarcane|day=17|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 7.5715625,
+      "fertilize": -2.80155625,
+      "do_nothing": -2.79
+    },
+    "crop=sugarcane|day=18|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.40796875,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=19|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 12.59859375,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=20|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -0.2195999999999998,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=21|moisture=dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 8.3,
+      "fertilize": 0.0,
+      "do_nothing": -1.635
+    },
+    "crop=sugarcane|day=23|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.94,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=24|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 5.5244140625,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=25|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=26|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=27|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.55375959375,
+      "fertilize": -10.699153875,
+      "do_nothing": -5.5725
+    },
+    "crop=sugarcane|day=28|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 5.7254486328125,
+      "fertilize": -7.0,
+      "do_nothing": -7.233371875
+    },
+    "crop=sugarcane|day=29|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 9.3635595703125,
+      "fertilize": -6.79875,
+      "do_nothing": -5.5725
+    },
+    "crop=sugarcane|day=30|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 1.15625,
+      "fertilize": -7.0,
+      "do_nothing": -5.6875
+    },
+    "crop=tomato|day=03|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 101.96483240839405,
+      "fertilize": 0.6202502358797155,
+      "do_nothing": -3.49140625
+    },
+    "crop=tomato|day=04|moisture=dry|temp=hot|health=strong|fertilizer=wait": {
+      "water": 21.575743759464224,
+      "fertilize": 0.0,
+      "do_nothing": -6.5625
+    },
+    "crop=tomato|day=05|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 141.00641898766503,
+      "fertilize": 42.55699920192994,
+      "do_nothing": 41.406371691596846
+    },
+    "crop=tomato|day=06|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 95.04281530785293,
+      "fertilize": -4.5728415,
+      "do_nothing": 3.7392345667638525
+    },
+    "crop=tomato|day=08|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 134.28799704314832,
+      "fertilize": 13.52026988518775,
+      "do_nothing": 29.168140872418547
+    },
+    "crop=tomato|day=09|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 82.5861827806799,
+      "fertilize": -3.3975,
+      "do_nothing": -2.085
+    },
+    "crop=tomato|day=10|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 10.653470992251036,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=11|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 106.83603181623286,
+      "fertilize": 2.0783478388057794,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=12|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 51.531575458790186,
+      "fertilize": 21.006140716860628,
+      "do_nothing": 123.3852953670436
+    },
+    "crop=tomato|day=13|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 0.875,
+      "fertilize": 21.58513591848197,
+      "do_nothing": 77.93710153083653
+    },
+    "crop=tomato|day=14|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 10.507280752975614,
+      "fertilize": 41.32924676143369,
+      "do_nothing": 113.24893042291018
+    },
+    "crop=tomato|day=15|moisture=optimal|temp=cool|health=strong|fertilizer=wait": {
+      "water": 16.17407520570342,
+      "fertilize": 79.48407676669109,
+      "do_nothing": 110.08491348894654
+    },
+    "crop=tomato|day=16|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 115.32988571832203,
+      "fertilize": 21.295692180599303,
+      "do_nothing": 37.4391866661729
+    },
+    "crop=tomato|day=17|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 78.33413419956462,
+      "fertilize": -2.4891211394809956,
+      "do_nothing": 3.6058595299116356
+    },
+    "crop=tomato|day=18|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 25.173101011071076,
+      "fertilize": -7.760241910377563,
+      "do_nothing": -3.6018942951941004
+    },
+    "crop=tomato|day=19|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 13.710322102357289,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=20|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 31.767419832293534,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=21|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=22|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=23|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=24|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=25|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 5.85425,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=26|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=27|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 3.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=28|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": -0.27249999999999996,
+      "do_nothing": -2.085
+    },
+    "crop=tomato|day=29|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 6.078125,
+      "fertilize": -7.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=30|moisture=dry|temp=cool|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -8.671875
+    },
+    "crop=rice|day=03|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 153.10927532568036,
+      "fertilize": 17.987169070925127,
+      "do_nothing": 18.183386839903264
+    },
+    "crop=rice|day=04|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 68.90970692897551,
+      "fertilize": -6.54,
+      "do_nothing": -5.6875
+    },
+    "crop=rice|day=05|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 3.5,
+      "fertilize": -9.25,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=06|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -6.79875,
+      "do_nothing": -3.135
+    },
+    "crop=rice|day=07|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.875,
+      "fertilize": 0.0,
+      "do_nothing": -5.60125
+    },
+    "crop=rice|day=08|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 1.335,
+      "fertilize": -3.54,
+      "do_nothing": -5.2275
+    },
+    "crop=rice|day=09|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=10|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.64145,
+      "fertilize": -4.0,
+      "do_nothing": -3.10855
+    },
+    "crop=sugarcane|day=11|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.8825,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=13|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 129.60323002294427,
+      "fertilize": 18.813446130884095,
+      "do_nothing": 55.70415090747363
+    },
+    "crop=sugarcane|day=18|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 10.048647430589043,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=19|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=20|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -5.6875
+    },
+    "crop=sugarcane|day=21|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=22|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.6015015625,
+      "fertilize": -7.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=23|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.75109375,
+      "fertilize": -3.0225,
+      "do_nothing": -4.7888671875
+    },
+    "crop=sugarcane|day=25|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.615,
+      "fertilize": 0.0,
+      "do_nothing": -8.88671875
+    },
+    "crop=sugarcane|day=26|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.54481960875,
+      "fertilize": -9.25,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=04|moisture=dry|temp=hot|health=stable|fertilizer=wait": {
+      "water": 4.331345614337501,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=07|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 13.162103946113092,
+      "fertilize": -7.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=08|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.54,
+      "do_nothing": -4.8825
+    },
+    "crop=tomato|day=09|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.625,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=10|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -5.85,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=11|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 5.6025,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=12|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 8.415,
+      "fertilize": 0.0,
+      "do_nothing": -5.6875
+    },
+    "crop=tomato|day=13|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=very_dry|temp=cool|health=critical|fertilizer=wait": {
+      "water": -1.5,
+      "fertilize": -6.0,
+      "do_nothing": -5.25
+    },
+    "crop=tomato|day=16|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -6.54,
+      "do_nothing": -2.79
+    },
+    "crop=tomato|day=17|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.2208,
+      "fertilize": 0.0,
+      "do_nothing": -5.6875
+    },
+    "crop=tomato|day=18|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.96,
+      "fertilize": -5.85,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=19|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 3.4648250000000003,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=20|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 2.56205,
+      "fertilize": 0.0,
+      "do_nothing": -5.805
+    },
+    "crop=tomato|day=21|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 8.07609375,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=22|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 8.127500000000001,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=23|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 7.428826
+    },
+    "crop=tomato|day=24|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": -0.6137999999999999
+    },
+    "crop=tomato|day=25|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.94,
+      "fertilize": -2.2792,
+      "do_nothing": -1.5292
+    },
+    "crop=tomato|day=27|moisture=dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 4.365,
+      "fertilize": 0.125,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=30|moisture=very_dry|temp=cool|health=critical|fertilizer=wait": {
+      "water": -1.5,
+      "fertilize": -6.0,
+      "do_nothing": -9.1875
+    },
+    "crop=rice|day=03|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 21.389373569337323,
+      "fertilize": 0.0,
+      "do_nothing": 113.7503015850317
+    },
+    "crop=rice|day=05|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 13.256085675660481,
+      "fertilize": 0.0,
+      "do_nothing": 59.38785675093044
+    },
+    "crop=rice|day=19|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 20.222377905052674,
+      "fertilize": -6.22763125,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=21|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.8575,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=22|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": -5.453448230501781,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=23|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 3.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=26|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": -5.5725
+    },
+    "crop=sugarcane|day=06|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 57.426452258396495,
+      "fertilize": 66.97678186235547,
+      "do_nothing": 135.2566156341652
+    },
+    "crop=sugarcane|day=07|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 79.85175996469073,
+      "fertilize": 134.63130989389586,
+      "do_nothing": 88.57663578972642
+    },
+    "crop=sugarcane|day=08|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -0.7648134421523383,
+      "do_nothing": -1.723274
+    },
+    "crop=sugarcane|day=09|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=10|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=11|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=12|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=13|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=14|moisture=wet|temp=ideal|health=critical|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=15|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=16|moisture=optimal|temp=hot|health=critical|fertilizer=wait": {
+      "water": -1.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=17|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=25|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 5.25
+    },
+    "crop=sugarcane|day=26|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 2.7275,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=27|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": -2.1875,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=28|moisture=dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": -0.901875
+    },
+    "crop=sugarcane|day=29|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 9.6350390625,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=30|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": -2.1875,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=05|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 21.594360005589,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=10|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=11|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=13|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.5,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -7.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=22|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 7.29,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=23|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 7.4375,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=24|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=25|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=26|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 5.43,
+      "fertilize": -3.54,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=28|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 6.04859375,
+      "fertilize": -3.0225,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=02|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -1.75,
+      "fertilize": 1.865,
+      "do_nothing": 18.592036307125237
+    },
+    "crop=sugarcane|day=03|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.1634747462499999,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=04|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=05|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=06|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=07|moisture=waterlogged|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.5,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=08|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=09|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=16|moisture=wet|temp=hot|health=critical|fertilizer=wait": {
+      "water": -6.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=17|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=19|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=20|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=21|moisture=waterlogged|temp=ideal|health=critical|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=22|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=23|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=24|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=25|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=26|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=27|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=28|moisture=waterlogged|temp=ideal|health=critical|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=29|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=30|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=16|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": -2.1875,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=17|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -1.02,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=18|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.115,
+      "do_nothing": 5.25
+    },
+    "crop=tomato|day=19|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 1.15625,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=20|moisture=optimal|temp=ideal|health=stable|fertilizer=due": {
+      "water": -1.0,
+      "fertilize": 20.00282485658215,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=21|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=22|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=25|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=27|moisture=wet|temp=ideal|health=critical|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 3.5,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=09|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 145.87806947184893,
+      "fertilize": 25.17373694922264,
+      "do_nothing": 31.171327921274425
+    },
+    "crop=rice|day=10|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 75.99293731222669,
+      "fertilize": -7.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=11|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 2.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=12|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 2.4510875,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=13|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.875,
+      "fertilize": -7.214119287109375,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=14|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.4775,
+      "fertilize": 0.0,
+      "do_nothing": -5.3425
+    },
+    "crop=sugarcane|day=05|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 3.3489375,
+      "do_nothing": 81.35823311741868
+    },
+    "crop=sugarcane|day=08|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 1.3221732523193381,
+      "fertilize": 2.8381312615326006,
+      "do_nothing": 106.90910200378087
+    },
+    "crop=sugarcane|day=09|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 5.644539646122427,
+      "do_nothing": -1.06
+    },
+    "crop=sugarcane|day=11|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 65.89979220875118,
+      "do_nothing": -1.1175
+    },
+    "crop=sugarcane|day=17|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 110.68128896043217,
+      "fertilize": 46.41384377157931,
+      "do_nothing": 60.17606260360116
+    },
+    "crop=sugarcane|day=18|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 72.65023149135833,
+      "fertilize": 48.46997821100466,
+      "do_nothing": 108.70840390895366
+    },
+    "crop=sugarcane|day=20|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 103.92906331116157,
+      "fertilize": 30.328353689844704,
+      "do_nothing": 30.11230693757222
+    },
+    "crop=sugarcane|day=21|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 72.19786409367414,
+      "fertilize": 1.3407660238237948,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=22|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 37.29647134059281,
+      "fertilize": -4.0,
+      "do_nothing": -5.6875
+    },
+    "crop=sugarcane|day=23|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=24|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 5.2275,
+      "fertilize": -6.85855,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=25|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 1.07625,
+      "fertilize": 0.0,
+      "do_nothing": -5.5725
+    },
+    "crop=sugarcane|day=26|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.375,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=27|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.2720336484375,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=06|moisture=wet|temp=ideal|health=stable|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 2.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=07|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=08|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=09|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=10|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -0.203125,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=11|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 8.923826
+    },
+    "crop=tomato|day=12|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 8.92585
+    },
+    "crop=tomato|day=13|moisture=dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 12.288096482335629,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=wet|temp=cool|health=stable|fertilizer=wait": {
+      "water": -6.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.75
+    },
+    "crop=tomato|day=17|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=18|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.8125,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=22|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=23|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 1.6584375,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=24|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 3.40625,
+      "fertilize": 0.0,
+      "do_nothing": 3.885201
+    },
+    "crop=tomato|day=25|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -0.5599999999999999,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=27|moisture=optimal|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=28|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=29|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=30|moisture=optimal|temp=cool|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 1.0
+    },
+    "crop=rice|day=20|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -5.37355
+    },
+    "crop=sugarcane|day=16|moisture=optimal|temp=hot|health=strong|fertilizer=wait": {
+      "water": 9.63022961819702,
+      "fertilize": 3.9698190407214122,
+      "do_nothing": 82.33551514620554
+    },
+    "crop=sugarcane|day=18|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 12.363443186339216,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=19|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.83625,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=22|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=23|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=24|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=29|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=13|moisture=dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 4.25,
+      "fertilize": 2.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=16|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=17|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 1.19,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=20|moisture=optimal|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 10.058125,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=21|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 1.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=22|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=23|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.635
+    },
+    "crop=tomato|day=26|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 8.23125
+    },
+    "crop=tomato|day=28|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=12|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 11.561151547057168,
+      "fertilize": -11.809825,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=13|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 1.96125,
+      "fertilize": -6.54,
+      "do_nothing": -5.2275
+    },
+    "crop=rice|day=14|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 11.110490698055074,
+      "fertilize": -7.0,
+      "do_nothing": -7.055625
+    },
+    "crop=rice|day=15|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -5.6875
+    },
+    "crop=rice|day=16|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": -4.5574625,
+      "do_nothing": -3.8074625
+    },
+    "crop=sugarcane|day=19|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 21.173242358359502,
+      "fertilize": -4.375,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=20|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -5.6875
+    },
+    "crop=sugarcane|day=21|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -5.5725
+    },
+    "crop=sugarcane|day=22|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=23|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.797675,
+      "do_nothing": -5.6875
+    },
+    "crop=sugarcane|day=24|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.625,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=wet|temp=cool|health=strong|fertilizer=wait": {
+      "water": -15.534374999999999,
+      "fertilize": -4.456502428349999,
+      "do_nothing": 27.838576326524283
+    },
+    "crop=tomato|day=16|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 2.6051234872888935,
+      "fertilize": 10.689591263747975,
+      "do_nothing": 79.4420014039211
+    },
+    "crop=tomato|day=17|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 56.001024721189005,
+      "fertilize": 13.621735505797224,
+      "do_nothing": 106.89213376757483
+    },
+    "crop=tomato|day=18|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 33.48202740518628,
+      "fertilize": 54.584373718852795,
+      "do_nothing": 103.14715768823172
+    },
+    "crop=tomato|day=19|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 99.0667651930735,
+      "fertilize": 22.210392798872935,
+      "do_nothing": 3.6570541397539245
+    },
+    "crop=tomato|day=20|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 43.09378707698336,
+      "fertilize": 82.41833432651273,
+      "do_nothing": 89.18788847838321
+    },
+    "crop=tomato|day=21|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 45.31264909074173,
+      "fertilize": 40.27013914630122,
+      "do_nothing": 83.88295643744371
+    },
+    "crop=tomato|day=22|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 1.272963624918734,
+      "fertilize": 13.377521332657873,
+      "do_nothing": 60.63191360739016
+    },
+    "crop=tomato|day=23|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 4.928933118994313,
+      "fertilize": 41.98743267525571,
+      "do_nothing": 66.4547772869463
+    },
+    "crop=tomato|day=24|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 19.08798772721621,
+      "do_nothing": 5.797698141608581
+    },
+    "crop=tomato|day=25|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 37.52947322743778,
+      "fertilize": 45.92233277712842,
+      "do_nothing": 40.24434061315548
+    },
+    "crop=tomato|day=26|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 36.8003154273704,
+      "fertilize": 45.585963508306705,
+      "do_nothing": 43.23755187805975
+    },
+    "crop=tomato|day=27|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 45.20499199912245,
+      "fertilize": 24.08625156645958,
+      "do_nothing": 11.38333302135428
+    },
+    "crop=tomato|day=28|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 33.18634301308062,
+      "fertilize": -1.25,
+      "do_nothing": -3.0625
+    },
+    "crop=tomato|day=29|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 5.155625,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=30|moisture=very_dry|temp=cool|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=03|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 1.682699855,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=04|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 7.60915678125
+    },
+    "crop=sugarcane|day=06|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -0.7725
+    },
+    "crop=sugarcane|day=14|moisture=wet|temp=ideal|health=strong|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 13.272751556309728,
+      "do_nothing": -1.06
+    },
+    "crop=tomato|day=07|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=08|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.9406125,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=12|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 16.827073233938172,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=13|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=14|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.0175,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=very_dry|temp=cool|health=stable|fertilizer=wait": {
+      "water": 3.9375,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=16|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 12.691916043623843,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=17|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.94,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=23|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": -1.4538,
+      "do_nothing": 0.958490686640932
+    },
+    "crop=tomato|day=24|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=25|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -0.5599999999999999,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=26|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 7.455
+    },
+    "crop=tomato|day=27|moisture=optimal|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 6.9375
+    },
+    "crop=tomato|day=28|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -0.13716216125488295,
+      "fertilize": 13.165480903630334,
+      "do_nothing": 30.657599999903184
+    },
+    "crop=tomato|day=29|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": -2.4002801513671876,
+      "do_nothing": -3.3425000000000002
+    },
+    "crop=tomato|day=30|moisture=optimal|temp=cool|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.0,
+      "do_nothing": 1.0
+    },
+    "crop=rice|day=10|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -0.4271865,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=16|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 66.50148000902767,
+      "fertilize": 31.601753977339264,
+      "do_nothing": 11.010739814232041
+    },
+    "crop=rice|day=17|moisture=optimal|temp=cool|health=strong|fertilizer=wait": {
+      "water": 1.99425,
+      "fertilize": 75.7249908952108,
+      "do_nothing": 104.5345753286191
+    },
+    "crop=rice|day=18|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 0.5,
+      "fertilize": 7.37501544280625,
+      "do_nothing": 70.78408779572347
+    },
+    "crop=rice|day=19|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 27.61846739513347,
+      "fertilize": 62.40616127055257,
+      "do_nothing": 102.74056952390632
+    },
+    "crop=rice|day=20|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 98.76274847907418,
+      "fertilize": 34.66402401985064,
+      "do_nothing": 27.833472223618045
+    },
+    "crop=rice|day=21|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 77.07604390335244,
+      "fertilize": -2.5,
+      "do_nothing": -4.10033125
+    },
+    "crop=rice|day=22|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 7.6923659157007735,
+      "fertilize": -3.54,
+      "do_nothing": -4.8825
+    },
+    "crop=rice|day=24|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 8.352990532075143,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=25|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 2.0,
+      "fertilize": -3.885,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=27|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 1.8525,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=28|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": -2.611079962158203
+    },
+    "crop=rice|day=29|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": -3.0625
+    },
+    "crop=rice|day=30|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": -5.6875
+    },
+    "crop=sugarcane|day=14|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 103.40055993569368,
+      "fertilize": -4.375,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=15|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 7.525202098159431,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=16|moisture=very_dry|temp=hot|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -5.25
+    },
+    "crop=sugarcane|day=17|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=18|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=19|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=21|moisture=very_dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -8.186250000000001,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=13|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 121.14435866435043,
+      "fertilize": 53.62211509825956,
+      "do_nothing": 36.516116879599856
+    },
+    "crop=tomato|day=19|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 2.4714795,
+      "fertilize": 5.2910440625,
+      "do_nothing": 78.69161039549888
+    },
+    "crop=tomato|day=24|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 59.21746319471073,
+      "fertilize": 23.429140939480966,
+      "do_nothing": 14.982391270915414
+    },
+    "crop=tomato|day=25|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 53.24950167813009,
+      "fertilize": -1.4167,
+      "do_nothing": -0.67953914375
+    },
+    "crop=tomato|day=26|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 16.683260321777343,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=29|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 4.424584045410156,
+      "fertilize": 10.627555059532316,
+      "do_nothing": 20.27999999998971
+    },
+    "crop=tomato|day=30|moisture=dry|temp=cool|health=strong|fertilizer=wait": {
+      "water": 8.999999999999709,
+      "fertilize": -12.02389907836914,
+      "do_nothing": -11.4404296875
+    },
+    "crop=rice|day=10|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 139.85805136744307,
+      "fertilize": 22.918320096833007,
+      "do_nothing": 71.83668833766659
+    },
+    "crop=rice|day=15|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 7.4375,
+      "fertilize": -2.04,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=23|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 25.757310671315597,
+      "fertilize": -1.815175,
+      "do_nothing": -1.75
+    },
+    "crop=rice|day=24|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 73.13777099897506,
+      "fertilize": 2.559315828125001,
+      "do_nothing": 4.21065267166779
+    },
+    "crop=rice|day=25|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 39.31746181922669,
+      "fertilize": -2.5,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=26|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 56.50412015344218,
+      "fertilize": 31.549610641123643,
+      "do_nothing": 15.029708429289517
+    },
+    "crop=sugarcane|day=19|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=20|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=21|moisture=wet|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 2.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=22|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=23|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=25|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 8.127500000000001,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=26|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=27|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 46.69433727894997,
+      "fertilize": 20.128282101347335,
+      "do_nothing": 15.33374190639478
+    },
+    "crop=sugarcane|day=28|moisture=dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 34.71690554297817,
+      "fertilize": -2.1875,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=29|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 22.03999770696421,
+      "fertilize": 18.46224442018738,
+      "do_nothing": 18.79167079017913
+    },
+    "crop=sugarcane|day=30|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 16.999998714888132,
+      "fertilize": -3.41796875,
+      "do_nothing": -5.754150390625
+    },
+    "crop=tomato|day=03|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 9.680563879856507,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=12|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=13|moisture=waterlogged|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.5,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=waterlogged|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=17|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -8.6225,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=06|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -4.3002275725
+    },
+    "crop=sugarcane|day=08|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 128.35579683845697,
+      "fertilize": 13.742395747503284,
+      "do_nothing": 33.46010898699938
+    },
+    "crop=sugarcane|day=09|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 83.22402910181627,
+      "fertilize": -2.5,
+      "do_nothing": -1.3961683018203657
+    },
+    "crop=sugarcane|day=10|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 7.244920426867975,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=11|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -7.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=12|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -7.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=18|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.454375,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=20|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.15900000000000025
+    },
+    "crop=sugarcane|day=21|moisture=optimal|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 4.25,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=22|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=23|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=28|moisture=dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 7.7227722280436195,
+      "fertilize": -1.25,
+      "do_nothing": -0.5476749999999999
+    },
+    "crop=sugarcane|day=29|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 8.170625000000001,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=30|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -5.6875
+    },
+    "crop=tomato|day=07|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 49.777893610793484,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 93.09572233680339,
+      "fertilize": 0.0,
+      "do_nothing": -3.0625
+    },
+    "crop=tomato|day=22|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=24|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=28|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=29|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=08|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=04|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 93.08972482193278,
+      "fertilize": -5.32125,
+      "do_nothing": -3.0625
+    },
+    "crop=sugarcane|day=05|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": -4.0,
+      "do_nothing": -4.657675
+    },
+    "crop=sugarcane|day=06|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 6.335625,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=07|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=08|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -5.6875
+    },
+    "crop=sugarcane|day=09|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=10|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=11|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=12|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=13|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": -3.54,
+      "do_nothing": -2.76355
+    },
+    "crop=sugarcane|day=19|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.135
+    },
+    "crop=sugarcane|day=20|moisture=very_dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.875,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=15|moisture=very_dry|temp=cool|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -6.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=16|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -2.79
+    },
+    "crop=rice|day=04|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 55.54385775838147,
+      "fertilize": -3.54,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=12|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 3.219375,
+      "fertilize": 0.0,
+      "do_nothing": -3.135
+    },
+    "crop=sugarcane|day=17|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 5.2275,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=23|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 78.94939787350022,
+      "fertilize": 30.18749933592051,
+      "do_nothing": 26.689539224467993
+    },
+    "crop=sugarcane|day=24|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 62.15027094440431,
+      "fertilize": -7.0,
+      "do_nothing": -7.515625
+    },
+    "crop=sugarcane|day=25|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 12.288667821731053,
+      "fertilize": -4.0,
+      "do_nothing": -4.8825
+    },
+    "crop=sugarcane|day=26|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 5.085,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=27|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 3.5,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=28|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 2.0,
+      "fertilize": -4.0,
+      "do_nothing": -2.2725
+    },
+    "crop=sugarcane|day=30|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.375,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=09|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=10|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 6.6962,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=20|moisture=very_dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 66.94034766063615,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=21|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=22|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=23|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 7.4375,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=25|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.5,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=26|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -7.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=27|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=28|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=29|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": -7.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=30|moisture=very_dry|temp=cool|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -9.1875
+    },
+    "crop=rice|day=27|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 46.32547040776335,
+      "fertilize": -8.2725,
+      "do_nothing": -3.598114953826904
+    },
+    "crop=rice|day=28|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 9.084282809448244,
+      "fertilize": -4.0,
+      "do_nothing": -5.2275
+    },
+    "crop=rice|day=29|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 3.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=30|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -5.6875
+    },
+    "crop=sugarcane|day=23|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=30|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 7.4375,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=very_dry|temp=cool|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -6.0,
+      "do_nothing": -5.25
+    },
+    "crop=tomato|day=16|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=17|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=18|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=19|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -5.6875
+    },
+    "crop=tomato|day=23|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.45125,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=25|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 2.3662,
+      "do_nothing": 3.8487
+    },
+    "crop=tomato|day=28|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.1875,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=29|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.48,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=21|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 89.23691133558552,
+      "fertilize": 48.73702102295005,
+      "do_nothing": 48.66604800862892
+    },
+    "crop=rice|day=22|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 58.76952131467719,
+      "fertilize": 37.36710140918941,
+      "do_nothing": 85.53317538448357
+    },
+    "crop=rice|day=29|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 32.63999999977241,
+      "fertilize": -2.04,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=07|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 7.4375,
+      "fertilize": -4.0,
+      "do_nothing": -2.445
+    },
+    "crop=sugarcane|day=09|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 3.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=10|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -5.20105
+    },
+    "crop=sugarcane|day=28|moisture=optimal|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 5.824999999999999
+    },
+    "crop=tomato|day=11|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 1.9090426086932117,
+      "do_nothing": -2.963555401440933
+    },
+    "crop=tomato|day=19|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -4.29875,
+      "fertilize": 0.0,
+      "do_nothing": -0.7725
+    },
+    "crop=tomato|day=21|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=22|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.115
+    },
+    "crop=tomato|day=27|moisture=dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=11|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 94.60597148969488,
+      "fertilize": 14.40819375427392,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=21|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 51.91174624522576,
+      "fertilize": 94.70245103123956,
+      "do_nothing": 66.33713492794652
+    },
+    "crop=sugarcane|day=23|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 2.6698545000000005,
+      "fertilize": 0.0,
+      "do_nothing": 61.606713652864116
+    },
+    "crop=sugarcane|day=24|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 18.89302067195321,
+      "fertilize": 26.09610713264609,
+      "do_nothing": 67.36765709689531
+    },
+    "crop=sugarcane|day=25|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 60.1965082901067,
+      "fertilize": 16.994855903835823,
+      "do_nothing": 24.185586243981653
+    },
+    "crop=sugarcane|day=26|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 53.935623792846954,
+      "fertilize": -3.59441,
+      "do_nothing": -3.0625
+    },
+    "crop=sugarcane|day=27|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 9.773377881835938,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=14|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 20.87872075685084,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=06|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.5,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=13|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=14|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 2.0,
+      "fertilize": -2.9362500000000002,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=15|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=16|moisture=very_dry|temp=hot|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=19|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.5,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=27|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.9929,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=27|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 1.15625,
+      "fertilize": 43.68431635315781,
+      "do_nothing": 16.831496339558605
+    },
+    "crop=tomato|day=30|moisture=optimal|temp=cool|health=strong|fertilizer=wait": {
+      "water": -3.46875,
+      "fertilize": -3.05078125,
+      "do_nothing": 3.7747459411621094
+    },
+    "crop=rice|day=15|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 3.5,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=17|moisture=very_dry|temp=cool|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -9.657503619476563,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=23|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 12.35421875,
+      "fertilize": -2.095479773221875,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=24|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 8.5737,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=25|moisture=optimal|temp=ideal|health=weak|fertilizer=due": {
+      "water": 7.725575,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=26|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 8.0875
+    },
+    "crop=rice|day=27|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 7.6274999999999995
+    },
+    "crop=rice|day=28|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 3.3825000000000003,
+      "fertilize": 0.0,
+      "do_nothing": 5.25
+    },
+    "crop=sugarcane|day=05|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.54,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=14|moisture=dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -2.385,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=16|moisture=dry|temp=hot|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -2.7313875
+    },
+    "crop=sugarcane|day=18|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0104687500000002,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=23|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.135,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=25|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.48,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=30|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=12|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.135
+    },
+    "crop=tomato|day=24|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 3.1816125,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=29|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=30|moisture=optimal|temp=cool|health=critical|fertilizer=wait": {
+      "water": -3.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=15|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.5474175475,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=17|moisture=dry|temp=cool|health=critical|fertilizer=wait": {
+      "water": 2.25,
+      "fertilize": -3.9356891485484375,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=18|moisture=dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=19|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.75,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=20|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.75,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=21|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=22|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=23|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=24|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=rice|day=25|moisture=optimal|temp=ideal|health=critical|fertilizer=due": {
+      "water": 2.75,
+      "fertilize": 4.94,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=28|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=29|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 5.445,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=30|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 2.5625,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=08|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=26|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 8.383635501094044,
+      "fertilize": 46.95730746046604,
+      "do_nothing": 45.896958609776554
+    },
+    "crop=sugarcane|day=28|moisture=optimal|temp=ideal|health=strong|fertilizer=due": {
+      "water": 16.35912204854138,
+      "fertilize": 27.064296803101108,
+      "do_nothing": 32.2767582993289
+    },
+    "crop=sugarcane|day=30|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 1.15625,
+      "fertilize": 2.3125,
+      "do_nothing": 11.999999909183792
+    },
+    "crop=rice|day=14|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.367639703125,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=26|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=27|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=28|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 14.591229554919858,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=29|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=22|moisture=dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 78.12732751658854,
+      "fertilize": 12.206401443058017,
+      "do_nothing": 16.5906115985427
+    },
+    "crop=tomato|day=23|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 52.53695979823066,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=30|moisture=very_dry|temp=cool|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -6.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=24|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=25|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=26|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=27|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 3.344975969873071,
+      "do_nothing": 24.239599002759466
+    },
+    "crop=tomato|day=30|moisture=wet|temp=cool|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.25,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=08|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=rice|day=09|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=10|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=rice|day=11|moisture=optimal|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=rice|day=12|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 6.136945651620312,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=19|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=rice|day=20|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 50.165145028157106,
+      "fertilize": 12.824612244041838,
+      "do_nothing": 12.18521709422497
+    },
+    "crop=rice|day=21|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -0.23936913250000003,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=26|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=30|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=12|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=13|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=14|moisture=wet|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 3.5,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=15|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=16|moisture=wet|temp=hot|health=stable|fertilizer=wait": {
+      "water": -6.5,
+      "fertilize": -3.25,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=17|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=18|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.25645
+    },
+    "crop=sugarcane|day=20|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=21|moisture=optimal|temp=ideal|health=stable|fertilizer=due": {
+      "water": 1.19,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=23|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.52
+    },
+    "crop=sugarcane|day=25|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=26|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=16|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=18|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=19|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.9122590078125,
+      "fertilize": 0.0,
+      "do_nothing": -2.2131043081054687
+    },
+    "crop=rice|day=24|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 5.3568750000000005,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=rice|day=25|moisture=dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 4.25,
+      "fertilize": -1.8186244231986328,
+      "do_nothing": -1.0686244231986328
+    },
+    "crop=rice|day=29|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.7410519409179686,
+      "do_nothing": -1.351402587890625
+    },
+    "crop=rice|day=07|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 3.93545,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=11|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 2.398475,
+      "fertilize": -3.885,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=21|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 7.4375,
+      "fertilize": 0.0,
+      "do_nothing": -0.6554875
+    },
+    "crop=rice|day=28|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 2.75,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=12|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=13|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.96,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=16|moisture=optimal|temp=hot|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=17|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 8.597929224781454,
+      "do_nothing": 6.212706893775
+    },
+    "crop=sugarcane|day=19|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 35.1865301388425,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=28|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 2.11359375,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=05|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.54,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=06|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=08|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 8.980066464600025,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=18|moisture=very_dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 5.0052896250000005,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=rice|day=25|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -2.8945057947945925,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=06|moisture=wet|temp=ideal|health=strong|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=07|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=11|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=12|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=13|moisture=wet|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 2.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=21|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=25|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 4.2075
+    },
+    "crop=tomato|day=26|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -0.44499999999999995,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=29|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=22|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.2352937499999999,
+      "do_nothing": -0.03937499999999994
+    },
+    "crop=rice|day=26|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 3.9575,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=29|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 5.0425,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=30|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=25|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 27.562292498151514,
+      "do_nothing": 12.376630191958077
+    },
+    "crop=sugarcane|day=30|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=15|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.325563160625
+    },
+    "crop=rice|day=17|moisture=dry|temp=cool|health=weak|fertilizer=wait": {
+      "water": 2.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=18|moisture=dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -1.040180428203125,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=22|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=23|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.75,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=24|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.6325,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=26|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=rice|day=27|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 2.75,
+      "fertilize": 1.375475,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=28|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.00235,
+      "fertilize": 1.6325,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=29|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 8.159607231015432,
+      "fertilize": -4.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=24|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=25|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=27|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -2.75843125,
+      "do_nothing": -2.2725
+    },
+    "crop=rice|day=17|moisture=dry|temp=cool|health=stable|fertilizer=wait": {
+      "water": 2.25,
+      "fertilize": 0.0,
+      "do_nothing": -3.75
+    },
+    "crop=rice|day=20|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 6.0257911875,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=07|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=08|moisture=very_dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=09|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 5.0412,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=28|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -7.875,
+      "fertilize": 0.0,
+      "do_nothing": -2.32226875
+    },
+    "crop=rice|day=30|moisture=optimal|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 1.64404296875,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=28|moisture=dry|temp=ideal|health=critical|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -0.4816083984374999
+    },
+    "crop=tomato|day=17|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 26.6401138141376,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=18|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=19|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -0.7725
+    },
+    "crop=tomato|day=22|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=23|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=24|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=12|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 43.04487647256173,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=29|moisture=waterlogged|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=30|moisture=waterlogged|temp=cool|health=stable|fertilizer=wait": {
+      "water": -6.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=07|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 33.2388501308986,
+      "do_nothing": 23.8219266105238
+    },
+    "crop=tomato|day=12|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=13|moisture=waterlogged|temp=ideal|health=stable|fertilizer=due": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=05|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.9799576031250001,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=19|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.634610261574725
+    },
+    "crop=rice|day=09|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -2.79
+    },
+    "crop=rice|day=26|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -0.33403525237701404
+    },
+    "crop=rice|day=29|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=rice|day=30|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=09|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=10|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=11|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=12|moisture=wet|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=13|moisture=optimal|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 4.365,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=optimal|temp=cool|health=stable|fertilizer=wait": {
+      "water": -1.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=16|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=tomato|day=17|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=18|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 1.95125,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=19|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 10.324756885725176,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=15|moisture=waterlogged|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=sugarcane|day=17|moisture=waterlogged|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=18|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=sugarcane|day=19|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": -1.0,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=20|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": -4.5,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=24|moisture=wet|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=27|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=sugarcane|day=28|moisture=optimal|temp=ideal|health=critical|fertilizer=due": {
+      "water": 2.865,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=25|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.195,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=13|moisture=very_dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -3.54,
+      "do_nothing": 0.0
+    },
+    "crop=sugarcane|day=16|moisture=wet|temp=hot|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -2.32107741443175
+    },
+    "crop=tomato|day=17|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=30|moisture=dry|temp=cool|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.25,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=11|moisture=dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=12|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.2989125
+    },
+    "crop=rice|day=16|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=rice|day=18|moisture=dry|temp=ideal|health=stable|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -0.5086051874999999
+    },
+    "crop=rice|day=25|moisture=dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -0.4802074541426573
+    },
+    "crop=rice|day=20|moisture=dry|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 4.25,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=21|moisture=optimal|temp=ideal|health=critical|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 3.0
+    },
+    "crop=rice|day=11|moisture=very_dry|temp=ideal|health=strong|fertilizer=due": {
+      "water": 2.684825,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=30|moisture=very_dry|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 2.0,
+      "fertilize": -4.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=30|moisture=wet|temp=cool|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -3.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=14|moisture=waterlogged|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -2.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=15|moisture=waterlogged|temp=cool|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -4.75,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=16|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=17|moisture=wet|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.06
+    },
+    "crop=tomato|day=19|moisture=optimal|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 4.710625
+    },
+    "crop=tomato|day=22|moisture=dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -0.27249999999999996,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=25|moisture=optimal|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": 11.157820776526346
+    },
+    "crop=rice|day=17|moisture=very_dry|temp=cool|health=stable|fertilizer=wait": {
+      "water": 0.5409277425,
+      "fertilize": 0.0,
+      "do_nothing": 0.0
+    },
+    "crop=rice|day=28|moisture=wet|temp=ideal|health=strong|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 5.105415199668818,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=18|moisture=very_dry|temp=ideal|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.25
+    },
+    "crop=tomato|day=20|moisture=very_dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": -2.08223125,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=24|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": -1.25,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=27|moisture=dry|temp=ideal|health=weak|fertilizer=due": {
+      "water": 0.0,
+      "fertilize": 2.0,
+      "do_nothing": 0.0
+    },
+    "crop=tomato|day=28|moisture=dry|temp=ideal|health=weak|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -1.75
+    },
+    "crop=tomato|day=30|moisture=dry|temp=cool|health=stable|fertilizer=wait": {
+      "water": 0.0,
+      "fertilize": 0.0,
+      "do_nothing": -3.75
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "soilixa-openenv",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend and static frontend for the Soilixa OpenEnv crop simulation.",
+  "scripts": {
+    "start": "node server.js",
+    "run:ai": "node runAI.js",
+    "train:ai": "python train.py",
+    "infer:ai": "node baselineInference.js",
+    "infer:py": "python -B run_inference.py"
+  }
+}
