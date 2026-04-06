@@ -221,3 +221,7 @@ const server = http.createServer(async (req, res) => {
 server.listen(PORT, HOST, () => {
   console.log(`Soilixa OpenEnv running on http://${HOST}:${PORT}`);
 });
+
+module.exports = {
+  server
+};

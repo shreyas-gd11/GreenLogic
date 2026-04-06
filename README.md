@@ -92,6 +92,16 @@ Optional cross-seed check:
 python -B run_inference.py --crop rice --runs 3 --vary-seed
 ```
 
+## Demo Endpoint Check
+
+Validate the live demo API endpoint:
+
+```bash
+npm run test:demo
+```
+
+This test starts the local server, checks `GET /api/demo?crop=rice&mode=explain`, and confirms invalid crop validation returns `400`.
+
 ## Project Notes
 
 - `openenv.yaml` defines the environment metadata and task difficulty mapping
