@@ -3,8 +3,8 @@ from __future__ import annotations
 import json
 import sys
 
-from soilixa_models import SoilixaState, StepResult, Thresholds
-from soilixa_openenv import SoilixaEnv
+from greenlogic_models import GreenLogicState, StepResult, Thresholds
+from greenlogic_openenv import GreenLogicEnv
 
 
 def thresholds_from_dict(payload: dict) -> Thresholds:
@@ -16,8 +16,8 @@ def thresholds_from_dict(payload: dict) -> Thresholds:
     )
 
 
-def state_from_dict(payload: dict) -> SoilixaState:
-    return SoilixaState(
+def state_from_dict(payload: dict) -> GreenLogicState:
+    return GreenLogicState(
         episodeId=payload["episodeId"],
         stepCount=int(payload["stepCount"]),
         day=int(payload["day"]),
@@ -43,7 +43,7 @@ def load_payload() -> dict:
     return json.loads(raw)
 
 
-def emit(result: StepResult, env: SoilixaEnv) -> None:
+def emit(result: StepResult, env: GreenLogicEnv) -> None:
     sys.stdout.write(
         json.dumps(
             {
@@ -64,7 +64,7 @@ def main() -> int:
     if command == "reset":
       crop_type = payload.get("cropType") or payload.get("crop") or "tomato"
       seed = payload.get("seed")
-      env = SoilixaEnv(crop_type=crop_type, seed=seed)
+      env = GreenLogicEnv(crop_type=crop_type, seed=seed)
       result = env.reset(crop_type=crop_type, seed=seed)
       emit(result, env)
       return 0
@@ -78,7 +78,7 @@ def main() -> int:
       if not action:
           raise SystemExit("Missing action payload for step.")
 
-      env = SoilixaEnv(crop_type=state_payload["cropType"])
+      env = GreenLogicEnv(crop_type=state_payload["cropType"])
       env._state = state_from_dict(state_payload)  # noqa: SLF001 - bridge for stateless API wrapper
       result = env.step(action)
       emit(result, env)
@@ -89,7 +89,7 @@ def main() -> int:
       if not state_payload:
           raise SystemExit("Missing state payload for state.")
 
-      env = SoilixaEnv(crop_type=state_payload["cropType"])
+      env = GreenLogicEnv(crop_type=state_payload["cropType"])
       env._state = state_from_dict(state_payload)  # noqa: SLF001 - bridge for stateless API wrapper
       sys.stdout.write(json.dumps({"state": env.state().to_dict()}))
       return 0

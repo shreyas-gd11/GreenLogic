@@ -5,6 +5,7 @@ colorFrom: green
 colorTo: blue
 sdk: docker
 app_port: 7860
+app_file: server/app.py
 pinned: false
 ---
 
@@ -67,9 +68,9 @@ The canonical Python environment implements:
 
 Core files:
 
-- [soilixa_openenv.py](E:/Meta/soilixa_openenv.py)
-- [soilixa_models.py](E:/Meta/soilixa_models.py)
-- [soilixa_agent.py](E:/Meta/soilixa_agent.py)
+- [greenlogic_openenv.py](E:/Meta/greenlogic_openenv.py)
+- [greenlogic_models.py](E:/Meta/greenlogic_models.py)
+- [greenlogic_agent.py](E:/Meta/greenlogic_agent.py)
 - [run_inference.py](E:/Meta/run_inference.py)
 - [openenv.yaml](E:/Meta/openenv.yaml)
 

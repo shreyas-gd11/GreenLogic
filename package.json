@@ -1,8 +1,8 @@
 {
-  "name": "soilixa-openenv",
+  "name": "greenlogic",
   "version": "1.0.0",
   "private": true,
-  "description": "Backend and static frontend for the Soilixa OpenEnv crop simulation.",
+  "description": "Backend and static frontend for the GreenLogic crop simulation.",
   "scripts": {
     "start": "node server.js",
     "run:ai": "node runAI.js",

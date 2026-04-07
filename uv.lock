@@ -1,0 +1,15 @@
+version = 1
+revision = 3
+requires-python = ">=3.9"
+
+[[package]]
+name = "greenlogic"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "openenv-core" },
+    { name = "streamlit" },
+    { name = "flask" },
+    { name = "gunicorn" },
+    { name = "numpy" },
+]

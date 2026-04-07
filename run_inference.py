@@ -5,12 +5,12 @@ sys.dont_write_bytecode = True
 
 import argparse
 
-from soilixa_agent import BaselineSoilixaAgent
-from soilixa_openenv import CROPS, DEFAULT_SEED, SoilixaEnv
+from greenlogic_agent import BaselineGreenLogicAgent
+from greenlogic_openenv import CROPS, DEFAULT_SEED, GreenLogicEnv
 
 
 def build_argument_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Run one Soilixa OpenEnv baseline episode.")
+    parser = argparse.ArgumentParser(description="Run one GreenLogic OpenEnv baseline episode.")
     parser.add_argument("--crop", default="tomato", choices=sorted(CROPS), help="Crop task to evaluate.")
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED, help="Random seed for environment dynamics.")
     parser.add_argument("--runs", type=int, default=1, help="Number of deterministic validation runs.")
@@ -19,8 +19,8 @@ def build_argument_parser() -> argparse.ArgumentParser:
 
 
 def run_episode(crop_name: str, seed: int) -> tuple[int, float, str, str]:
-    env = SoilixaEnv(crop_type=crop_name, seed=seed)
-    agent = BaselineSoilixaAgent()
+    env = GreenLogicEnv(crop_type=crop_name, seed=seed)
+    agent = BaselineGreenLogicAgent()
     agent.epsilon = 0.0
 
     result = env.reset()

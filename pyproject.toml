@@ -4,8 +4,15 @@ version = "0.1.0"
 description = "Intelligent crop learning through guided simulation"
 requires-python = ">=3.9"
 dependencies = [
+    "openenv-core>=0.2.0",
+    "streamlit",
+    "flask",
+    "gunicorn",
     "numpy"
 ]
+
+[project.scripts]
+server = "server.app:main"
 
 [build-system]
 requires = ["setuptools>=61.0"]
@@ -13,6 +20,9 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 py-modules = [
+    "greenlogic_openenv",
+    "greenlogic_models",
+    "greenlogic_agent",
     "soilixa_openenv",
     "soilixa_models",
     "soilixa_agent",
@@ -20,3 +30,6 @@ py-modules = [
     "inference",
     "openenv_api"
 ]
+
+[tool.setuptools.packages.find]
+include = ["server"]

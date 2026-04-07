@@ -1,4 +1,4 @@
-name: SoilixaEnv
+name: GreenLogicEnv
 description: AI-driven agricultural environment
 
 observation_space:
