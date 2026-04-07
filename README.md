@@ -1,3 +1,13 @@
+---
+title: GreenLogic
+emoji: 🌱
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # GreenLogic - AI-Powered Agricultural Environment
 
 GreenLogic is a reinforcement learning environment that simulates real-world agricultural decision-making. It allows AI agents to learn optimal crop management strategies using `step()`, `reset()`, and `state()` interactions in an OpenEnv-style loop.
