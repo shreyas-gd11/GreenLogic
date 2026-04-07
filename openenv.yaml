@@ -1,12 +1,26 @@
 name: SoilixaEnv
 description: AI-driven agricultural environment
 
+observation_space:
+  day: integer
+  soilMoisture: float
+  temperature: float
+  cropHealth: float
+  cropType: string
+
 state:
   day: integer
   soilMoisture: float
   temperature: float
   cropHealth: float
   cropType: string
+
+action_space:
+  type: discrete
+  values:
+    - water
+    - fertilize
+    - do_nothing
 
 actions:
   - water

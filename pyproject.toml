@@ -1,0 +1,22 @@
+[project]
+name = "greenlogic"
+version = "0.1.0"
+description = "Intelligent crop learning through guided simulation"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = [
+    "soilixa_openenv",
+    "soilixa_models",
+    "soilixa_agent",
+    "run_inference",
+    "inference",
+    "openenv_api"
+]
