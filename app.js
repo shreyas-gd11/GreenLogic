@@ -3,8 +3,8 @@ const STAGE_TITLES = {
   start: "Start",
   crop: "Crop Selection",
   guide: "Crop Guide",
-  simulation: "Challenge Arena",
-  result: "Challenge Result"
+  simulation: "Simulation",
+  result: "Result"
 };
 
 const AI_ACTIONS = ["water", "fertilize", "do_nothing"];
@@ -19,7 +19,9 @@ const state = {
   stage: "start",
   crops: [],
   agentBrief: null,
+  humanData: null,
   selectedCropId: null,
+  playMode: null,
   comparisonId: null,
   simulation: null,
   aiSimulation: null,
@@ -52,7 +54,7 @@ function getActionLabel(action) {
 }
 
 function updateStageUI() {
-  stageLabel.textContent = STAGE_TITLES[state.stage];
+  stageLabel.textContent = state.stage === "simulation" || state.stage === "result" ? getModeLabel() : STAGE_TITLES[state.stage];
   progressSteps.forEach((step, index) => {
     const currentIndex = STAGES.indexOf(state.stage);
     step.classList.toggle("active", currentIndex === index);
@@ -88,6 +90,15 @@ async function loadAiModel() {
 
   state.aiModel = await response.json();
   return state.aiModel;
+}
+
+async function refreshHumanData() {
+  try {
+    const { humanData } = await apiRequest("/api/human-data");
+    state.humanData = humanData;
+  } catch (error) {
+    // Keep the existing stats if the refresh fails.
+  }
 }
 
 function clearDemoTimer() {
@@ -223,6 +234,22 @@ function resetChallengeState() {
   state.lastComparison = null;
 }
 
+function getModeLabel() {
+  if (state.playMode === "compare") {
+    return "Human vs AI";
+  }
+
+  if (state.playMode === "ai") {
+    return "Watch AI";
+  }
+
+  if (state.playMode === "manual") {
+    return "Play Manually";
+  }
+
+  return STAGE_TITLES[state.stage];
+}
+
 function getComparisonSummary() {
   const manualWins = state.comparisonHistory.filter((entry) => entry.swing > 0).length;
   const aiWins = state.comparisonHistory.filter((entry) => entry.swing < 0).length;
@@ -288,12 +315,14 @@ async function loadCrops() {
   render();
 
   try {
-    const [{ crops }, { agentBrief }] = await Promise.all([
+    const [{ crops }, { agentBrief }, { humanData }] = await Promise.all([
       apiRequest("/api/crops"),
-      apiRequest("/api/agent-brief")
+      apiRequest("/api/agent-brief"),
+      apiRequest("/api/human-data")
     ]);
     state.crops = crops;
     state.agentBrief = agentBrief;
+    state.humanData = humanData;
     state.selectedCropId = state.selectedCropId || (crops[0] && crops[0].id) || null;
   } catch (error) {
     state.error = error.message;
@@ -353,6 +382,35 @@ async function startSimulation() {
 
   resetDemoMode();
   resetChallengeState();
+  state.playMode = "manual";
+  state.loading = true;
+  state.error = "";
+  render();
+
+  try {
+    const { simulation } = await apiRequest("/api/simulations", {
+      method: "POST",
+      body: JSON.stringify({ cropId: state.selectedCropId })
+    });
+
+    state.simulation = simulation;
+    state.stage = simulation.status === "complete" ? "result" : "simulation";
+  } catch (error) {
+    state.error = error.message;
+  } finally {
+    state.loading = false;
+    render();
+  }
+}
+
+async function startComparison() {
+  if (!state.selectedCropId) {
+    return;
+  }
+
+  resetDemoMode();
+  resetChallengeState();
+  state.playMode = "compare";
   state.loading = true;
   state.error = "";
   render();
@@ -386,6 +444,7 @@ async function startAIFarm(cropId = state.selectedCropId) {
 
   resetDemoMode();
   resetChallengeState();
+  state.playMode = "ai";
   state.loading = true;
   state.error = "";
   render();
@@ -439,7 +498,7 @@ async function submitAction(action, options = {}) {
     if (isDemoStep || !state.comparisonId) {
       const { simulation } = await apiRequest(`/api/simulations/${manualSimulation.id}/actions`, {
         method: "POST",
-        body: JSON.stringify({ action })
+        body: JSON.stringify({ action, source: isDemoStep ? "ai" : "human" })
       });
 
       state.simulation = simulation;
@@ -465,6 +524,10 @@ async function submitAction(action, options = {}) {
       state.lastComparison = comparison.lastComparison;
       state.comparisonHistory = comparison.comparisonHistory;
       state.stage = comparison.simulation.status === "complete" ? "result" : "simulation";
+    }
+
+    if (!isDemoStep && state.playMode !== "ai") {
+      await refreshHumanData();
     }
   } catch (error) {
     state.error = error.message;
@@ -495,57 +558,67 @@ function renderFrame(content) {
 
 function renderStart() {
   const demoCrop = getSelectedCrop();
+  const humanDataText = state.humanData
+    ? `${state.humanData.entries} human decisions collected`
+    : "Human decision log loading";
 
   renderFrame(`
     <div class="hero-grid">
       <article class="panel-card hero-card">
         <div class="hero-copy">
           <p class="eyebrow">Step 1</p>
-          <h2>Challenge the AI agronomist in a live crop season.</h2>
+          <h2>Pick how you want to use the crop simulator.</h2>
           <p>
-            GreenLogic now runs as a head-to-head decision arena. You make the manual move, the AI plays its own lane,
-            and every submission shows who handled the farm state better.
+            You can watch the trained policy run, play the farm manually, or switch on Human vs AI mode when you want a fair score comparison.
           </p>
         </div>
-        <div class="tip-card" style="margin-top: 1rem;">
-          <h3>Why this demo works in a pitch</h3>
-          <p class="muted">
-            Judges can see the recommendation, your override, the AI counter-move, and the point swing immediately after each manual submit.
-          </p>
+        <div class="mode-grid" style="margin-top: 1rem;">
+          <div class="mode-card">
+            <h3>Watch AI</h3>
+            <p class="muted">Let the trained policy run the 30-day farm by itself.</p>
+          </div>
+          <div class="mode-card">
+            <h3>Play Manually</h3>
+            <p class="muted">Control the farm yourself and log human decisions for later training data.</p>
+          </div>
+          <div class="mode-card">
+            <h3>Human vs AI</h3>
+            <p class="muted">Run both lanes together and compare final scores on the same environment.</p>
+          </div>
         </div>
         <div class="cta-row">
-          <button class="primary" data-action="go-crops" ${state.loading ? "disabled" : ""}>Start Challenge</button>
+          <button class="primary" data-action="go-crops" ${state.loading ? "disabled" : ""}>Choose Crop</button>
           <button class="secondary" data-action="preview-guide" ${state.loading || !state.crops.length ? "disabled" : ""}>Preview Crop Guide</button>
         </div>
       </article>
 
       <aside class="panel-card">
-        <h3>What the system proves</h3>
+        <h3>Training pipeline</h3>
         <div class="mini-grid">
           <div class="metric">
-            <span class="muted">Challenge</span>
-            <span class="metric-value">Manual vs AI</span>
+            <span class="muted">Human data</span>
+            <span class="metric-value">${humanDataText}</span>
           </div>
           <div class="metric">
-            <span class="muted">Simulation</span>
-            <span class="metric-value">30 days</span>
+            <span class="muted">Storage</span>
+            <span class="metric-value">JSONL log</span>
           </div>
           <div class="metric">
-            <span class="muted">Result</span>
-            <span class="metric-value">Round verdicts</span>
+            <span class="muted">Training</span>
+            <span class="metric-value">Q-table</span>
           </div>
         </div>
         <p class="support-copy">
-          The platform turns crop guidance into a visible AI copilot challenge instead of a passive simulation.
+          Manual and Human vs AI play now collect human action data that can be used to improve future training runs.
         </p>
         ${
-          state.agentBrief
+          state.humanData
             ? `
             <div class="tip-card" style="margin-top: 1rem;">
-              <h3>AI challenge lane</h3>
-              <p class="muted">${state.agentBrief.objective}</p>
-              <p><strong>Episode:</strong> ${state.agentBrief.episode.totalDays} days</p>
-              <p><strong>Demo crop:</strong> ${demoCrop ? `${demoCrop.name} ${demoCrop.emoji}` : "Loading..."}</p>
+              <h3>Human data collection</h3>
+              <p class="muted">Collected manual actions are appended to the local training dataset.</p>
+              <p><strong>Dataset:</strong> ${state.humanData.path}</p>
+              <p><strong>Latest crop:</strong> ${demoCrop ? `${demoCrop.name} ${demoCrop.emoji}` : "Loading..."}</p>
             </div>
           `
             : ""
@@ -583,14 +656,14 @@ function renderCropSelection() {
   renderFrame(`
     <div class="panel-card">
       <p class="eyebrow">Step 2</p>
-      <h2>Select the crop for the challenge arena.</h2>
-      <p class="muted">Both the manual lane and the AI lane will be judged against the same crop rules, moisture range, and fertilizer timing.</p>
+      <h2>Select the crop for your mode.</h2>
+      <p class="muted">After crop selection you can choose Watch AI, Play Manually, or Human vs AI for the same field setup.</p>
 
       <div class="crop-grid">${cards}</div>
 
       <div class="button-row" style="margin-top: 1.2rem;">
         <button class="secondary" data-action="go-start" ${state.loading ? "disabled" : ""}>Back</button>
-        <button class="primary" data-action="go-guide" ${state.loading || !state.selectedCropId ? "disabled" : ""}>Continue to Challenge Guide</button>
+        <button class="primary" data-action="go-guide" ${state.loading || !state.selectedCropId ? "disabled" : ""}>Continue to Mode Selection</button>
       </div>
     </div>
   `);
@@ -619,7 +692,7 @@ function renderGuide() {
       <article class="panel-card">
         <p class="eyebrow">Step 3</p>
         <h2>How to grow ${crop.name} ${crop.emoji}</h2>
-        <p class="muted">Read the crop guidance first. The challenge score and AI recommendation are both based on these practical rules.</p>
+        <p class="muted">Read the crop guidance first. All three modes use the same crop rules and backend environment.</p>
         <div class="guide-list">${points}</div>
       </article>
 
@@ -645,18 +718,32 @@ function renderGuide() {
         </div>
 
         <div class="tip-card" style="margin-top: 1rem;">
-          <h3>How manual submit shows results</h3>
+          <h3>Mode options</h3>
           <p class="muted">
-            When you submit an action, GreenLogic scores your move, advances the AI lane with its own choice,
-            and immediately shows the round winner, point swing, and explanation.
+            Watch AI runs the trained policy, Play Manually collects human decisions for training data,
+            and Human vs AI compares both lanes on the same environment.
           </p>
         </div>
+
+        ${
+          state.humanData
+            ? `
+            <div class="tip-card" style="margin-top: 1rem;">
+              <h3>Human data collector</h3>
+              <p class="muted">Manual decisions are stored at <strong>${state.humanData.path}</strong> and can be reused for future training.</p>
+              <p><strong>Collected entries:</strong> ${state.humanData.entries}</p>
+            </div>
+          `
+            : ""
+        }
 
         ${renderAgentBrief()}
 
         <div class="button-row" style="margin-top: 1rem;">
           <button class="secondary" data-action="go-crops" ${state.loading ? "disabled" : ""}>Choose Another Crop</button>
-          <button class="primary" data-action="start-simulation" ${state.loading ? "disabled" : ""}>Start Challenge</button>
+          <button class="ghost" data-action="watch-ai" ${state.loading ? "disabled" : ""}>Watch AI</button>
+          <button class="secondary" data-action="start-simulation" ${state.loading ? "disabled" : ""}>Play Manually</button>
+          <button class="primary" data-action="start-comparison" ${state.loading ? "disabled" : ""}>Human vs AI</button>
         </div>
       </aside>
     </div>
@@ -731,6 +818,122 @@ function renderSimulation() {
     return;
   }
 
+  if (!state.comparisonId) {
+    const logs = simulation.history.length
+      ? simulation.history
+          .slice(0, 6)
+          .map(
+            (entry) => `
+              <div class="log-item">
+                <strong>Day ${entry.day} · ${entry.actionLabel || entry.action}</strong>
+                <div class="score-chip">Score ${entry.scoreDelta >= 0 ? `+${entry.scoreDelta}` : entry.scoreDelta}</div>
+                <p class="muted">Moisture after action: ${entry.moistureAfterAction}% · Crop health: ${entry.healthAfter}%</p>
+                <p>${entry.notes[0]}</p>
+              </div>
+            `
+          )
+          .join("")
+      : `<div class="log-item"><strong>No actions yet</strong><p class="muted">Start with day 1 and respond to the live field conditions.</p></div>`;
+
+    renderFrame(`
+      <div class="simulation-layout">
+        <article class="panel-card">
+          <p class="eyebrow">Step 4</p>
+          <h2>${simulation.crop.name} ${state.demoMode ? "AI Farm" : "Manual Simulation"} · Day ${simulation.day} / ${simulation.totalDays}</h2>
+          <div class="progress-bar" aria-hidden="true">
+            <div class="progress-fill" style="width: ${simulation.progressPercent}%;"></div>
+          </div>
+
+          <div class="condition-grid" style="margin-top: 1rem;">
+            <div class="condition-card">
+              <span class="muted">Soil moisture</span>
+              <span class="metric-value">${simulation.moisture}%</span>
+            </div>
+            <div class="condition-card">
+              <span class="muted">Temperature</span>
+              <span class="metric-value">${simulation.temperature}°C</span>
+            </div>
+            <div class="condition-card">
+              <span class="muted">Crop health</span>
+              <span class="metric-value">${simulation.cropHealth}%</span>
+            </div>
+            <div class="condition-card">
+              <span class="muted">Score</span>
+              <span class="metric-value">${simulation.score}</span>
+            </div>
+          </div>
+
+          <div class="tip-card" style="margin-top: 1rem;">
+            <h3>Daily crop guidance</h3>
+            <p>${simulation.growthHint}</p>
+          </div>
+
+          ${
+            simulation.lastActionSummary
+              ? `
+              <div class="status-card" style="margin-top: 1rem;">
+                <h3>Previous action feedback</h3>
+                <p>${simulation.lastActionSummary.notes.join(" ")}</p>
+              </div>
+            `
+              : ""
+          }
+
+          ${
+            state.demoMode
+              ? renderDemoStatus()
+              : `
+              <div class="tip-card" style="margin-top: 1rem;">
+                <h3>Submit your move</h3>
+                <p class="muted">Manual actions from this mode are logged for future AI training.</p>
+                <div class="button-row" style="margin-top: 1rem;">
+                  <button class="primary" data-action="water" ${state.loading ? "disabled" : ""}>Water</button>
+                  <button class="ghost" data-action="fertilize" ${state.loading ? "disabled" : ""}>Add fertilizer</button>
+                  <button class="secondary" data-action="do_nothing" ${state.loading ? "disabled" : ""}>Do nothing</button>
+                </div>
+              </div>
+            `
+          }
+        </article>
+
+        <aside class="panel-card">
+          <h3>${state.demoMode ? "AI policy" : "AI field recommendation"}</h3>
+          <div class="recommendation-card">
+            <div class="recommendation-topline">
+              <strong>${simulation.recommendation.label}</strong>
+              <div class="score-chip">${state.demoMode ? "Watch AI" : "Manual assist"}</div>
+            </div>
+            <p>${simulation.recommendation.reason}</p>
+            <div class="decision-badge">
+              <span>Crop ${simulation.crop.name}</span>
+              <span>Target moisture ${simulation.crop.moistureRange[0]}-${simulation.crop.moistureRange[1]}%</span>
+              <span>Target temp ${simulation.crop.temperatureRange[0]}-${simulation.crop.temperatureRange[1]}°C</span>
+            </div>
+          </div>
+
+          ${
+            state.humanData && !state.demoMode
+              ? `
+              <div class="tip-card" style="margin-top: 1rem;">
+                <h3>Human data collector</h3>
+                <p class="muted">Your manual actions are appended to:</p>
+                <p><strong>${state.humanData.path}</strong></p>
+                <p><strong>Collected entries:</strong> ${state.humanData.entries}</p>
+              </div>
+            `
+              : ""
+          }
+
+          <div class="tip-card" style="margin-top: 1rem;">
+            <h3>Recent farm log</h3>
+            <div class="log-list">${logs}</div>
+          </div>
+        </aside>
+      </div>
+    `);
+    return;
+  }
+
   const summary = getComparisonSummary();
   const lastComparison = state.lastComparison;
   const aiDecision = aiSimulation ? chooseAiAction(aiSimulation) : null;
@@ -739,7 +942,7 @@ function renderSimulation() {
     <div class="simulation-layout challenge-layout">
       <article class="panel-card">
         <p class="eyebrow">Step 4</p>
-        <h2>${simulation.crop.name} Challenge Arena · Day ${simulation.day} / ${simulation.totalDays}</h2>
+        <h2>${simulation.crop.name} Human vs AI · Day ${simulation.day} / ${simulation.totalDays}</h2>
         <div class="progress-bar" aria-hidden="true">
           <div class="progress-fill" style="width: ${simulation.progressPercent}%;"></div>
         </div>
@@ -851,7 +1054,7 @@ function renderSimulation() {
         </div>
 
         <div class="tip-card" style="margin-top: 1rem;">
-          <h3>Challenge score</h3>
+          <h3>Human vs AI score</h3>
           <div class="agent-pill-row">
             <div class="agent-pill">
               <strong>${summary.manualWins}</strong>
@@ -879,7 +1082,7 @@ function renderSimulation() {
         </div>
 
         <div class="tip-card" style="margin-top: 1rem;">
-          <h3>Recent challenge timeline</h3>
+          <h3>Recent comparison timeline</h3>
           <div class="log-list">${renderChallengeTimeline()}</div>
         </div>
       </aside>
@@ -898,7 +1101,7 @@ function renderResult() {
   if (!aiSimulation) {
     const bestActionCount = simulation.history.filter((entry) => entry.scoreDelta >= 8).length;
     const stressDays = simulation.history.filter((entry) => entry.scoreDelta < 0).length;
-    const rerunLabel = state.demoMode ? `Watch ${simulation.crop.name} Again` : `Simulate ${simulation.crop.name} Again`;
+    const rerunLabel = state.playMode === "ai" ? `Watch ${simulation.crop.name} Again` : `Simulate ${simulation.crop.name} Again`;
 
     renderFrame(`
       <div class="result-layout">
@@ -937,6 +1140,11 @@ function renderResult() {
         <aside class="panel-card">
           <h3>${simulation.crop.emoji} ${simulation.crop.name} season review</h3>
           <p class="muted">${simulation.outcome.summary}</p>
+          ${
+            state.humanData && state.playMode === "manual"
+              ? `<p class="muted"><strong>Human data log:</strong> ${state.humanData.path}</p>`
+              : ""
+          }
           <div class="button-row" style="margin-top: 1rem;">
             <button class="secondary" data-action="restart-same" ${state.loading ? "disabled" : ""}>${rerunLabel}</button>
             <button class="primary" data-action="restart-all" ${state.loading ? "disabled" : ""}>Choose Another Crop</button>
@@ -969,7 +1177,7 @@ function renderResult() {
       <article class="panel-card">
         <p class="eyebrow">Step 5</p>
         <div class="result-banner">
-          <p class="eyebrow">30-day challenge outcome</p>
+          <p class="eyebrow">30-day human vs AI outcome</p>
           <h2 class="result-title">${duelTitle}</h2>
           <p>${duelBody}</p>
         </div>
@@ -1025,7 +1233,7 @@ function renderResult() {
       </article>
 
       <aside class="panel-card">
-        <h3>${simulation.crop.emoji} ${simulation.crop.name} challenge review</h3>
+        <h3>${simulation.crop.emoji} ${simulation.crop.name} comparison review</h3>
         <p class="muted">
           The final screen is built from the actions you manually submitted plus the AI lane that advanced in parallel across the same 30-day crop.
         </p>
@@ -1048,7 +1256,7 @@ function renderResult() {
         </div>
 
         <div class="button-row" style="margin-top: 1rem;">
-          <button class="secondary" data-action="restart-same" ${state.loading ? "disabled" : ""}>Run ${simulation.crop.name} Challenge Again</button>
+          <button class="secondary" data-action="restart-same" ${state.loading ? "disabled" : ""}>Run ${simulation.crop.name} Human vs AI Again</button>
           <button class="primary" data-action="restart-all" ${state.loading ? "disabled" : ""}>Choose Another Crop</button>
         </div>
       </aside>
@@ -1101,6 +1309,7 @@ document.addEventListener("click", (event) => {
   if (action === "go-crops") {
     resetDemoMode();
     resetChallengeState();
+    state.playMode = null;
     state.stage = "crop";
     state.error = "";
     render();
@@ -1119,6 +1328,7 @@ document.addEventListener("click", (event) => {
   if (action === "go-start") {
     resetDemoMode();
     resetChallengeState();
+    state.playMode = null;
     state.stage = "start";
     state.error = "";
     render();
@@ -1133,6 +1343,11 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  if (action === "start-comparison") {
+    startComparison();
+    return;
+  }
+
   if (action === "watch-ai") {
     startAIFarm(state.selectedCropId || (state.crops[0] && state.crops[0].id));
     return;
@@ -1140,6 +1355,7 @@ document.addEventListener("click", (event) => {
 
   if (action === "take-over") {
     resetDemoMode();
+    state.playMode = "manual";
     render();
     return;
   }
@@ -1155,8 +1371,13 @@ document.addEventListener("click", (event) => {
   }
 
   if (action === "restart-same") {
-    if (state.demoMode && state.simulation) {
+    if (state.playMode === "ai" && state.simulation) {
       startAIFarm(state.simulation.crop.id);
+      return;
+    }
+
+    if (state.playMode === "compare" && state.simulation) {
+      startComparison();
       return;
     }
 
@@ -1168,6 +1389,7 @@ document.addEventListener("click", (event) => {
     resetDemoMode();
     state.simulation = null;
     resetChallengeState();
+    state.playMode = null;
     state.stage = "crop";
     state.error = "";
     render();

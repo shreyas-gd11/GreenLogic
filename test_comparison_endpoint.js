@@ -41,6 +41,16 @@ async function postJson(path, payload) {
   return data;
 }
 
+async function getJson(path) {
+  const response = await fetch(`${BASE_URL}${path}`);
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.error || `Request failed for ${path}`);
+  }
+
+  return data;
+}
+
 async function assertComparisonFlow() {
   const { comparison: created } = await postJson("/api/comparisons", { cropId: "rice" });
 
@@ -78,6 +88,11 @@ async function assertComparisonFlow() {
 
   if (!comparison.simulation.outcome || !comparison.aiSimulation.outcome) {
     throw new Error("Expected both final outcomes in the completed comparison.");
+  }
+
+  const { humanData } = await getJson("/api/human-data");
+  if (typeof humanData.entries !== "number" || humanData.entries <= 0) {
+    throw new Error("Expected human-data collection to record at least one entry.");
   }
 }
 

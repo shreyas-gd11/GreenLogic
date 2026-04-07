@@ -239,6 +239,23 @@ button:disabled {
   gap: 0.9rem;
 }
 
+.mode-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.mode-card {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(23, 47, 36, 0.08);
+}
+
+.mode-card h3 {
+  margin: 0 0 0.4rem;
+}
+
 .mini-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -616,6 +633,7 @@ button:disabled {
   .condition-grid,
   .metrics-grid,
   .mini-grid,
+  .mode-grid,
   .agent-pill-row,
   .agent-columns,
   .progress-strip,

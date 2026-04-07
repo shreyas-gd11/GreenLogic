@@ -12,6 +12,9 @@ const {
   createSimulation,
   serializeSimulation,
   applyAction,
+  cloneSimulationState,
+  recordHumanDecision,
+  getHumanDataStats,
   createComparison,
   serializeComparison,
   applyComparisonAction
@@ -121,6 +124,11 @@ async function handleApi(req, res, url) {
     return;
   }
 
+  if (req.method === "GET" && pathname === "/api/human-data") {
+    sendJson(res, 200, { humanData: getHumanDataStats() });
+    return;
+  }
+
   if (req.method === "GET" && pathname.startsWith("/api/crops/")) {
     const cropId = pathname.split("/").pop();
     const crop = getCrop(cropId);
@@ -222,7 +230,17 @@ async function handleApi(req, res, url) {
 
     const body = await readBody(req);
     try {
+      const before = cloneSimulationState(simulation);
       applyAction(simulation, body.action);
+      if (body.source !== "ai") {
+        recordHumanDecision({
+          mode: "manual",
+          action: body.action,
+          before,
+          after: simulation,
+          recommendation: serializeSimulation(before).recommendation
+        });
+      }
       sendJson(res, 200, { simulation: serializeSimulation(simulation) });
     } catch (error) {
       sendJson(res, 400, { error: error.message });
