@@ -25,6 +25,9 @@ const HOST = process.env.HOST || "localhost";
 const ROOT = __dirname;
 const simulations = new Map();
 const comparisons = new Map();
+const openEnvSessions = new Map();
+const DEFAULT_OPENENV_SESSION = "default";
+const OPENENV_PATHS = new Set(["/reset", "/step", "/state"]);
 
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -106,11 +109,119 @@ function serveStatic(res, pathname) {
   });
 }
 
+function normalizeOpenEnvResetBody(body = {}) {
+  return {
+    cropType: body.cropType || body.crop || "tomato",
+    seed: typeof body.seed === "number" ? body.seed : undefined,
+  };
+}
+
+function normalizeOpenEnvAction(body = {}) {
+  return body.action || body.move || body.input || null;
+}
+
+function normalizeOpenEnvReward(scoreDelta) {
+  return Math.max(0, Math.min(1, (scoreDelta + 10) / 20));
+}
+
+function serializeOpenEnvState(simulation) {
+  const serialized = serializeSimulation(simulation);
+  return {
+    episodeId: serialized.id,
+    stepCount: serialized.history.length,
+    day: serialized.day,
+    soilMoisture: serialized.moisture,
+    temperature: serialized.temperature,
+    cropHealth: serialized.cropHealth,
+    cropType: serialized.crop.id,
+    totalScore: serialized.score,
+    done: serialized.status === "complete",
+    lastAction: serialized.lastActionSummary ? serialized.lastActionSummary.action : null,
+  };
+}
+
+function serializeOpenEnvObservation(simulation) {
+  const state = serializeOpenEnvState(simulation);
+  return {
+    day: state.day,
+    soilMoisture: state.soilMoisture,
+    temperature: state.temperature,
+    cropHealth: state.cropHealth,
+    cropType: state.cropType,
+  };
+}
+
 async function handleApi(req, res, url) {
   const pathname = url.pathname;
 
   if (req.method === "GET" && pathname === "/api/health") {
     sendJson(res, 200, { ok: true });
+    return;
+  }
+
+  if (req.method === "POST" && pathname === "/reset") {
+    const body = await readBody(req);
+    const sessionId = body.sessionId || DEFAULT_OPENENV_SESSION;
+    const payload = normalizeOpenEnvResetBody(body);
+    const simulation = createSimulation(payload.cropType);
+    openEnvSessions.set(sessionId, simulation);
+    sendJson(res, 200, {
+      sessionId,
+      observation: serializeOpenEnvObservation(simulation),
+      reward: 0,
+      done: false,
+      info: {
+        event: "reset",
+        episodeLength: 30,
+      },
+      state: serializeOpenEnvState(simulation),
+    });
+    return;
+  }
+
+  if (req.method === "POST" && pathname === "/step") {
+    const body = await readBody(req);
+    const sessionId = body.sessionId || DEFAULT_OPENENV_SESSION;
+    const simulation = openEnvSessions.get(sessionId);
+    if (!simulation) {
+      sendJson(res, 400, { error: "OpenEnv session not initialized. Call POST /reset first." });
+      return;
+    }
+
+    const action = normalizeOpenEnvAction(body);
+    if (!action) {
+      sendJson(res, 400, { error: "Valid action is required" });
+      return;
+    }
+
+    applyAction(simulation, action);
+    sendJson(res, 200, {
+      sessionId,
+      observation: serializeOpenEnvObservation(simulation),
+      reward: normalizeOpenEnvReward(simulation.lastActionSummary.scoreDelta),
+      done: simulation.status === "complete",
+      info: {
+        action: simulation.lastActionSummary.action,
+        finalScore: simulation.score,
+        normalizedScore: Math.max(0, Math.min(1, simulation.score / 400)),
+      },
+      state: serializeOpenEnvState(simulation),
+    });
+    return;
+  }
+
+  if (req.method === "GET" && pathname === "/state") {
+    const sessionId = url.searchParams.get("sessionId") || DEFAULT_OPENENV_SESSION;
+    const simulation = openEnvSessions.get(sessionId);
+    if (!simulation) {
+      sendJson(res, 400, { error: "OpenEnv session not initialized. Call POST /reset first." });
+      return;
+    }
+
+    sendJson(res, 200, {
+      sessionId,
+      state: serializeOpenEnvState(simulation),
+    });
     return;
   }
 
@@ -272,7 +383,7 @@ async function handleApi(req, res, url) {
 const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, `http://${req.headers.host || "localhost"}`);
-    if (url.pathname.startsWith("/api/")) {
+    if (url.pathname.startsWith("/api/") || OPENENV_PATHS.has(url.pathname)) {
       await handleApi(req, res, url);
       return;
     }
