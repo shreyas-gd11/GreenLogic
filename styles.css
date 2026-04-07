@@ -442,6 +442,151 @@ button:disabled {
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
+.challenge-layout,
+.challenge-result-layout {
+  grid-template-columns: 1.1fr 0.9fr;
+}
+
+.challenge-scoreboard,
+.versus-summary-grid,
+.round-result-grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.challenge-scoreboard {
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.versus-card,
+.summary-column,
+.recommendation-card,
+.round-result-card {
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(23, 47, 36, 0.08);
+}
+
+.versus-card {
+  display: grid;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.versus-card.manual,
+.summary-column.manual,
+.round-lane {
+  background: linear-gradient(180deg, rgba(255, 248, 238, 0.95), rgba(255, 255, 255, 0.86));
+}
+
+.versus-card.ai,
+.summary-column.ai,
+.round-lane.ai {
+  background: linear-gradient(180deg, rgba(229, 243, 232, 0.95), rgba(255, 255, 255, 0.86));
+}
+
+.versus-card strong {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.versus-label {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+}
+
+.versus-vs {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 999px;
+  background: rgba(23, 47, 36, 0.08);
+  font-weight: 800;
+  color: var(--accent-strong);
+}
+
+.recommendation-card {
+  background: linear-gradient(155deg, rgba(255, 251, 240, 0.96), rgba(229, 243, 232, 0.92));
+}
+
+.recommendation-topline,
+.round-result-head,
+.duel-line,
+.flow-step {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.round-result-card {
+  background: rgba(255, 255, 255, 0.76);
+}
+
+.round-result-head {
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.round-result-grid,
+.versus-summary-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.round-lane {
+  border-radius: var(--radius-md);
+  padding: 0.95rem;
+  border: 1px solid rgba(23, 47, 36, 0.08);
+}
+
+.round-lane strong {
+  display: block;
+  margin: 0.25rem 0;
+}
+
+.duel-line {
+  font-weight: 700;
+}
+
+.duel-line.ai {
+  color: var(--accent-strong);
+}
+
+.flow-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.flow-step span {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(31, 107, 69, 0.12);
+  color: var(--accent-strong);
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+.flow-step p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.summary-column h3 {
+  margin: 0.1rem 0 0.4rem;
+}
+
+.compact-metrics {
+  margin-top: 0.9rem;
+}
+
 .footnote {
   margin-top: 1rem;
   font-size: 0.92rem;
@@ -465,13 +610,18 @@ button:disabled {
   .guide-layout,
   .simulation-layout,
   .result-layout,
+  .challenge-layout,
+  .challenge-result-layout,
   .crop-grid,
   .condition-grid,
   .metrics-grid,
   .mini-grid,
   .agent-pill-row,
   .agent-columns,
-  .progress-strip {
+  .progress-strip,
+  .challenge-scoreboard,
+  .versus-summary-grid,
+  .round-result-grid {
     grid-template-columns: 1fr;
   }
 

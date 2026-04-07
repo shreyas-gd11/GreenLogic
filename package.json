@@ -9,6 +9,7 @@
     "train:ai": "python train.py",
     "infer:ai": "node baselineInference.js",
     "infer:py": "python -B run_inference.py",
-    "test:demo": "node test_demo_endpoint.js"
+    "test:demo": "node test_demo_endpoint.js",
+    "test:compare": "node test_comparison_endpoint.js"
   }
 }

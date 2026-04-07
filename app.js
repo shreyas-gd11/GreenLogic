@@ -3,8 +3,8 @@ const STAGE_TITLES = {
   start: "Start",
   crop: "Crop Selection",
   guide: "Crop Guide",
-  simulation: "Simulation",
-  result: "Final Result"
+  simulation: "Challenge Arena",
+  result: "Challenge Result"
 };
 
 const AI_ACTIONS = ["water", "fertilize", "do_nothing"];
@@ -20,7 +20,11 @@ const state = {
   crops: [],
   agentBrief: null,
   selectedCropId: null,
+  comparisonId: null,
   simulation: null,
+  aiSimulation: null,
+  comparisonHistory: [],
+  lastComparison: null,
   loading: false,
   error: "",
   aiModel: null,
@@ -203,6 +207,55 @@ function chooseAiAction(simulation) {
   };
 }
 
+function getCurrentSimulation() {
+  return state.simulation;
+}
+
+function getAiSimulation() {
+  return state.aiSimulation;
+}
+
+function resetChallengeState() {
+  state.comparisonId = null;
+  state.simulation = null;
+  state.aiSimulation = null;
+  state.comparisonHistory = [];
+  state.lastComparison = null;
+}
+
+function getComparisonSummary() {
+  const manualWins = state.comparisonHistory.filter((entry) => entry.swing > 0).length;
+  const aiWins = state.comparisonHistory.filter((entry) => entry.swing < 0).length;
+  const ties = state.comparisonHistory.length - manualWins - aiWins;
+
+  return {
+    manualWins,
+    aiWins,
+    ties
+  };
+}
+
+function getSeasonStats(simulation) {
+  return {
+    strongDays: simulation.history.filter((entry) => entry.scoreDelta >= 8).length,
+    stressDays: simulation.history.filter((entry) => entry.scoreDelta < 0).length,
+    wateringDays: simulation.history.filter((entry) => entry.action === "water").length,
+    fertilizerDays: simulation.history.filter((entry) => entry.action === "fertilize").length
+  };
+}
+
+function getRoundVerdict(entry) {
+  if (entry.swing > 0) {
+    return "Manual move won the round";
+  }
+
+  if (entry.swing < 0) {
+    return "AI move won the round";
+  }
+
+  return "Round tied";
+}
+
 function scheduleDemoStep() {
   clearDemoTimer();
 
@@ -299,18 +352,25 @@ async function startSimulation() {
   }
 
   resetDemoMode();
+  resetChallengeState();
   state.loading = true;
   state.error = "";
   render();
 
   try {
-    const { simulation } = await apiRequest("/api/simulations", {
+    const { comparison } = await apiRequest("/api/comparisons", {
       method: "POST",
       body: JSON.stringify({ cropId: state.selectedCropId })
     });
 
-    state.simulation = simulation;
-    state.stage = simulation.status === "complete" ? "result" : "simulation";
+    loadAiModel().catch(() => null);
+
+    state.comparisonId = comparison.id;
+    state.simulation = comparison.simulation;
+    state.aiSimulation = comparison.aiSimulation;
+    state.lastComparison = comparison.lastComparison;
+    state.comparisonHistory = comparison.comparisonHistory;
+    state.stage = comparison.simulation.status === "complete" ? "result" : "simulation";
   } catch (error) {
     state.error = error.message;
   } finally {
@@ -325,6 +385,7 @@ async function startAIFarm(cropId = state.selectedCropId) {
   }
 
   resetDemoMode();
+  resetChallengeState();
   state.loading = true;
   state.error = "";
   render();
@@ -361,6 +422,8 @@ async function submitAction(action, options = {}) {
   }
 
   const isDemoStep = options.trigger === "ai";
+  const manualSimulation = state.simulation;
+  const aiSimulation = state.aiSimulation;
 
   if (!isDemoStep) {
     resetDemoMode();
@@ -373,21 +436,35 @@ async function submitAction(action, options = {}) {
   let continueDemo = false;
 
   try {
-    const { simulation } = await apiRequest(`/api/simulations/${state.simulation.id}/actions`, {
-      method: "POST",
-      body: JSON.stringify({ action })
-    });
+    if (isDemoStep || !state.comparisonId) {
+      const { simulation } = await apiRequest(`/api/simulations/${manualSimulation.id}/actions`, {
+        method: "POST",
+        body: JSON.stringify({ action })
+      });
 
-    state.simulation = simulation;
-    state.selectedCropId = simulation.crop.id;
-    state.stage = simulation.status === "complete" ? "result" : "simulation";
+      state.simulation = simulation;
+      state.selectedCropId = simulation.crop.id;
+      state.stage = simulation.status === "complete" ? "result" : "simulation";
 
-    if (isDemoStep) {
-      if (simulation.status === "complete") {
-        stopDemoPlayback();
-      } else {
-        continueDemo = true;
+      if (isDemoStep) {
+        if (simulation.status === "complete") {
+          stopDemoPlayback();
+        } else {
+          continueDemo = true;
+        }
       }
+    } else {
+      const { comparison } = await apiRequest(`/api/comparisons/${state.comparisonId}/actions`, {
+        method: "POST",
+        body: JSON.stringify({ action })
+      });
+
+      state.simulation = comparison.simulation;
+      state.aiSimulation = comparison.aiSimulation;
+      state.selectedCropId = comparison.simulation.crop.id;
+      state.lastComparison = comparison.lastComparison;
+      state.comparisonHistory = comparison.comparisonHistory;
+      state.stage = comparison.simulation.status === "complete" ? "result" : "simulation";
     }
   } catch (error) {
     state.error = error.message;
@@ -424,43 +501,48 @@ function renderStart() {
       <article class="panel-card hero-card">
         <div class="hero-copy">
           <p class="eyebrow">Step 1</p>
-          <h2>Start Your Agriculture Journey</h2>
+          <h2>Challenge the AI agronomist in a live crop season.</h2>
           <p>
-            Learn how real crop decisions affect farm outcomes. Soilixa OpenEnv combines crop knowledge,
-            daily monitoring, and interactive choices across a 30-day guided simulation.
+            GreenLogic now runs as a head-to-head decision arena. You make the manual move, the AI plays its own lane,
+            and every submission shows who handled the farm state better.
+          </p>
+        </div>
+        <div class="tip-card" style="margin-top: 1rem;">
+          <h3>Why this demo works in a pitch</h3>
+          <p class="muted">
+            Judges can see the recommendation, your override, the AI counter-move, and the point swing immediately after each manual submit.
           </p>
         </div>
         <div class="cta-row">
-          <button class="primary" data-action="go-crops" ${state.loading ? "disabled" : ""}>Start</button>
-          <button class="ghost" data-action="watch-ai" ${state.loading || !state.crops.length ? "disabled" : ""}>Watch AI Farm</button>
-          <button class="secondary" data-action="preview-guide" ${state.loading || !state.crops.length ? "disabled" : ""}>Preview Learning Flow</button>
+          <button class="primary" data-action="go-crops" ${state.loading ? "disabled" : ""}>Start Challenge</button>
+          <button class="secondary" data-action="preview-guide" ${state.loading || !state.crops.length ? "disabled" : ""}>Preview Crop Guide</button>
         </div>
       </article>
 
       <aside class="panel-card">
-        <h3>What the system teaches</h3>
+        <h3>What the system proves</h3>
         <div class="mini-grid">
           <div class="metric">
-            <span class="muted">Crop knowledge</span>
-            <span class="metric-value">12 tips</span>
+            <span class="muted">Challenge</span>
+            <span class="metric-value">Manual vs AI</span>
           </div>
           <div class="metric">
             <span class="muted">Simulation</span>
             <span class="metric-value">30 days</span>
           </div>
           <div class="metric">
-            <span class="muted">Actions</span>
-            <span class="metric-value">3 choices</span>
+            <span class="muted">Result</span>
+            <span class="metric-value">Round verdicts</span>
           </div>
         </div>
         <p class="support-copy">
-          The platform is built around practical farming guidance first, then turns that knowledge into a decision game.
+          The platform turns crop guidance into a visible AI copilot challenge instead of a passive simulation.
         </p>
         ${
           state.agentBrief
             ? `
             <div class="tip-card" style="margin-top: 1rem;">
-              <h3>AI agent objective</h3>
+              <h3>AI challenge lane</h3>
               <p class="muted">${state.agentBrief.objective}</p>
               <p><strong>Episode:</strong> ${state.agentBrief.episode.totalDays} days</p>
               <p><strong>Demo crop:</strong> ${demoCrop ? `${demoCrop.name} ${demoCrop.emoji}` : "Loading..."}</p>
@@ -501,15 +583,14 @@ function renderCropSelection() {
   renderFrame(`
     <div class="panel-card">
       <p class="eyebrow">Step 2</p>
-      <h2>Select a crop to guide the simulation.</h2>
-      <p class="muted">Choose the crop first. Soilixa then loads the matching farming guide and daily environmental targets.</p>
+      <h2>Select the crop for the challenge arena.</h2>
+      <p class="muted">Both the manual lane and the AI lane will be judged against the same crop rules, moisture range, and fertilizer timing.</p>
 
       <div class="crop-grid">${cards}</div>
 
       <div class="button-row" style="margin-top: 1.2rem;">
         <button class="secondary" data-action="go-start" ${state.loading ? "disabled" : ""}>Back</button>
-        <button class="ghost" data-action="watch-ai" ${state.loading || !state.selectedCropId ? "disabled" : ""}>Watch AI Farm</button>
-        <button class="primary" data-action="go-guide" ${state.loading || !state.selectedCropId ? "disabled" : ""}>Continue to Crop Guide</button>
+        <button class="primary" data-action="go-guide" ${state.loading || !state.selectedCropId ? "disabled" : ""}>Continue to Challenge Guide</button>
       </div>
     </div>
   `);
@@ -538,7 +619,7 @@ function renderGuide() {
       <article class="panel-card">
         <p class="eyebrow">Step 3</p>
         <h2>How to grow ${crop.name} ${crop.emoji}</h2>
-        <p class="muted">Read the crop guidance first. The simulation and scoring system are based on these practical rules.</p>
+        <p class="muted">Read the crop guidance first. The challenge score and AI recommendation are both based on these practical rules.</p>
         <div class="guide-list">${points}</div>
       </article>
 
@@ -564,10 +645,10 @@ function renderGuide() {
         </div>
 
         <div class="tip-card" style="margin-top: 1rem;">
-          <h3>OpenEnv framing</h3>
+          <h3>How manual submit shows results</h3>
           <p class="muted">
-            The 30-day loop will show soil moisture, temperature, crop health, and a daily learning prompt.
-            Each action changes score and final crop quality.
+            When you submit an action, GreenLogic scores your move, advances the AI lane with its own choice,
+            and immediately shows the round winner, point swing, and explanation.
           </p>
         </div>
 
@@ -575,8 +656,7 @@ function renderGuide() {
 
         <div class="button-row" style="margin-top: 1rem;">
           <button class="secondary" data-action="go-crops" ${state.loading ? "disabled" : ""}>Choose Another Crop</button>
-          <button class="ghost" data-action="watch-ai" ${state.loading ? "disabled" : ""}>Watch AI Farm</button>
-          <button class="primary" data-action="start-simulation" ${state.loading ? "disabled" : ""}>Start Simulation</button>
+          <button class="primary" data-action="start-simulation" ${state.loading ? "disabled" : ""}>Start Challenge</button>
         </div>
       </aside>
     </div>
@@ -617,36 +697,65 @@ function renderDemoStatus() {
   `;
 }
 
+function renderChallengeTimeline() {
+  if (!state.comparisonHistory.length) {
+    return `<div class="log-item"><strong>No rounds yet</strong><p class="muted">Your first manual action will generate the first AI comparison.</p></div>`;
+  }
+
+  return state.comparisonHistory
+    .slice(0, 5)
+    .map(
+      (entry) => `
+        <div class="log-item">
+          <strong>Day ${entry.day} · ${getRoundVerdict(entry)}</strong>
+          <div class="duel-line">
+            <span>You: ${entry.manualAction}</span>
+            <span>${entry.manualDelta >= 0 ? `+${entry.manualDelta}` : entry.manualDelta}</span>
+          </div>
+          <div class="duel-line ai">
+            <span>AI: ${entry.aiAction}</span>
+            <span>${entry.aiPreviewDelta >= 0 ? `+${entry.aiPreviewDelta}` : entry.aiPreviewDelta}</span>
+          </div>
+          <p class="muted">Swing ${entry.swing >= 0 ? `+${entry.swing}` : entry.swing} against the AI lane.</p>
+        </div>
+      `
+    )
+    .join("");
+}
+
 function renderSimulation() {
-  const simulation = state.simulation;
+  const simulation = getCurrentSimulation();
+  const aiSimulation = getAiSimulation();
   if (!simulation) {
     renderFrame(`<div class="panel-card"><p class="muted">Simulation not found.</p></div>`);
     return;
   }
 
-  const logs = simulation.history.length
-    ? simulation.history
-        .slice(0, 6)
-        .map(
-          (entry) => `
-            <div class="log-item">
-              <strong>Day ${entry.day} · ${entry.actionLabel || entry.action}</strong>
-              <div class="score-chip">Score ${entry.scoreDelta >= 0 ? `+${entry.scoreDelta}` : entry.scoreDelta}</div>
-              <p class="muted">Moisture after action: ${entry.moistureAfterAction}% · Crop health: ${entry.healthAfter}%</p>
-              <p>${entry.notes[0]}</p>
-            </div>
-          `
-        )
-        .join("")
-    : `<div class="log-item"><strong>No actions yet</strong><p class="muted">Start with day 1 and respond to the live field conditions.</p></div>`;
+  const summary = getComparisonSummary();
+  const lastComparison = state.lastComparison;
+  const aiDecision = aiSimulation ? chooseAiAction(aiSimulation) : null;
 
   renderFrame(`
-    <div class="simulation-layout">
+    <div class="simulation-layout challenge-layout">
       <article class="panel-card">
         <p class="eyebrow">Step 4</p>
-        <h2>${simulation.crop.name} Simulation · Day ${simulation.day} / ${simulation.totalDays}</h2>
+        <h2>${simulation.crop.name} Challenge Arena · Day ${simulation.day} / ${simulation.totalDays}</h2>
         <div class="progress-bar" aria-hidden="true">
           <div class="progress-fill" style="width: ${simulation.progressPercent}%;"></div>
+        </div>
+
+        <div class="challenge-scoreboard">
+          <div class="versus-card manual">
+            <span class="versus-label">Manual lane</span>
+            <strong>${simulation.score}</strong>
+            <span>Health ${simulation.cropHealth}%</span>
+          </div>
+          <div class="versus-vs">VS</div>
+          <div class="versus-card ai">
+            <span class="versus-label">AI lane</span>
+            <strong>${aiSimulation ? aiSimulation.score : "--"}</strong>
+            <span>${aiSimulation ? `Health ${aiSimulation.cropHealth}%` : "Preparing AI lane"}</span>
+          </div>
         </div>
 
         <div class="condition-grid" style="margin-top: 1rem;">
@@ -673,74 +782,105 @@ function renderSimulation() {
           <p>${simulation.growthHint}</p>
         </div>
 
+        <div class="tip-card" style="margin-top: 1rem;">
+          <h3>Submit your manual move</h3>
+          <p class="muted">
+            After you submit, the backend scores your move, replays the AI decision on the same day snapshot for a fair round verdict, and also advances the AI season lane.
+          </p>
+          ${
+            state.demoMode
+              ? renderDemoStatus()
+              : `
+              <div class="button-row" style="margin-top: 1rem;">
+                <button class="primary" data-action="water" ${state.loading ? "disabled" : ""}>Water</button>
+                <button class="ghost" data-action="fertilize" ${state.loading ? "disabled" : ""}>Add fertilizer</button>
+                <button class="secondary" data-action="do_nothing" ${state.loading ? "disabled" : ""}>Do nothing</button>
+              </div>
+            `
+          }
+        </div>
+
         ${
-          simulation.lastActionSummary
+          lastComparison
             ? `
-            <div class="status-card" style="margin-top: 1rem;">
-              <h3>Previous action feedback</h3>
-              <p>${simulation.lastActionSummary.notes.join(" ")}</p>
+            <div class="round-result-card" style="margin-top: 1rem;">
+              <div class="round-result-head">
+                <div>
+                  <p class="eyebrow">Latest round verdict</p>
+                  <h3>${getRoundVerdict(lastComparison)}</h3>
+                </div>
+                <div class="score-chip">Swing ${lastComparison.swing >= 0 ? `+${lastComparison.swing}` : lastComparison.swing}</div>
+              </div>
+              <div class="round-result-grid">
+                <div class="round-lane">
+                  <span class="muted">Your action</span>
+                  <strong>${lastComparison.manualAction}</strong>
+                  <p>Turn score ${lastComparison.manualDelta >= 0 ? `+${lastComparison.manualDelta}` : lastComparison.manualDelta}</p>
+                  <p class="muted">${lastComparison.manualReason}</p>
+                </div>
+                <div class="round-lane ai">
+                  <span class="muted">AI action</span>
+                  <strong>${lastComparison.aiAction}</strong>
+                  <p>Turn score ${lastComparison.aiPreviewDelta >= 0 ? `+${lastComparison.aiPreviewDelta}` : lastComparison.aiPreviewDelta}</p>
+                  <p class="muted">${lastComparison.aiPreviewReason}</p>
+                </div>
+              </div>
             </div>
           `
             : ""
-        }
-
-        ${
-          state.demoMode
-            ? renderDemoStatus()
-            : `
-            <div class="button-row" style="margin-top: 1rem;">
-              <button class="primary" data-action="water" ${state.loading ? "disabled" : ""}>Water</button>
-              <button class="ghost" data-action="fertilize" ${state.loading ? "disabled" : ""}>Add fertilizer</button>
-              <button class="secondary" data-action="do_nothing" ${state.loading ? "disabled" : ""}>Do nothing</button>
-            </div>
-          `
         }
       </article>
 
       <aside class="panel-card">
         <h3>AI field recommendation</h3>
-        <p><strong>Best action now:</strong> ${simulation.recommendation.label}</p>
-        <p class="muted">${simulation.recommendation.reason}</p>
-
-        ${
-          simulation.agentBrief
-            ? `
-            <div class="tip-card" style="margin-top: 1rem;">
-              <h3>Agent rule focus</h3>
-              <p class="muted">${simulation.agentBrief.finalGoal.join(" ")}</p>
-            </div>
-          `
-            : ""
-        }
-
-        ${
-          state.demoMode
-            ? `
-            <div class="tip-card" style="margin-top: 1rem;">
-              <h3>Trained policy</h3>
-              <p class="muted">
-                The live demo reads the exported Q-table first and falls back to the backend recommendation only when a state is unseen.
-              </p>
-              ${
-                state.demoDecision
-                  ? `<p><strong>Current state key:</strong> ${state.demoDecision.stateKey}</p>`
-                  : ""
-              }
-            </div>
-          `
-            : ""
-        }
-
-        <div class="tip-card" style="margin-top: 1rem;">
-          <h3>Scoring system</h3>
-          <p class="muted">
-            Good decisions typically earn +5 to +10. Poor timing or harmful actions drop the score by -5 to -10.
-          </p>
+        <div class="recommendation-card">
+          <div class="recommendation-topline">
+            <strong>${simulation.recommendation.label}</strong>
+            ${
+              aiDecision
+                ? `<div class="score-chip">${aiDecision.source === "q_table" ? "Q-table" : "Rule-based"} AI lane</div>`
+                : ""
+            }
+          </div>
+          <p>${simulation.recommendation.reason}</p>
+          <div class="decision-badge">
+            <span>Crop ${simulation.crop.name}</span>
+            <span>Target moisture ${simulation.crop.moistureRange[0]}-${simulation.crop.moistureRange[1]}%</span>
+            <span>Target temp ${simulation.crop.temperatureRange[0]}-${simulation.crop.temperatureRange[1]}°C</span>
+          </div>
         </div>
 
         <div class="tip-card" style="margin-top: 1rem;">
-          <h3>Recent farm log</h3>
-          <div class="log-list">${logs}</div>
+          <h3>Challenge score</h3>
+          <div class="agent-pill-row">
+            <div class="agent-pill">
+              <strong>${summary.manualWins}</strong>
+              <span>Manual round wins</span>
+            </div>
+            <div class="agent-pill">
+              <strong>${summary.aiWins}</strong>
+              <span>AI round wins</span>
+            </div>
+            <div class="agent-pill">
+              <strong>${summary.ties}</strong>
+              <span>Tied rounds</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tip-card" style="margin-top: 1rem;">
+          <h3>How the result appears after submit</h3>
+          <div class="flow-list">
+            <div class="flow-step"><span>1</span><p>You choose a manual action for the current day.</p></div>
+            <div class="flow-step"><span>2</span><p>The backend scores your lane and records the crop impact.</p></div>
+            <div class="flow-step"><span>3</span><p>The AI move is replayed on the same snapshot to measure the round swing fairly.</p></div>
+            <div class="flow-step"><span>4</span><p>The AI season lane also advances, then the verdict card shows who won and why.</p></div>
+          </div>
+        </div>
+
+        <div class="tip-card" style="margin-top: 1rem;">
+          <h3>Recent challenge timeline</h3>
+          <div class="log-list">${renderChallengeTimeline()}</div>
         </div>
       </aside>
     </div>
@@ -748,78 +888,167 @@ function renderSimulation() {
 }
 
 function renderResult() {
-  const simulation = state.simulation;
+  const simulation = getCurrentSimulation();
+  const aiSimulation = getAiSimulation();
   if (!simulation || !simulation.outcome) {
     renderFrame(`<div class="panel-card"><p class="muted">Result not available.</p></div>`);
     return;
   }
 
-  const bestActionCount = simulation.history.filter((entry) => entry.scoreDelta >= 8).length;
-  const stressDays = simulation.history.filter((entry) => entry.scoreDelta < 0).length;
-  const rerunLabel = state.demoMode ? `Watch ${simulation.crop.name} Again` : `Simulate ${simulation.crop.name} Again`;
+  if (!aiSimulation) {
+    const bestActionCount = simulation.history.filter((entry) => entry.scoreDelta >= 8).length;
+    const stressDays = simulation.history.filter((entry) => entry.scoreDelta < 0).length;
+    const rerunLabel = state.demoMode ? `Watch ${simulation.crop.name} Again` : `Simulate ${simulation.crop.name} Again`;
+
+    renderFrame(`
+      <div class="result-layout">
+        <article class="panel-card">
+          <p class="eyebrow">Step 5</p>
+          <div class="result-banner">
+            <p class="eyebrow">30-day outcome</p>
+            <h2 class="result-title">${simulation.outcome.badge}</h2>
+            <p>${simulation.outcome.summary}</p>
+          </div>
+
+          <div class="metrics-grid" style="margin-top: 1rem;">
+            <div class="metric">
+              <span class="muted">Final score</span>
+              <span class="metric-value">${simulation.score}</span>
+            </div>
+            <div class="metric">
+              <span class="muted">Crop health</span>
+              <span class="metric-value">${simulation.cropHealth}%</span>
+            </div>
+            <div class="metric">
+              <span class="muted">Strong days</span>
+              <span class="metric-value">${bestActionCount}</span>
+            </div>
+            <div class="metric">
+              <span class="muted">Stress days</span>
+              <span class="metric-value">${stressDays}</span>
+            </div>
+          </div>
+
+          <p class="footnote">
+            Soilixa OpenEnv blends agricultural knowledge, AI-style recommendations, and interactive decision learning in one crop lifecycle experience.
+          </p>
+        </article>
+
+        <aside class="panel-card">
+          <h3>${simulation.crop.emoji} ${simulation.crop.name} season review</h3>
+          <p class="muted">${simulation.outcome.summary}</p>
+          <div class="button-row" style="margin-top: 1rem;">
+            <button class="secondary" data-action="restart-same" ${state.loading ? "disabled" : ""}>${rerunLabel}</button>
+            <button class="primary" data-action="restart-all" ${state.loading ? "disabled" : ""}>Choose Another Crop</button>
+          </div>
+        </aside>
+      </div>
+    `);
+    return;
+  }
+
+  const manualStats = getSeasonStats(simulation);
+  const aiStats = getSeasonStats(aiSimulation);
+  const summary = getComparisonSummary();
+  const manualPower = simulation.score + simulation.cropHealth;
+  const aiPower = aiSimulation.score + aiSimulation.cropHealth;
+  const gap = manualPower - aiPower;
+  let duelTitle = "Season tied the AI";
+  let duelBody = "Manual play and the AI lane finished with the same combined season strength.";
+
+  if (gap > 0) {
+    duelTitle = "Manual strategy beat the AI";
+    duelBody = `You finished ${gap} combined points ahead by turning more days into productive crop decisions.`;
+  } else if (gap < 0) {
+    duelTitle = "AI strategy beat manual play";
+    duelBody = `The AI finished ${Math.abs(gap)} combined points ahead by making more stable day-to-day decisions.`;
+  }
 
   renderFrame(`
-    <div class="result-layout">
+    <div class="result-layout challenge-result-layout">
       <article class="panel-card">
         <p class="eyebrow">Step 5</p>
         <div class="result-banner">
-          <p class="eyebrow">30-day outcome</p>
-          <h2 class="result-title">${simulation.outcome.badge}</h2>
-          <p>${simulation.outcome.summary}</p>
+          <p class="eyebrow">30-day challenge outcome</p>
+          <h2 class="result-title">${duelTitle}</h2>
+          <p>${duelBody}</p>
         </div>
 
-        <div class="metrics-grid" style="margin-top: 1rem;">
-          <div class="metric">
-            <span class="muted">Final score</span>
-            <span class="metric-value">${simulation.score}</span>
-          </div>
-          <div class="metric">
-            <span class="muted">Crop health</span>
-            <span class="metric-value">${simulation.cropHealth}%</span>
-          </div>
-          <div class="metric">
-            <span class="muted">Strong days</span>
-            <span class="metric-value">${bestActionCount}</span>
-          </div>
-          <div class="metric">
-            <span class="muted">Stress days</span>
-            <span class="metric-value">${stressDays}</span>
-          </div>
-        </div>
-
-        ${
-          state.demoMode
-            ? `
-            <div class="tip-card" style="margin-top: 1rem;">
-              <h3>AI season recap</h3>
-              <p class="muted">
-                This run was driven by the exported Q-table from \`train.py\`, using the same backend step logic as the guided simulation.
-              </p>
+        <div class="versus-summary-grid" style="margin-top: 1rem;">
+          <div class="summary-column manual">
+            <p class="eyebrow">Manual season</p>
+            <h3>${simulation.outcome.badge}</h3>
+            <p class="muted">${simulation.outcome.summary}</p>
+            <div class="metrics-grid compact-metrics">
+              <div class="metric">
+                <span class="muted">Final score</span>
+                <span class="metric-value">${simulation.score}</span>
+              </div>
+              <div class="metric">
+                <span class="muted">Health</span>
+                <span class="metric-value">${simulation.cropHealth}%</span>
+              </div>
+              <div class="metric">
+                <span class="muted">Strong days</span>
+                <span class="metric-value">${manualStats.strongDays}</span>
+              </div>
+              <div class="metric">
+                <span class="muted">Stress days</span>
+                <span class="metric-value">${manualStats.stressDays}</span>
+              </div>
             </div>
-          `
-            : ""
-        }
-
-        <p class="footnote">
-          Soilixa OpenEnv blends agricultural knowledge, AI-style recommendations, and interactive decision learning in one crop lifecycle experience.
-        </p>
+          </div>
+          <div class="summary-column ai">
+            <p class="eyebrow">AI season</p>
+            <h3>${aiSimulation.outcome.badge}</h3>
+            <p class="muted">${aiSimulation.outcome.summary}</p>
+            <div class="metrics-grid compact-metrics">
+              <div class="metric">
+                <span class="muted">Final score</span>
+                <span class="metric-value">${aiSimulation.score}</span>
+              </div>
+              <div class="metric">
+                <span class="muted">Health</span>
+                <span class="metric-value">${aiSimulation.cropHealth}%</span>
+              </div>
+              <div class="metric">
+                <span class="muted">Strong days</span>
+                <span class="metric-value">${aiStats.strongDays}</span>
+              </div>
+              <div class="metric">
+                <span class="muted">Stress days</span>
+                <span class="metric-value">${aiStats.stressDays}</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </article>
 
       <aside class="panel-card">
-        <h3>${simulation.crop.emoji} ${simulation.crop.name} season review</h3>
+        <h3>${simulation.crop.emoji} ${simulation.crop.name} challenge review</h3>
         <p class="muted">
-          The final result reflects how well the simulation followed the crop guide across moisture, nutrient timing, and daily balance.
+          The final screen is built from the actions you manually submitted plus the AI lane that advanced in parallel across the same 30-day crop.
         </p>
 
         <div class="tip-card" style="margin-top: 1rem;">
-          <h3>Knowledge to remember</h3>
-          <p>${simulation.crop.knowledge[0]}</p>
-          <p>${simulation.crop.knowledge[5]}</p>
-          <p>${simulation.crop.knowledge[10]}</p>
+          <h3>Head-to-head metrics</h3>
+          <div class="flow-list">
+            <div class="flow-step"><span>${summary.manualWins}</span><p>Rounds won by your manual decision.</p></div>
+            <div class="flow-step"><span>${summary.aiWins}</span><p>Rounds won by the AI lane.</p></div>
+            <div class="flow-step"><span>${manualStats.wateringDays}</span><p>Manual watering decisions across the season.</p></div>
+            <div class="flow-step"><span>${aiStats.fertilizerDays}</span><p>AI fertilizer plays across the season.</p></div>
+          </div>
+        </div>
+
+        <div class="tip-card" style="margin-top: 1rem;">
+          <h3>How the result was built</h3>
+          <p class="muted">
+            After every manual submit, GreenLogic updated your lane, updated the AI lane, and stored the round verdict. This page is the season total of those daily comparisons plus final crop health.
+          </p>
         </div>
 
         <div class="button-row" style="margin-top: 1rem;">
-          <button class="secondary" data-action="restart-same" ${state.loading ? "disabled" : ""}>${rerunLabel}</button>
+          <button class="secondary" data-action="restart-same" ${state.loading ? "disabled" : ""}>Run ${simulation.crop.name} Challenge Again</button>
           <button class="primary" data-action="restart-all" ${state.loading ? "disabled" : ""}>Choose Another Crop</button>
         </div>
       </aside>
@@ -871,6 +1100,7 @@ document.addEventListener("click", (event) => {
 
   if (action === "go-crops") {
     resetDemoMode();
+    resetChallengeState();
     state.stage = "crop";
     state.error = "";
     render();
@@ -888,6 +1118,7 @@ document.addEventListener("click", (event) => {
 
   if (action === "go-start") {
     resetDemoMode();
+    resetChallengeState();
     state.stage = "start";
     state.error = "";
     render();
@@ -936,6 +1167,7 @@ document.addEventListener("click", (event) => {
   if (action === "restart-all") {
     resetDemoMode();
     state.simulation = null;
+    resetChallengeState();
     state.stage = "crop";
     state.error = "";
     render();

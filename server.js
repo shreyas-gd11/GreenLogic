@@ -11,13 +11,17 @@ const {
   getCrop,
   createSimulation,
   serializeSimulation,
-  applyAction
+  applyAction,
+  createComparison,
+  serializeComparison,
+  applyComparisonAction
 } = require("./lib/simulation");
 
 const PORT = process.env.PORT || 5000;
 const HOST = process.env.HOST || "localhost";
 const ROOT = __dirname;
 const simulations = new Map();
+const comparisons = new Map();
 
 const MIME_TYPES = {
   ".html": "text/html; charset=utf-8",
@@ -171,6 +175,19 @@ async function handleApi(req, res, url) {
     return;
   }
 
+  if (req.method === "POST" && pathname === "/api/comparisons") {
+    const body = await readBody(req);
+    if (!getCrop(body.cropId)) {
+      sendJson(res, 400, { error: "Valid cropId is required" });
+      return;
+    }
+
+    const comparison = createComparison(body.cropId);
+    comparisons.set(comparison.id, comparison);
+    sendJson(res, 201, { comparison: serializeComparison(comparison) });
+    return;
+  }
+
   const simulationMatch = pathname.match(/^\/api\/simulations\/([^/]+)$/);
   if (req.method === "GET" && simulationMatch) {
     const simulation = simulations.get(simulationMatch[1]);
@@ -180,6 +197,18 @@ async function handleApi(req, res, url) {
     }
 
     sendJson(res, 200, { simulation: serializeSimulation(simulation) });
+    return;
+  }
+
+  const comparisonMatch = pathname.match(/^\/api\/comparisons\/([^/]+)$/);
+  if (req.method === "GET" && comparisonMatch) {
+    const comparison = comparisons.get(comparisonMatch[1]);
+    if (!comparison) {
+      sendJson(res, 404, { error: "Comparison not found" });
+      return;
+    }
+
+    sendJson(res, 200, { comparison: serializeComparison(comparison) });
     return;
   }
 
@@ -195,6 +224,24 @@ async function handleApi(req, res, url) {
     try {
       applyAction(simulation, body.action);
       sendJson(res, 200, { simulation: serializeSimulation(simulation) });
+    } catch (error) {
+      sendJson(res, 400, { error: error.message });
+    }
+    return;
+  }
+
+  const comparisonActionMatch = pathname.match(/^\/api\/comparisons\/([^/]+)\/actions$/);
+  if (req.method === "POST" && comparisonActionMatch) {
+    const comparison = comparisons.get(comparisonActionMatch[1]);
+    if (!comparison) {
+      sendJson(res, 404, { error: "Comparison not found" });
+      return;
+    }
+
+    const body = await readBody(req);
+    try {
+      applyComparisonAction(comparison, body.action);
+      sendJson(res, 200, { comparison: serializeComparison(comparison) });
     } catch (error) {
       sendJson(res, 400, { error: error.message });
     }
