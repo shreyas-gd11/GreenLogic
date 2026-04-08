@@ -15,6 +15,7 @@ except ImportError:  # pragma: no cover - numpy is optional for this local envir
 EPISODE_LENGTH = 30
 MAX_FINAL_SCORE = 400
 DEFAULT_SEED = 42
+SCORE_EPSILON = 0.01
 
 CROPS: dict[str, CropTask] = {
     "tomato": CropTask(
@@ -101,7 +102,7 @@ class GreenLogicEnv:
         )
         return StepResult(
             observation=self._observation(),
-            reward=0.0,
+            reward=SCORE_EPSILON,
             done=False,
             info={"event": "reset", "episodeLength": EPISODE_LENGTH},
         )
@@ -177,7 +178,7 @@ class GreenLogicEnv:
                 },
                 "thresholds": crop.thresholds.to_dict(),
                 "finalScore": total_score,
-                "normalizedScore": round(total_score / MAX_FINAL_SCORE, 4),
+                "normalizedScore": self.normalized_score(),
             },
         )
 
@@ -192,7 +193,8 @@ class GreenLogicEnv:
         return self._state.totalScore
 
     def normalized_score(self) -> float:
-        return round(self._clamp(self.final_score() / MAX_FINAL_SCORE, 0.0, 1.0), 4)
+        score = self.final_score() / MAX_FINAL_SCORE
+        return round(self._clamp(score, SCORE_EPSILON, 1.0 - SCORE_EPSILON), 4)
 
     def result_label(self) -> str:
         score = self.final_score()
@@ -217,7 +219,7 @@ class GreenLogicEnv:
             rainfall=self._state.rainfall,
             weather=self._state.weather,
             thresholds=self._state.thresholds,
-            normalizedScore=round(self._state.totalScore / MAX_FINAL_SCORE, 4),
+            normalizedScore=self.normalized_score(),
         )
 
     def _calculate_reward(self, soil_moisture: float, crop_health: float, temperature: float, crop: CropTask) -> float:
@@ -241,7 +243,7 @@ class GreenLogicEnv:
             penalty += min(0.12, (temperature - high_temp) / high_temp)
 
         reward = (0.55 * moisture_score) + (0.45 * health_score) - penalty + self._difficulty_modifier(crop)
-        return self._clamp(reward, 0.0, 1.0)
+        return self._clamp(reward, SCORE_EPSILON, 1.0 - SCORE_EPSILON)
 
     def _fertilizer_effect(self, state: GreenLogicState) -> float:
         crop = self._get_crop(state.cropType)
