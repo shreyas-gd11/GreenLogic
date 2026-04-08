@@ -4,7 +4,7 @@
   <rect width="960" height="420" rx="24" fill="#fff7ec" />
   <rect x="16" y="16" width="928" height="388" rx="20" fill="#f8fbf4" stroke="rgba(26,82,54,0.09)" />
   <text x="68" y="44" font-size="22" font-family="Trebuchet MS, Segoe UI, sans-serif" font-weight="700" fill="#173626">AI Learning Curve</text>
-  <text x="68" y="66" font-size="13" font-family="Trebuchet MS, Segoe UI, sans-serif" fill="#567062">500 episodes using the live Soilixa simulation backend</text>
+  <text x="68" y="66" font-size="13" font-family="Trebuchet MS, Segoe UI, sans-serif" fill="#567062">500 episodes using the live GreenLogic simulation backend</text>
   <line x1="68" y1="368.00" x2="936" y2="368.00" stroke="rgba(20,60,40,0.14)" stroke-width="1" /><text x="58" y="372.00" text-anchor="end" font-size="12" fill="#4d6357">-412</text><line x1="68" y1="284.00" x2="936" y2="284.00" stroke="rgba(20,60,40,0.14)" stroke-width="1" /><text x="58" y="288.00" text-anchor="end" font-size="12" fill="#4d6357">-208</text><line x1="68" y1="200.00" x2="936" y2="200.00" stroke="rgba(20,60,40,0.14)" stroke-width="1" /><text x="58" y="204.00" text-anchor="end" font-size="12" fill="#4d6357">-4</text><line x1="68" y1="116.00" x2="936" y2="116.00" stroke="rgba(20,60,40,0.14)" stroke-width="1" /><text x="58" y="120.00" text-anchor="end" font-size="12" fill="#4d6357">200</text><line x1="68" y1="32.00" x2="936" y2="32.00" stroke="rgba(20,60,40,0.14)" stroke-width="1" /><text x="58" y="36.00" text-anchor="end" font-size="12" fill="#4d6357">404</text>
   <line x1="68" y1="368" x2="936" y2="368" stroke="#67806d" stroke-width="1.2" />
   <line x1="68" y1="32" x2="68" y2="368" stroke="#67806d" stroke-width="1.2" />

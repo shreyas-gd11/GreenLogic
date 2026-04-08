@@ -50,6 +50,3 @@ class BaselineGreenLogicAgent:
         if crop_type == "rice":
             return 35.0
         return 34.0
-
-
-BaselineSoilixaAgent = BaselineGreenLogicAgent

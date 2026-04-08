@@ -341,7 +341,7 @@ function renderStart() {
           <p class="eyebrow">Step 1</p>
           <h2>Start Your Agriculture Journey</h2>
           <p>
-            Learn how real crop decisions affect farm outcomes. Soilixa OpenEnv combines crop knowledge,
+            Learn how real crop decisions affect farm outcomes. GreenLogic combines crop knowledge,
             daily monitoring, and interactive choices across a 30-day guided simulation.
           </p>
         </div>
@@ -399,7 +399,7 @@ function renderCropSelection() {
     <div class="panel-card">
       <p class="eyebrow">Step 2</p>
       <h2>Select a crop to guide the simulation.</h2>
-      <p class="muted">Choose the crop first. Soilixa then loads the matching farming guide and daily environmental targets.</p>
+      <p class="muted">Choose the crop first. GreenLogic then loads the matching farming guide and daily environmental targets.</p>
 
       <div class="crop-grid">${cards}</div>
 
@@ -599,7 +599,7 @@ function renderResult() {
         </div>
 
         <p class="footnote">
-          Soilixa OpenEnv blends agricultural knowledge, AI-style recommendations, and interactive decision learning in one crop lifecycle experience.
+          GreenLogic blends agricultural knowledge, AI-style recommendations, and interactive decision learning in one crop lifecycle experience.
         </p>
       </article>
 

@@ -110,8 +110,3 @@ class StepResult:
             "done": self.done,
             "info": self.info,
         }
-
-
-SoilixaAction = GreenLogicAction
-SoilixaObservation = GreenLogicObservation
-SoilixaState = GreenLogicState

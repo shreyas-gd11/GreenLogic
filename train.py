@@ -151,7 +151,7 @@ def build_learning_curve_svg(scores: list[int], smoothed_scores: list[float]) ->
   <rect width="{width}" height="{height}" rx="24" fill="#fff7ec" />
   <rect x="16" y="16" width="{width - 32}" height="{height - 32}" rx="20" fill="#f8fbf4" stroke="rgba(26,82,54,0.09)" />
   <text x="{left}" y="44" font-size="22" font-family="Trebuchet MS, Segoe UI, sans-serif" font-weight="700" fill="#173626">AI Learning Curve</text>
-  <text x="{left}" y="66" font-size="13" font-family="Trebuchet MS, Segoe UI, sans-serif" fill="#567062">{len(scores)} episodes using the live Soilixa simulation backend</text>
+  <text x="{left}" y="66" font-size="13" font-family="Trebuchet MS, Segoe UI, sans-serif" fill="#567062">{len(scores)} episodes using the live GreenLogic simulation backend</text>
   {''.join(grid_lines)}
   <line x1="{left}" y1="{height - bottom}" x2="{width - right}" y2="{height - bottom}" stroke="#67806d" stroke-width="1.2" />
   <line x1="{left}" y1="{top}" x2="{left}" y2="{height - bottom}" stroke="#67806d" stroke-width="1.2" />
@@ -190,7 +190,7 @@ def save_training_history(
 
 
 def build_argument_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Train the Soilixa Q-learning agent.")
+    parser = argparse.ArgumentParser(description="Train the GreenLogic Q-learning agent.")
     parser.add_argument("--episodes", type=int, default=500, help="Number of training episodes.")
     parser.add_argument("--api-base", default=DEFAULT_API_BASE, help="Backend API base URL.")
     parser.add_argument("--model-path", default=str(DEFAULT_MODEL_PATH), help="Path to write the Q-table JSON file.")

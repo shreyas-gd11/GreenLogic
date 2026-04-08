@@ -1133,7 +1133,7 @@ function renderResult() {
           </div>
 
           <p class="footnote">
-            Soilixa OpenEnv blends agricultural knowledge, AI-style recommendations, and interactive decision learning in one crop lifecycle experience.
+            GreenLogic blends agricultural knowledge, AI-style recommendations, and interactive decision learning in one crop lifecycle experience.
           </p>
         </article>
 

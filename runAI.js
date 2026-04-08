@@ -68,7 +68,7 @@ async function run() {
   const environment = new FarmEnvironment({ cropType: requestedCropType });
   const episode = environment.runEpisode({ mode: requestedMode });
 
-  console.log("Soilixa OpenEnv CLI");
+  console.log("GreenLogic CLI");
   console.log(`Crop: ${episode.cropType}`);
   console.log(`Mode: ${episode.mode}`);
   console.log("----------------------");

@@ -16,7 +16,7 @@ function run() {
   const environment = new FarmEnvironment({ cropType: requestedCropType });
   const episode = environment.runEpisode({ mode: "learning" });
 
-  console.log("Soilixa OpenEnv Baseline Inference");
+  console.log("GreenLogic Baseline Inference");
   console.log(`Crop: ${episode.cropType}`);
   console.log(`Score: ${episode.finalScore}`);
   console.log(`Normalized Score: ${episode.normalizedScore.toFixed(2)}`);

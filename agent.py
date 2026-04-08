@@ -278,7 +278,7 @@ class QLearningAgent:
 
 
 def build_argument_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(description="Run the Soilixa Q-learning farm agent.")
+    parser = argparse.ArgumentParser(description="Run the GreenLogic Q-learning farm agent.")
     parser.add_argument("--api-base", default=DEFAULT_API_BASE, help="Backend API base URL.")
     parser.add_argument("--crop", default="tomato", help="Crop to simulate.")
     parser.add_argument("--model-path", default=str(DEFAULT_MODEL_PATH), help="Path to the Q-table JSON file.")

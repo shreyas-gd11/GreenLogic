@@ -323,6 +323,3 @@ class GreenLogicEnv:
     @staticmethod
     def _clamp(value: float, minimum: float, maximum: float) -> float:
         return max(minimum, min(maximum, value))
-
-
-SoilixaEnv = GreenLogicEnv

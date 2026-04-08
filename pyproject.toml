@@ -13,6 +13,7 @@ dependencies = [
 
 [project.scripts]
 server = "server.app:main"
+inference = "inference:main"
 
 [build-system]
 requires = ["setuptools>=61.0"]
@@ -23,13 +24,10 @@ py-modules = [
     "greenlogic_openenv",
     "greenlogic_models",
     "greenlogic_agent",
-    "soilixa_openenv",
-    "soilixa_models",
-    "soilixa_agent",
     "run_inference",
     "inference",
     "openenv_api"
 ]
 
 [tool.setuptools.packages.find]
-include = ["server"]
+include = ["server", "server.*"]
