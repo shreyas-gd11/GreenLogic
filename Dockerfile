@@ -8,7 +8,7 @@ RUN apt-get update \
 
 COPY . .
 
-RUN python3 -m pip install --no-cache-dir -r requirements.txt
+RUN python3 -m pip install --break-system-packages --no-cache-dir -r requirements.txt
 
 ENV HOST=0.0.0.0
 ENV PORT=7860
