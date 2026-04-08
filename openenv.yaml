@@ -34,18 +34,18 @@ reward:
 episode_length: 30
 
 tasks:
-  - id: tomato_easy
-    name: Tomato Easy
-    cropType: tomato
+  tomato:
+    id: task_easy
     difficulty: Easy
-    grader: graders.EasyGrader
-  - id: rice_medium
-    name: Rice Medium
-    cropType: rice
+    optimalMoisture: 55.0
+    grader: graders.easy_grader
+  rice:
+    id: task_medium
     difficulty: Medium
-    grader: graders.MediumGrader
-  - id: sugarcane_hard
-    name: Sugarcane Hard
-    cropType: sugarcane
+    optimalMoisture: 75.0
+    grader: graders.medium_grader
+  sugarcane:
+    id: task_hard
     difficulty: Hard
-    grader: graders.HardGrader
+    optimalMoisture: 65.0
+    grader: graders.hard_grader

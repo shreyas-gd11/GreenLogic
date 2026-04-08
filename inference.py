@@ -12,10 +12,17 @@ import urllib.request
 from greenlogic_agent import BaselineGreenLogicAgent
 from greenlogic_openenv import CROPS, DEFAULT_SEED, GreenLogicEnv
 
+TASK_TO_CROP = {
+    "task_easy": "tomato",
+    "task_medium": "rice",
+    "task_hard": "sugarcane",
+}
+
 
 def build_argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run one validator-compatible GreenLogic inference episode.")
     parser.add_argument("--crop", default="tomato", choices=sorted(CROPS), help="Crop task to evaluate.")
+    parser.add_argument("--task", default="", help="Optional task id alias (task_easy, task_medium, task_hard).")
     parser.add_argument("--seed", type=int, default=DEFAULT_SEED, help="Random seed for environment dynamics.")
     return parser
 
@@ -76,12 +83,13 @@ def ping_litellm_proxy() -> None:
 
 def main() -> int:
     args = build_argument_parser().parse_args()
+    crop_name = TASK_TO_CROP.get(args.task, args.crop)
 
     try:
-        emit("[START]", {"crop": args.crop, "seed": args.seed})
+        emit("[START]", {"crop": crop_name, "seed": args.seed, "task": args.task or None})
         ping_litellm_proxy()
 
-        env = GreenLogicEnv(crop_type=args.crop, seed=args.seed)
+        env = GreenLogicEnv(crop_type=crop_name, seed=args.seed)
         agent = BaselineGreenLogicAgent()
         agent.epsilon = 0.0
 

@@ -62,3 +62,15 @@ class MediumGrader(_BaseTaskGrader):
 class HardGrader(_BaseTaskGrader):
     crop_type = "sugarcane"
     bias = -0.02
+
+
+def easy_grader(payload: Any) -> float:
+    return EasyGrader().grade(payload)
+
+
+def medium_grader(payload: Any) -> float:
+    return MediumGrader().grade(payload)
+
+
+def hard_grader(payload: Any) -> float:
+    return HardGrader().grade(payload)
