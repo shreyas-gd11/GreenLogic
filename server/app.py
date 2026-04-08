@@ -1,16 +1,20 @@
 from __future__ import annotations
 
+from pathlib import Path
+
 try:
-    from flask import Flask, jsonify, request
+    from flask import Flask, jsonify, request, send_from_directory
 except ModuleNotFoundError:  # pragma: no cover - validator/install environment should provide Flask
     Flask = None
     jsonify = None
     request = None
+    send_from_directory = None
 
 from greenlogic_openenv import GreenLogicEnv
 
 app = Flask(__name__) if Flask is not None else None
 _sessions: dict[str, GreenLogicEnv] = {}
+_ROOT_DIR = Path(__file__).resolve().parent.parent
 
 
 def _session_id() -> str:
@@ -94,6 +98,17 @@ def health() -> tuple:
     return jsonify({"ok": True})
 
 
+def home():
+    return send_from_directory(_ROOT_DIR, "index.html")
+
+
+def static_file(path: str):
+    candidate = _ROOT_DIR / path
+    if candidate.is_file():
+        return send_from_directory(_ROOT_DIR, path)
+    return send_from_directory(_ROOT_DIR, "index.html")
+
+
 def main() -> None:
     if app is None:
         raise RuntimeError("Flask is required to run server.app. Install dependencies first.")
@@ -105,6 +120,8 @@ if app is not None:
     app.add_url_rule("/step", "step", step, methods=["POST"])
     app.add_url_rule("/state", "state", state, methods=["GET"])
     app.add_url_rule("/health", "health", health, methods=["GET"])
+    app.add_url_rule("/", "home", home, methods=["GET"])
+    app.add_url_rule("/<path:path>", "static_file", static_file, methods=["GET"])
 
 
 if __name__ == "__main__":
